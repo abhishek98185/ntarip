@@ -1,28 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JEE & NEET Resources</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-
-
 </head>
-
 <body>
 
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <h1>ExamPrepZone</h1>
+      <h1>NTARIP</h1>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">JEE</a></li>
         <li><a href="#">NEET</a></li>
+        <li><a href="/jeeadvance">JEE ADVANCE</a></li>
         <li><a href="#">Formula Sheets</a></li>
         <li><a href="#">About</a></li>
         {% if request.user.is_authenticated %}
@@ -61,14 +57,11 @@
     </div>
   </main>
 
-
-
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 ExamPrepZone | Made by Abhishek</p>
+    <p>&copy; 2025 NTARIP | Made by CodexSync</p>
   </footer>
 
-  <script src="{% static 'js/script.js' %}"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>

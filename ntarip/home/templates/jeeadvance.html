@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JEE Advanced Papers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .year-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .year-header {
+            background: #007bff;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .papers {
+            display: none;
+            padding: 15px;
+            background: #e9f4ff;
+        }
+
+        .paper {
+            margin: 10px 0;
+        }
+
+        .options {
+            display: none;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #0056b3;
+        }
+
+        .toggle {
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .arrow {
+            transition: transform 0.3s;
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JEE Advanced Previous Year Papers</h1>
+
+    <div id="main-container"></div>
+
+    <script>
+        const years = [2024, 2023, 2022];
+        const container = document.getElementById("main-container");
+
+        years.forEach(year => {
+            const yearBox = document.createElement("div");
+            yearBox.className = "year-container";
+
+            const header = document.createElement("div");
+            header.className = "year-header";
+            header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow">▶</span>`;
+
+            const papers = document.createElement("div");
+            papers.className = "papers";
+
+            ["Paper 1", "Paper 2"].forEach(paperName => {
+                const paper = document.createElement("div");
+                paper.className = "paper";
+
+                const toggle = document.createElement("div");
+                toggle.className = "toggle";
+                toggle.textContent = paperName;
+
+                const options = document.createElement("div");
+                options.className = "options";
+
+                const downloadBtn = document.createElement("a");
+                downloadBtn.className = "button";
+
+                // Correct PDF path using consistent naming
+                const paperNumber = paperName.endsWith("1") ? "1" : "2";
+                downloadBtn.href = `../media/advance/${year}/paper-${paperNumber}.pdf`;
+
+                downloadBtn.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
+                downloadBtn.textContent = "Download";
+
+
+                const testBtn = document.createElement("a");
+                testBtn.className = "button";
+                testBtn.href = `/test/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
+                testBtn.textContent = "Give as a Test";
+
+                options.appendChild(downloadBtn);
+                options.appendChild(testBtn);
+                paper.appendChild(toggle);
+                paper.appendChild(options);
+                papers.appendChild(paper);
+
+                toggle.addEventListener("click", () => {
+                    options.style.display = options.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            header.addEventListener("click", () => {
+                papers.style.display = papers.style.display === "block" ? "none" : "block";
+                const arrow = header.querySelector(".arrow");
+                arrow.classList.toggle("rotate", papers.style.display === "block");
+            });
+
+            yearBox.appendChild(header);
+            yearBox.appendChild(papers);
+            container.appendChild(yearBox);
+        });
+    </script>
+
+</body>
+
+</html>

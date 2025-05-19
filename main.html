@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEE & NEET Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1>ExamPrepZone</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">JEE</a></li>
+        <li><a href="#">NEET</a></li>
+        <li><a href="#">Formula Sheets</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main class="main-content">
+    <h2>JEE Resources</h2>
+    <div class="card-container">
+      <div class="resource-card">
+        <h3>JEE 2023 Papers</h3>
+        <button onclick="downloadFile('jee2023.pdf')">Download</button>
+      </div>
+      <div class="resource-card">
+        <h3>JEE Formula Sheet</h3>
+        <button onclick="downloadFile('jee_formula.pdf')">Download</button>
+      </div>
+    </div>
+
+    <h2>NEET Resources</h2>
+    <div class="card-container">
+      <div class="resource-card">
+        <h3>NEET 2023 Papers</h3>
+        <button onclick="downloadFile('neet2023.pdf')">Download</button>
+      </div>
+      <div class="resource-card">
+        <h3>NEET Formula Sheet</h3>
+        <button onclick="downloadFile('neet_formula.pdf')">Download</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ExamPrepZone | Made by Abhishek</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

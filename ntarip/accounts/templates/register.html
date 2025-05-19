@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | My Blog</title>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  
+</head>
+<body>
+  <div class="login-wrapper">
+    <form class="login-form" action="/account/register" method="post">
+        {% csrf_token %}
+            
+        <h2>Welcome 👋</h2>
+        {% if messages %}
+            <div class="alert alert-primary"  role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+      
+ 
+
+
+      <p>Please register to continue</p>
+      
+
+      <input type="text" placeholder="First Name" name="fname" required>
+      <input type="text" placeholder="Last Name" name="lname" required>
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="email" placeholder="Email" name="email" required>
+      <input type="password" placeholder="New Password" name="password" required>
+
+      <p>I already have an account <a href="/account/login">login</a></p>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

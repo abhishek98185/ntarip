@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JEE Mains Papers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .year-section {
+      background: #fff;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      overflow: hidden;
+    }
+
+    .year-header {
+      padding: 15px 20px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shift-buttons {
+      display: none;
+      padding: 20px;
+      background: #f0f8ff;
+    }
+
+    .shift-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .shift-buttons a:hover {
+      background: #0056b3;
+    }
+
+    .arrow {
+      transition: transform 0.3s;
+    }
+
+    .rotate {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JEE Mains Previous Year Papers</h1>
+
+  <div id="papers-container">
+    <!-- Content will be injected by JavaScript -->
+  </div>
+
+  <script>
+    const years = [2024, 2023, 2022, 2021, 2020];
+    const shiftsPerYear = {
+      2024: 6,
+      2023: 6,
+      2022: 6,
+      2021: 6,
+      2020: 4
+    };
+
+    const container = document.getElementById("papers-container");
+
+    years.forEach(year => {
+      const section = document.createElement("div");
+      section.className = "year-section";
+
+      const header = document.createElement("div");
+      header.className = "year-header";
+      header.innerHTML = `
+        <span>JEE Mains ${year}</span>
+        <span class="arrow">▶</span>
+      `;
+
+      const shiftDiv = document.createElement("div");
+      shiftDiv.className = "shift-buttons";
+
+      for (let i = 1; i <= shiftsPerYear[year]; i++) {
+        const btn = document.createElement("a");
+        btn.href = `/papers/${year}/shift-${i}.pdf`;
+        btn.target = "_blank";
+        btn.textContent = `Shift ${i}`;
+        shiftDiv.appendChild(btn);
+      }
+
+      header.addEventListener("click", () => {
+        const arrow = header.querySelector(".arrow");
+        const isVisible = shiftDiv.style.display === "block";
+        shiftDiv.style.display = isVisible ? "none" : "block";
+        arrow.classList.toggle("rotate", !isVisible);
+      });
+
+      section.appendChild(header);
+      section.appendChild(shiftDiv);
+      container.appendChild(section);
+    });
+  </script>
+</body>
+</html>

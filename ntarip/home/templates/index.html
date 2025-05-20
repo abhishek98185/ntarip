@@ -1,23 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-JEE & NEET Resources
-{% endblock %}
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-<link rel="stylesheet" href="{% static 'css/theme.css' %}">
+{% extends 'base.html' %} {% load static %} {% block title %} JEE & NEET
+Resources {% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/theme.css' %}" />
 
-{% endblock %}
-
-
-{% block body %}
+{% endblock %} {% block body %}
 <!-- Main Section -->
-<div class="top">
-  STUDY SMART
-</div>
-<div class="top top1">
-  Free JEE/NEET resources
-</div>
+<div class="top">STUDY SMART</div>
+<div class="top top1">Free JEE/NEET resources</div>
 
 <main>
   <div class="card">
@@ -25,28 +14,39 @@ JEE & NEET Resources
     <div class="text">Resources</div>
     <div class="text">🧪</div>
     <div class="text buttonjee">
-      <div class="button"><button> JEE MAINS</button></div>
-      <div class="button"><button >JEE ADVANCE</button></div>
+      <div class="button"><button>JEE MAINS</button></div>
+      <div class="button"><button>JEE ADVANCE</button></div>
     </div>
   </div>
-  <div class="line"></div>
+  <div id="path">
+    <svg width="100" height="500">
+      <path d="M 50 0 Q 50 250 50 500" stroke="black" fill="transparent" />
+    </svg>
+  </div>
 
   <div class="card">
     <div class="text">NEET</div>
     <div class="text">Resources</div>
     <div class="text">🩺</div>
-    <div class="text"><div class="button"><button type="button"></button></div></div>
+    <div class="text">
+      <div class="button"><button type="button"></button></div>
+    </div>
   </div>
-  <div class="line"></div>
+
+  <div id="path2">
+    <svg width="100" height="500">
+      <path d="M 50 0 Q 50 250 50 500" stroke="black" fill="transparent" />
+    </svg>
+  </div>
+
   <div class="card">
     <div class="text">Formula</div>
     <div class="text">Sheet</div>
     <div class="text">📝</div>
-    <div class="text"><div class="button"><button type="button"></button></div></div>
-
+    <div class="text">
+      <div class="button"><button type="button"></button></div>
+    </div>
   </div>
 </main>
-
-
 
 {% endblock %}

@@ -10,4 +10,10 @@ def jeeadvance(request):
 def jee(request):
     return render(request,'jee.html')
 
+def neet(request):
+    return render(request,'neet.html')
+
+def formulasheet(request):
+    return render(request,'formulasheet.html')
+
 

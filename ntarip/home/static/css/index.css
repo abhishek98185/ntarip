@@ -32,9 +32,15 @@ main {
 
 .buttonjee{
   display: flex;
-  
+  /* justify-content: space-evenly;
+   */
 }
 
+
+.jeebutton{
+  width: 8vw;
+  gap: 15px;
+}
 
 
 

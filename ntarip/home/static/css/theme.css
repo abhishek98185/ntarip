@@ -1,7 +1,7 @@
 
 
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #f8fafc;
   --text-color: #1e293b;
   --primary-color: #007BFF;
   --card-bg: #ffffff;
@@ -78,10 +78,10 @@ button.theme-toggle:hover {
 
 /* Dark theme overrides */
 body.dark-theme {
-  --bg-color: #121212;
+  --bg-color: #0f172a;
   --text-color: #E2E8F0;
   --primary-color: #1e90ff;
-  --card-bg: #1f1f1f;
+  --card-bg: #1e293b;
   --card-text: #e0e0e0;
   --navbar-bg: #000000;
   --navbar-text: #ffffff;

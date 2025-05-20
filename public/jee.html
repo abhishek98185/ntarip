@@ -1,126 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JEE Mains Papers</title>
+  <meta charset="UTF-8">
+  <title>NEET Previous Year Papers (2018–2025)</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #333;
-    }
-
-    .year-section {
-      background: #fff;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      overflow: hidden;
-    }
-
-    .year-header {
-      padding: 15px 20px;
-      background: #007bff;
-      color: white;
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .section { margin: 15px 0; }
+    .hidden { display: none; }
+    .button {
       cursor: pointer;
-      font-size: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .shift-buttons {
-      display: none;
-      padding: 20px;
-      background: #f0f8ff;
-    }
-
-    .shift-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: #007bff;
+      padding: 8px 12px;
+      background-color: #28a745;
       color: white;
-      text-decoration: none;
+      border: none;
+      margin: 5px;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
     }
-
-    .shift-buttons a:hover {
-      background: #0056b3;
-    }
-
-    .arrow {
-      transition: transform 0.3s;
-    }
-
-    .rotate {
-      transform: rotate(90deg);
-    }
+    .paper-option { margin-left: 20px; margin-top: 10px; }
   </style>
 </head>
 <body>
 
-  <h1>JEE Mains Previous Year Papers</h1>
+  <h1>NEET Previous Year Papers (2018–2025)</h1>
 
-  <div id="papers-container">
-    <!-- Content will be injected by JavaScript -->
-  </div>
+  <div id="neet-container"></div>
 
   <script>
-    const years = [2024, 2023, 2022, 2021, 2020];
-    const shiftsPerYear = {
-      2024: 6,
-      2023: 6,
-      2022: 6,
-      2021: 6,
-      2020: 4
-    };
+    const neetContainer = document.getElementById('neet-container');
 
-    const container = document.getElementById("papers-container");
+    for (let year = 2025; year >= 2018; year--) {
+      const yearId = `neet${year}`;
+      const pdfLink = `papers/neet-${year}.pdf`;      // Placeholder PDF path
+      const testLink = `test/neet-${year}.html`;       // Placeholder test path
 
-    years.forEach(year => {
-      const section = document.createElement("div");
-      section.className = "year-section";
-
-      const header = document.createElement("div");
-      header.className = "year-header";
-      header.innerHTML = `
-        <span>JEE Mains ${year}</span>
-        <span class="arrow">▶</span>
+      neetContainer.innerHTML += `
+        <div class="section">
+          <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
+          <div id="${yearId}" class="hidden">
+            <div class="paper-option">
+              <strong>NEET Paper ${year}</strong><br>
+              <a href="${pdfLink}" class="button" download>Download</a>
+              <a href="${testLink}" class="button">Take Test</a>
+            </div>
+          </div>
+        </div>
       `;
+    }
 
-      const shiftDiv = document.createElement("div");
-      shiftDiv.className = "shift-buttons";
-
-      for (let i = 1; i <= shiftsPerYear[year]; i++) {
-        const btn = document.createElement("a");
-        btn.href = `/papers/${year}/shift-${i}.pdf`;
-        btn.target = "_blank";
-        btn.textContent = `Shift ${i}`;
-        shiftDiv.appendChild(btn);
-      }
-
-      header.addEventListener("click", () => {
-        const arrow = header.querySelector(".arrow");
-        const isVisible = shiftDiv.style.display === "block";
-        shiftDiv.style.display = isVisible ? "none" : "block";
-        arrow.classList.toggle("rotate", !isVisible);
-      });
-
-      section.appendChild(header);
-      section.appendChild(shiftDiv);
-      container.appendChild(section);
-    });
+    function toggleVisibility(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
   </script>
+
 </body>
 </html>

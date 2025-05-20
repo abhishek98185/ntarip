@@ -123,7 +123,7 @@
 
                 // Correct PDF path using consistent naming
                 const paperNumber = paperName.endsWith("1") ? "1" : "2";
-                downloadBtn.href = `../media/advance/${year}/paper-${paperNumber}.pdf`;
+                downloadBtn.href =`/static/media/advance/${year}/paper-${paperNumber}.pdf`;
 
                 downloadBtn.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
                 downloadBtn.textContent = "Download";

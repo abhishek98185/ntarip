@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,7 @@
     .subsection, .papers { margin-left: 20px; }
     .paper-option { margin-left: 40px; margin-bottom: 8px; }
   </style>
+  <link rel="stylesheet" href="{% static 'css/theme.css ' %}">
 </head>
 <body>
 
@@ -72,6 +74,6 @@
       if (el) el.classList.toggle('hidden');
     }
   </script>
-
+  <script src="{% static 'js/theme.js' %}"></script>
 </body>
 </html>

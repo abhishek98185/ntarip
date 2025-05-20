@@ -13,7 +13,7 @@
         {% csrf_token %}
       <h2>Welcome Back 👋</h2>
       {% if messages %}
-            <div class="alert alert-primary" style="padding: 20px; background-color: lightblue; border-radius: 10px;" role="alert">
+            <div class="alert alert-primary"  role="alert">
                 {% for message in messages %}
                     {{ message }}
                 {% endfor %}

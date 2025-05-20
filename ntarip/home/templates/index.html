@@ -1,6 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEE & NEET Resources</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <h1>NTARIP</h1>
+
+        <!-- Hamburger icon -->
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <!-- Navigation links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="/jee">JEE</a></li>
+          <li><a href="/neet">NEET</a></li>
+          <li><a href="/jeeadvance">JEE ADVANCE</a></li>
+          <li><a href="/formulasheet">Formula Sheets</a></li>
+          <li><a href="#">About</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="/account/logout">{{ request.user }}</a></li>
+          {% else %}
+          <li><a href="/account/login">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
 
 <head>
   <meta charset="UTF-8" />
@@ -34,6 +69,19 @@
     </nav>
   </header>
 
+    <!-- Main Section -->
+    <main class="main-content">
+      <h2>JEE Resources</h2>
+      <div class="card-container">
+        <div class="resource-card">
+          <h3>JEE 2023 Papers</h3>
+          <button onclick="downloadFile('jee2023.pdf')">Download</button>
+        </div>
+        <div class="resource-card">
+          <h3>JEE Formula Sheet</h3>
+          <button onclick="downloadFile('jee_formula.pdf')">Download</button>
+        </div>
+      </div>
   <!-- Main Section -->
   <main class="main-content">
     <!-- <div class="button">
@@ -51,32 +99,36 @@
       </div>
     </div>
 
-    <h2>NEET Resources</h2>
-    <div class="card-container">
-      <div class="resource-card">
-        <h3>NEET 2023 Papers</h3>
-        <button onclick="downloadFile('neet2023.pdf')">Download</button>
+      <h2>NEET Resources</h2>
+      <div class="card-container">
+        <div class="resource-card">
+          <h3>NEET 2023 Papers</h3>
+          <button onclick="downloadFile('neet2023.pdf')">Download</button>
+        </div>
+        <div class="resource-card">
+          <h3>NEET Formula Sheet</h3>
+          <button onclick="downloadFile('neet_formula.pdf')">Download</button>
+        </div>
       </div>
-      <div class="resource-card">
-        <h3>NEET Formula Sheet</h3>
-        <button onclick="downloadFile('neet_formula.pdf')">Download</button>
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- footer , contact us  -->
+    <!-- footer , contact us  -->
 
+    <div class="contactus"></div>
   <div class="contactus">
 
 
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 NTARIP | Made by CodexSync</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 NTARIP | Made by CodexSync</p>
+    </footer>
 
+    
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
   <script src="{% static 'js/theme.js' %}"></script>
   <script src="{% static 'js/script.js' %}"></script>
 </body>

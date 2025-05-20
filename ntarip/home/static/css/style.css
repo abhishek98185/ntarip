@@ -27,12 +27,23 @@ body {
   
 }
 
+.nav-links.active{
+  display: flex;
+}
 
 .navbar a {
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
 
 .main-content {
   padding: 40px 20px;
@@ -80,6 +91,9 @@ h2 {
   background-color: #1aab67;
 }
 
+.nav-links.active {
+  display: flex;
+}
 
 footer {
   background-color: #0047ab;
@@ -87,4 +101,29 @@ footer {
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  #navLinks {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    width: 100%;
+    background-color: #0047ab;
+    padding: 10px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+  }
+  
+  #navLinks.active {
+    display: flex;
+  }
+  .nav-links li {
+    padding: 10px 20px;
+    text-align: left;
+  }
 }

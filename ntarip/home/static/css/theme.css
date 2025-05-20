@@ -1,0 +1,79 @@
+
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #007BFF;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+  --navbar-bg: #0047ab;
+  --navbar-text: #ffffff;
+  
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+  font-family: sans-serif;
+}
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.navbar a {
+  color: var(--navbar-text);
+}
+
+.navbar h1 {
+  color: var(--navbar-text);
+}
+
+.resource-card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+footer{
+    background-color:var(--navbar-bg) ;
+    color: var(--navbar-text);
+}
+
+
+button.theme-toggle {
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+  padding: 10px 12px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.theme-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #1e90ff;
+  --card-bg: #1f1f1f;
+  --card-text: #e0e0e0;
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+}

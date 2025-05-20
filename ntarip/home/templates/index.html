@@ -1,13 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JEE & NEET Resources</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/theme.css ' %}">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -16,15 +19,16 @@
       <h1>NTARIP</h1>
       <ul>
         <li><a href="#">Home</a></li>
+
         <li><a href="/jee">JEE</a></li>
         <li><a href="/neet">NEET</a></li>
         <li><a href="/jeeadvance">JEE ADVANCE</a></li>
         <li><a href="/formulasheet">Formula Sheets</a></li>
         <li><a href="#">About</a></li>
         {% if request.user.is_authenticated %}
-        <li><a href="/account/logout" >{{request.user}}</a></li>
+        <li><a href="/account/logout">{{request.user}}</a></li>
         {% else %}
-        <li><a href="/account/login" >Login</a></li>
+        <li><a href="/account/login">Login</a></li>
         {% endif %}
       </ul>
     </nav>
@@ -32,6 +36,9 @@
 
   <!-- Main Section -->
   <main class="main-content">
+    <!-- <div class="button">
+      <button id="theme-toggle">change Theme</button>
+    </div> -->
     <h2>JEE Resources</h2>
     <div class="card-container">
       <div class="resource-card">
@@ -60,8 +67,8 @@
   <!-- footer , contact us  -->
 
   <div class="contactus">
-    
-    
+
+
 
   </div>
 
@@ -70,6 +77,8 @@
     <p>&copy; 2025 NTARIP | Made by CodexSync</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>

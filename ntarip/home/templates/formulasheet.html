@@ -1,15 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formula Sheet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
 
+{% block title %}
+Formula Sheet
+{% endblock %}
+{% block extra_css %}
+<style>
+       
         .subject-buttons button {
             margin: 10px;
             padding: 10px 20px;
@@ -26,9 +23,10 @@
             padding: 8px 16px;
         }
     </style>
-    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
+
 
     <h1>Formula Sheet</h1>
 
@@ -147,6 +145,6 @@
             });
         }
     </script>
-    <script src="{% static 'js/theme.js' %}"></script>
-</body>
-</html>
+  
+{% endblock %}
+  

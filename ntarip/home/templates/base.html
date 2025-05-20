@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEE & NEET Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css ' %}">
+    {% block extra_css %}{% endblock %}
+  </head>
+
+  <body>
+    <!-- 
+  <header>
+    <nav class="navbar">
+      <h1>NTARIP</h1>
+
+      
+      <div class="hamburger" id="hamburger">&#9776;</div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="/jee">JEE</a></li>
+        <li><a href="/neet">NEET</a></li>
+        <li><a href="/jeeadvance">JEE ADVANCE</a></li>
+        <li><a href="/formulasheet">Formula Sheets</a></li>
+        <li><a href="#">About</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="/account/logout">{{ request.user }}</a></li>
+        {% else %}
+        <li><a href="/account/login">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header> -->
+
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <h1>NTARIP</h1>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/jee">JEE</a></li>
+          <li><a href="/neet">NEET</a></li>
+          <li><a href="/jeeadvance">JEE ADVANCE</a></li>
+          <li><a href="/formulasheet">Formula Sheets</a></li>
+          <li><a href="#">About</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="/account/logout">{{ request.user }}</a></li>
+          {% else %}
+          <li><a href="/account/login">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Navbar -->
+    <!--<header>
+      <nav class="navbar">
+        <h1>NTARIP</h1>
+
+       
+        <div class="hamburger" id="hamburger">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="/jee">JEE</a></li>
+          <li><a href="/neet">NEET</a></li>
+          <li><a href="/jeeadvance">JEE ADVANCE</a></li>
+          <li><a href="/formulasheet">Formula Sheets</a></li>
+          <li><a href="#">About</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="/account/logout">{{ request.user }}</a></li>
+          {% else %}
+          <li><a href="/account/login">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>-->
+
+
+  {% block body %}
+  {% endblock %}
+
+  <!-- footer , contact us  -->
+
+      <div class="contactus"></div>
+      <div class="contactus">
+
+
+
+      </div>
+    </main>
+
+    <!-- footer , contact us  -->
+
+    <div class="contactus"></div>
+    <div class="contactus"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 NTARIP | Made by CodexSync</p>
+    </footer>
+  </body>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+</html>

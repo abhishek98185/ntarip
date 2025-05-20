@@ -1,11 +1,12 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JEE Mains Papers (2015–2020)</title>
+
+{% block title %}
+JEE Mains Papers (2015–2020)
+{% endblock %}
+{% block extra_css %}
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
+    
     .section { margin: 15px 0; }
     .hidden { display: none; }
     .button {
@@ -21,9 +22,9 @@
     .subsection, .papers { margin-left: 20px; }
     .paper-option { margin-left: 40px; margin-bottom: 8px; }
   </style>
-  <link rel="stylesheet" href="{% static 'css/theme.css ' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
 
   <h1>JEE Mains Previous Year Papers (2015–2020)</h1>
 
@@ -74,6 +75,5 @@
       if (el) el.classList.toggle('hidden');
     }
   </script>
-  <script src="{% static 'js/theme.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NEET Previous Year Papers (2018–2025)</title>
+  <title>JEE Mains Papers (2015–2020)</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     .section { margin: 15px 0; }
@@ -10,44 +10,61 @@
     .button {
       cursor: pointer;
       padding: 8px 12px;
-      background-color: #28a745;
+      background-color: #007bff;
       color: white;
       border: none;
       margin: 5px;
       border-radius: 5px;
       font-size: 14px;
-      text-decoration: none;
-      display: inline-block;
     }
-    .paper-option { margin-left: 20px; margin-top: 10px; }
+    .subsection, .papers { margin-left: 20px; }
+    .paper-option { margin-left: 40px; margin-bottom: 8px; }
   </style>
 </head>
 <body>
 
-  <h1>NEET Previous Year Papers (2018–2025)</h1>
+  <h1>JEE Mains Previous Year Papers (2015–2020)</h1>
 
-  <div id="neet-container"></div>
+  <div id="main-container"></div>
 
   <script>
-    const neetContainer = document.getElementById('neet-container');
+    const container = document.getElementById('main-container');
+    
+    for (let year = 2020; year >= 2015; year--) {
+      const yearId = `year${year}`;
+      const janId = `jan${year}`;
+      const aprId = `apr${year}`;
 
-    for (let year = 2025; year >= 2018; year--) {
-      const yearId = `neet${year}`;
-      const pdfLink = `papers/neet-${year}.pdf`;      // Placeholder PDF path
-      const testLink = `test/neet-${year}.html`;       // Placeholder test path
-
-      neetContainer.innerHTML += `
+      container.innerHTML += `
         <div class="section">
           <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
-          <div id="${yearId}" class="hidden">
-            <div class="paper-option">
-              <strong>NEET Paper ${year}</strong><br>
-              <a href="${pdfLink}" class="button" download>Download</a>
-              <a href="${testLink}" class="button">Take Test</a>
+          <div id="${yearId}" class="subsection hidden">
+            <button class="button" onclick="toggleVisibility('${janId}')">January</button>
+            <div id="${janId}" class="papers hidden">
+              ${generatePapers(year, 'Jan')}
+            </div>
+
+            <button class="button" onclick="toggleVisibility('${aprId}')">April</button>
+            <div id="${aprId}" class="papers hidden">
+              ${generatePapers(year, 'Apr')}
             </div>
           </div>
         </div>
       `;
+    }
+
+    function generatePapers(year, session) {
+      let papersHTML = '';
+      for (let i = 1; i <= 10; i++) {
+        papersHTML += `
+          <div class="paper-option">
+            <strong>Paper ${i} (${session} ${year})</strong><br>
+            <button class="button">Download</button>
+            <button class="button">Take Test</button>
+          </div>
+        `;
+      }
+      return papersHTML;
     }
 
     function toggleVisibility(id) {

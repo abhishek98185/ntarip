@@ -40,6 +40,10 @@ footer {
   margin-top: 40px;
 }
 
+/* .card{
+  border: 2px solid black;
+} */
+
 
 @media (max-width: 768px) {
   .hamburger {
@@ -65,3 +69,4 @@ footer {
     text-align: left;
   }
 }
+

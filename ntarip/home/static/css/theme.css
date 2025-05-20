@@ -2,12 +2,14 @@
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #1e293b;
   --primary-color: #007BFF;
   --card-bg: #ffffff;
   --card-text: #000000;
   --navbar-bg: #0047ab;
   --navbar-text: #ffffff;
+  --card-border: #e2e8f0;
+  --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   
 }
 
@@ -47,6 +49,12 @@ footer{
     color: var(--navbar-text);
 }
 
+.card{
+  border: 5px solid var(--card-border);
+}
+.line{
+   border: 2.5px solid var(--card-border);
+}
 
 button.theme-toggle {
   position: fixed;
@@ -65,15 +73,18 @@ button.theme-toggle {
 
 button.theme-toggle:hover {
   background-color: #0056b3;
+  box-shadow: var(--box-shadow) ;
 }
 
 /* Dark theme overrides */
 body.dark-theme {
   --bg-color: #121212;
-  --text-color: #e0e0e0;
+  --text-color: #E2E8F0;
   --primary-color: #1e90ff;
   --card-bg: #1f1f1f;
   --card-text: #e0e0e0;
   --navbar-bg: #000000;
   --navbar-text: #ffffff;
+  --card-border:#334155;
+  --box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }

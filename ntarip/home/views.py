@@ -7,3 +7,7 @@ def index(request):
 def jeeadvance(request):
     return render(request,'jeeadvance.html')
 
+def jee(request):
+    return render(request,'jee.html')
+
+

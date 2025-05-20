@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEET Previous Year Papers (2018–2025)</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .section { margin: 15px 0; }
+    .hidden { display: none; }
+    .button {
+      cursor: pointer;
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .paper-option { margin-left: 20px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>NEET Previous Year Papers (2018–2025)</h1>
+
+  <div id="neet-container"></div>
+
+  <script>
+    const neetContainer = document.getElementById('neet-container');
+
+    for (let year = 2025; year >= 2018; year--) {
+      const yearId = `neet${year}`;
+      const pdfLink = `papers/neet-${year}.pdf`;      // Placeholder PDF path
+      const testLink = `test/neet-${year}.html`;       // Placeholder test path
+
+      neetContainer.innerHTML += `
+        <div class="section">
+          <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
+          <div id="${yearId}" class="hidden">
+            <div class="paper-option">
+              <strong>NEET Paper ${year}</strong><br>
+              <a href="${pdfLink}" class="button" download>Download</a>
+              <a href="${testLink}" class="button">Take Test</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleVisibility(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>

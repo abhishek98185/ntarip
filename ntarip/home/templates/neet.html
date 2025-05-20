@@ -1,11 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>NEET Previous Year Papers (2018–2025)</title>
+
+{% block title %}
+NEET Previous Year Papers (2018–2025)
+{% endblock %}
+{% block extra_css %}
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
     .section { margin: 15px 0; }
     .hidden { display: none; }
     .button {
@@ -22,10 +22,9 @@
     }
     .paper-option { margin-left: 20px; margin-top: 10px; }
   </style>
-  <link rel="stylesheet" href="{% static 'css/theme.css ' %}">
-</head>
-<body>
+{% endblock %}
 
+{% block body %}
   <h1>NEET Previous Year Papers (2018–2025)</h1>
 
   <div id="neet-container"></div>
@@ -57,6 +56,6 @@
       if (el) el.classList.toggle('hidden');
     }
   </script>
-<script src="{% static 'js/theme.js' %}"></script>
-</body>
-</html>
+
+
+{% endblock %}

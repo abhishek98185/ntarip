@@ -7,10 +7,10 @@ function downloadFile(filename) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("hamburger").addEventListener("click", function () {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  });
+  // document.getElementById("hamburger").addEventListener("click", function () {
+  //   const nav = document.getElementById("navLinks");
+  //   nav.classList.toggle("active");
+  // });
 
   window.downloadFile = function (fileName) {
     const link = document.createElement("a");
@@ -34,6 +34,8 @@ tl.from(".navbar ul li", {
   opacity: 0,
   stagger: 0.2
 })
+const hamburger = document.querySelector(".hamburger");
+
 var path = `M 50 0 Q 50 250 50 500`
 var finalpath = `M 50 0 Q 50 250 50 500`
 var pathContainer = document.querySelector("#path")

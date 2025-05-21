@@ -43,15 +43,13 @@ footer {
   justify-self: center;
 }
 
-/* .card{
-  border: 2px solid black;
-} */
 
 
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
+
   #navLinks {
     display: none; /* Initially hidden */
     flex-direction: column;
@@ -63,7 +61,10 @@ footer {
     left: 0;
     z-index: 10;
   }
-  
+  #menuright{
+    top:0;
+    right: 0;
+  }
   #navLinks.active {
     display: flex;
   }

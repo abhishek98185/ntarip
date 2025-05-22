@@ -342,8 +342,8 @@ Resources {% endblock %} {% block extra_css %}
 ></script>
 
 <script>
-    gsap.set(".quote1 img", { x: "100%", opacity: 0 });
-    gsap.set(".text1", { x: "-5%", opacity: 0 });
+    gsap.set(".quote1 img", { x: "-100%", opacity: 0 });
+    gsap.set(".text1", { x: "5%", opacity: 0 });
 
     ScrollTrigger.create({
       trigger: ".quote1",
@@ -359,8 +359,8 @@ Resources {% endblock %} {% block extra_css %}
       },
     });
 
-    gsap.set(".quote3 img", { x: "100%", opacity: 0 });
-    gsap.set(".text3", { x: "-5%", opacity: 0 });
+    gsap.set(".quote3 img", { x: "-100%", opacity: 0 });
+    gsap.set(".text3", { x: "5%", opacity: 0 });
 
     ScrollTrigger.create({
       trigger: ".quote3",
@@ -377,11 +377,11 @@ Resources {% endblock %} {% block extra_css %}
     });
 
     gsap.set(".quote2 img", {
-      x: "100%",
+      x: "-100%",
       opacity: 0,
     });
     gsap.set(".text2", {
-      x: "-10%",
+      x: "10%",
       opacity: 0,
     });
     ScrollTrigger.create({
@@ -400,11 +400,11 @@ Resources {% endblock %} {% block extra_css %}
 
 
     gsap.set(".quote4 img", {
-      x: "100%",
+      x: "-100%",
       opacity: 0,
     });
     gsap.set(".text4", {
-      x: "-10%",
+      x: "10%",
       opacity: 0,
     });
     ScrollTrigger.create({

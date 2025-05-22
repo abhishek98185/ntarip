@@ -1,0 +1,98 @@
+
+
+.light-button {
+  position: fixed; /* ✅ Ensures relative base for absolute children */
+  bottom: 1px;
+  right: 1px;
+  display: inline-block;
+
+  margin: 20px; /* spacing between buttons */
+  z-index: 1000;
+}
+
+.light-button button.bt {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none; /* ✅ Prevents blocking other elements */
+  z-index: 0; /* ✅ Keeps it behind the button visuals */
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+   background-color: #0a0a0a; 
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+  transition: background 300ms;
+}
+
+.light-button button.bt .button-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+ background-color: #0a0a0a;
+  border-radius: 5px;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+.light-button button.bt .button-holder img {
+  height: 50px;
+  fill: #0f0f0f;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.light-button button.bt:hover .button-holder img {
+  opacity: 1;
+  fill: rgb(66, 81, 245);
+}
+
+.light-button button.bt:hover .button-holder {
+  color: rgba(66, 81, 245);
+  outline: rgba(66, 81, 245) 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: linear-gradient(
+    180deg,
+    rgba(66, 81, 245, 1) 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}

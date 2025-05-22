@@ -11,21 +11,23 @@
 main {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 40px;
+  /* margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 50px; */
+  width: 90vw;
+
 }
 
 .card {
-  min-width: 20vw;
+  min-width: 18vw;
+  max-width: 18vw;
   border-radius: 10px;
   text-align: center;
   min-height: 50vh;
   padding: 5vh;
 
 }
-.line{
-  width: 2px ;
-  min-height: 50vh;
-}
+
 .text{
   font-size: xx-large;
 }
@@ -41,7 +43,11 @@ main {
   width: 8vw;
   gap: 15px;
 }
-
+::selection{
+  color: white;
+  background-color: black;
+  
+}
 
 
 

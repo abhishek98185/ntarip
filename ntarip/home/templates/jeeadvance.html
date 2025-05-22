@@ -20,7 +20,7 @@ JEE Advanced Papers
 
     .year-container {
         max-width: 600px;
-        min-width: 20vw;
+        min-width: 28vw;
         margin: 20px auto;
         background: #fff;
         border-radius: 10px;
@@ -42,7 +42,7 @@ JEE Advanced Papers
     }
 
     .papers {
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 15px;
         background: #e9f4ff;
     }
@@ -95,10 +95,10 @@ JEE Advanced Papers
         display: flex;
         align-items: center;
         border-radius: 50px;
-        width: 160px;
+        width: 140px;
         cursor: pointer;
         transition: all 0.4s ease;
-        padding: 2.5px;
+        padding: 1.5px;
         position: relative;
     }
 
@@ -124,12 +124,12 @@ JEE Advanced Papers
     }
 
     .label .title {
-        font-size: 17px;
+        font-size: 14px;
         color: #007bff;
         transition: all 0.4s ease;
         position: absolute;
         right: 18px;
-        bottom: 14px;
+        bottom: 10px;
         text-align: center;
     }
 
@@ -139,8 +139,8 @@ JEE Advanced Papers
     }
 
     .label .circle {
-        height: 45px;
-        width: 45px;
+        height: 35px;
+        width: 35px;
         border-radius: 50%;
         background-color: #007bff;
         display: flex;
@@ -154,7 +154,7 @@ JEE Advanced Papers
 
     .label .circle .icon {
         color: #fff;
-        width: 30px;
+        width: 20px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -431,6 +431,7 @@ JEE Advanced Papers
 
         const header = document.createElement("div");
         header.className = "year-header";
+        
         header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow">▶</span>`;
 
         const papers = document.createElement("div");
@@ -447,18 +448,22 @@ JEE Advanced Papers
 
             const options = document.createElement("div");
             options.className = "options";
+            // options.style.margin="-5px"
             options.style.display = "none"; // Hidden by default
 
             // Buttons container
             const buttonRow = document.createElement("div");
-            buttonRow.style.display = "flex";
-            buttonRow.style.alignItems = "center";
-            buttonRow.style.gap = "10px";
-            buttonRow.style.flexWrap = "wrap";
+
+            // buttonRow.style.display = "flex";
+            // buttonRow.style.alignItems = "center";
+            // buttonRow.style.gap = "10px";
+            // buttonRow.style.padding="10px"
+            // buttonRow.style.flexWrap = "wrap";
 
             // Download label with animated checkbox
             const label = document.createElement("label");
             label.className = "label";
+            label.style.marginBottom="10px";
             label.innerHTML = `
       <input type="checkbox" class="input" />
       <span class="circle">

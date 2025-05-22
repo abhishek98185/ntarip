@@ -34,7 +34,6 @@ tl.from(".navbar ul li", {
   opacity: 0,
   stagger: 0.2
 })
-const hamburger = document.querySelector(".hamburger");
 
 var path = `M 50 0 Q 50 250 50 500`
 var finalpath = `M 50 0 Q 50 250 50 500`

@@ -6,21 +6,26 @@
   overflow-x: hidden;
 }
 
-.navbar {
+.navbar {  
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center; 
+  z-index: 2;
+  position: relative;
+  background-color: transparent; 
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px ;
+  z-index: 4;
   
 }
 .navbar li{
   gap: 50px;
+  z-index: 4;
 }
 
 .navbar a {

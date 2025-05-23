@@ -5,6 +5,7 @@ Resources {% endblock %} {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/socialmedia.css' %}" />
 <link rel="stylesheet" href="{% static 'css/loader.css' %}" />
 <style>
+  
   .page2 {
     width: 100vw;
     height: 125%;
@@ -71,7 +72,10 @@ Resources {% endblock %} {% block extra_css %}
   .text4{
     padding-left: 4vw;
   }
-</style>
+  main{
+    overflow-y:hidden ;
+  }
+  </style>
 
 {% endblock %} {% block body %}
 <!-- Main Section -->
@@ -221,18 +225,21 @@ Resources {% endblock %} {% block extra_css %}
 <script>
   const tml = gsap.timeline();
   tml.from(".card2", {
-    duration: 0.1,
+    y:500,
+    duration: 0.5,
     delay: 0.1,
     opacity: 0,
   });
-  tml.from(".card1", {
+  gsap.from(".card1", {
     duration: 0.8,
+    delay : 0.8,
     x: -100,
     opacity: 0,
     ease: "bounce.out",
   });
-  tml.from(".card3", {
+  gsap.from(".card3", {
     duration: 0.8,
+    delay:0.8,
     x: 100,
     opacity: 0,
     ease: "bounce.out",

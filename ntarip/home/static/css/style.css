@@ -21,7 +21,6 @@
   display: flex;
   gap: 20px ;
   z-index: 4;
-  
 }
 .navbar li{
   gap: 50px;

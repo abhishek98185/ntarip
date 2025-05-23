@@ -1,21 +1,19 @@
-
-
 :root {
   --bg-color: #f8fafc;
   --text-color: #1e293b;
-  --primary-color: #007BFF;
+  --primary-color: #007bff;
   --card-bg: #ffffff;
   --card-text: #000000;
   --navbar-bg: #0047ab;
   --navbar-text: #ffffff;
   --card-border: #e2e8f0;
-  --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   --page2-color: black;
-
-
+  --nav2-bg: darkblue;
+  --nav-text: white;
 }
 
-.page2{
+.page2 {
   color: --var(--page2-color);
   background-color: var(--bg-color);
   z-index: 1000;
@@ -25,6 +23,10 @@ body {
   color: var(--text-color);
   transition: 0.3s ease;
   font-family: sans-serif;
+}
+#nav2 {
+  background-color: var(--nav2-bg);
+  color: var(--nav2-text);
 }
 .navbar {
   background-color: var(--navbar-bg);
@@ -44,23 +46,23 @@ body {
   color: var(--card-text);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 h2 {
   color: var(--primary-color);
 }
-footer{
-    background-color:var(--navbar-bg) ;
-    color: var(--navbar-text);
+footer {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
 }
 
-.card{
+.card {
   border: 5px solid var(--card-border);
 }
-.line{
-   border: 2.5px solid var(--card-border);
+.line {
+  border: 2.5px solid var(--card-border);
 }
 /*social media*/
 .light-button button.bt .light-holder .dot {
@@ -80,26 +82,32 @@ button.theme-toggle {
   color: white;
   border: none;
   border-radius: 100px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button.theme-toggle:hover {
   background-color: #0056b3;
-  box-shadow: var(--box-shadow) ;
+  box-shadow: var(--box-shadow);
+}
+#nav2.theme-toggle {
+  --nav2-bg: #0a0e19;
+  --nav2-text: white;
 }
 
 /* Dark theme overrides */
 body.dark-theme {
-  --bg-color: #0f172a;
-  --text-color: #E2E8F0;
+  --bg-color: #0d111c;
+  --text-color: #e2e8f0;
   --primary-color: #1e90ff;
   --card-bg: #1e293b;
   --card-text: #e0e0e0;
-  --navbar-bg: #000000;
+  --navbar-bg: #1c294b;
   --navbar-text: #ffffff;
-  --card-border:#334155;
-  --box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  --page2-color:#E2E8F0;
+  --card-border: #334155;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --page2-color: #e2e8f0;
+  --nav2-bg: #0a0e19;
+  --nav2-text: white;
 }

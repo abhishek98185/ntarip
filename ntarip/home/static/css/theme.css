@@ -10,12 +10,16 @@
   --navbar-text: #ffffff;
   --card-border: #e2e8f0;
   --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  
+  --page2-color: black;
 
 
 }
 
-
+.page2{
+  color: --var(--page2-color);
+  background-color: var(--bg-color);
+  z-index: 1000;
+}
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -97,4 +101,5 @@ body.dark-theme {
   --navbar-text: #ffffff;
   --card-border:#334155;
   --box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  --page2-color:#E2E8F0;
 }

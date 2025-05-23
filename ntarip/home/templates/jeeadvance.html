@@ -300,6 +300,7 @@ JEE Advanced Papers
 
 <div id="main-container"></div>
 <script>
+
     // const years = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007];
     // const container = document.getElementById("main-container");
 
@@ -309,12 +310,12 @@ JEE Advanced Papers
 
     //     const header = document.createElement("div");
     //     header.className = "year-header";
+        
     //     header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow">▶</span>`;
 
     //     const papers = document.createElement("div");
     //     papers.className = "papers";
-
-
+    //     papers.style.display = "flex"; // Show papers by default
 
     //     ["Paper 1", "Paper 2"].forEach(paperName => {
     //         const paper = document.createElement("div");
@@ -326,49 +327,46 @@ JEE Advanced Papers
 
     //         const options = document.createElement("div");
     //         options.className = "options";
+    //         // options.style.margin="-5px"
+    //         options.style.display = "none"; // Hidden by default
 
-    //         // Create a row for buttons
+    //         // Buttons container
     //         const buttonRow = document.createElement("div");
-    //         buttonRow.style.display = "flex";
-    //         buttonRow.style.alignItems = "center";
-    //         buttonRow.style.gap = "10px";
-    //         buttonRow.style.flexWrap = "wrap";
 
-    //         // DOWNLOAD button (animated)
+    //         // buttonRow.style.display = "flex";
+    //         // buttonRow.style.alignItems = "center";
+    //         // buttonRow.style.gap = "10px";
+    //         // buttonRow.style.padding="10px"
+    //         // buttonRow.style.flexWrap = "wrap";
+
+    //         // Download label with animated checkbox
     //         const label = document.createElement("label");
     //         label.className = "label";
+    //         label.style.marginBottom="10px";
     //         label.innerHTML = `
-    //             <input type="checkbox" class="input" />
-    //             <span class="circle">
-    //                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-    //                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-    //                         d="M12 19V5m0 14-4-4m4 4 4-4" />
-    //                 </svg>
-    //                 <div class="square"></div>
-    //             </span>
-    //             <p class="title">Download</p>
-    //             <p class="title">Open</p>
-    //         `;
+    //   <input type="checkbox" class="input" />
+    //   <span class="circle">
+    //     <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    //       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+    //         d="M12 19V5m0 14-4-4m4 4 4-4" />
+    //     </svg>
+    //     <div class="square"></div>
+    //   </span>
+    //   <p class="title">Download</p>
+    //   <p class="title open-title" style="cursor: default; user-select:none;">Open</p>
+    // `;
 
-    //         // Handle actual download on click
-    //         label.querySelector(".input").addEventListener("change", function () {
-    //             if (this.checked) {
-    //                 const paperNumber = paperName.endsWith("1") ? "1" : "2";
-    //                 const downloadLink = document.createElement("a");
-    //                 downloadLink.href = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
-    //                 downloadLink.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
-    //                 document.body.appendChild(downloadLink);
-    //                 downloadLink.click();
-    //                 document.body.removeChild(downloadLink);
-    //             }
-    //         });
-    //         label.querySelector(".input").addEventListener("change", function () {
-    //             const checkbox = this;
-    //             const paperNumber = paperName.endsWith("1") ? "1" : "2";
-    //             const fileUrl = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
+    //         const checkbox = label.querySelector(".input");
+    //         const openTitle = label.querySelector(".open-title");
+    //         openTitle.style.pointerEvents = "none"; // Disable open link initially
 
+    //         const paperNumber = paperName.endsWith("1") ? "1" : "2";
+    //         const fileUrl = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
+
+    //         // Handle download checkbox change
+    //         checkbox.addEventListener("change", () => {
     //             if (checkbox.checked) {
-    //                 // Trigger file download
+    //                 // Trigger download
     //                 const downloadLink = document.createElement("a");
     //                 downloadLink.href = fileUrl;
     //                 downloadLink.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
@@ -376,54 +374,69 @@ JEE Advanced Papers
     //                 downloadLink.click();
     //                 document.body.removeChild(downloadLink);
 
-    //                 // Wait for animation to finish, then enable "Open" behavior
+    //                 // After animation delay enable Open clickable
     //                 setTimeout(() => {
-    //                     const label = checkbox.closest(".label");
-    //                     const openTitle = label.querySelector(".title:last-child");
-
-    //                     // Add click listener to open file
     //                     openTitle.style.cursor = "pointer";
+    //                     openTitle.style.userSelect = "auto";
+    //                     openTitle.style.pointerEvents = "auto";
+
+    //                     // Add click to open PDF in new tab
     //                     openTitle.addEventListener("click", () => {
     //                         window.open(fileUrl, "_blank");
-    //                     });
-    //                 }, 3500); // Match the animation delay
+    //                     }, { once: true }); // only once to avoid duplicates
+    //                 }, 3500); // match your animation duration
+    //             } else {
+    //                 // Reset Open button when unchecked
+    //                 openTitle.style.cursor = "default";
+    //                 openTitle.style.userSelect = "none";
+    //                 openTitle.style.pointerEvents = "none";
+    //                 // Remove any attached click event by cloning node (simpler way)
+    //                 const newOpenTitle = openTitle.cloneNode(true);
+    //                 label.replaceChild(newOpenTitle, openTitle);
     //             }
     //         });
 
-
-    //         // TEST button
+    //         // Test button
     //         const testBtn = document.createElement("a");
     //         testBtn.className = "button";
     //         testBtn.href = `/test/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
     //         testBtn.textContent = "Give as a Test";
 
-    //         // Add both to the row
     //         buttonRow.appendChild(label);
     //         buttonRow.appendChild(testBtn);
 
-    //         // Add everything to DOM
     //         options.appendChild(buttonRow);
+
     //         paper.appendChild(toggle);
     //         paper.appendChild(options);
     //         papers.appendChild(paper);
 
+    //         // Toggle options show/hide when clicking paper toggle
     //         toggle.addEventListener("click", () => {
     //             options.style.display = options.style.display === "block" ? "none" : "block";
     //         });
     //     });
 
+    //     // Toggle showing all papers under year
     //     header.addEventListener("click", () => {
-    //         papers.style.display = papers.style.display === "block" ? "none" : "block";
-    //         const arrow = header.querySelector(".arrow");
-    //         arrow.classList.toggle("rotate", papers.style.display === "block");
+    //         if (papers.style.display === "block") {
+    //             papers.style.display = "none";
+    //             header.querySelector(".arrow").classList.remove("rotate");
+    //         } else {
+    //             papers.style.display = "block";
+    //             header.querySelector(".arrow").classList.add("rotate");
+    //         }
     //     });
 
     //     yearBox.appendChild(header);
     //     yearBox.appendChild(papers);
     //     container.appendChild(yearBox);
     // });
+    
     const years = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007];
     const container = document.getElementById("main-container");
+
+    let currentlyOpenOptions = null;
 
     years.forEach(year => {
         const yearBox = document.createElement("div");
@@ -431,12 +444,11 @@ JEE Advanced Papers
 
         const header = document.createElement("div");
         header.className = "year-header";
-        
-        header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow">▶</span>`;
+        header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow rotate">▶</span>`;
 
         const papers = document.createElement("div");
         papers.className = "papers";
-        papers.style.display = "flex"; // Show papers by default
+        papers.style.display = "flex"; // Visible by default
 
         ["Paper 1", "Paper 2"].forEach(paperName => {
             const paper = document.createElement("div");
@@ -448,46 +460,35 @@ JEE Advanced Papers
 
             const options = document.createElement("div");
             options.className = "options";
-            // options.style.margin="-5px"
-            options.style.display = "none"; // Hidden by default
+            options.style.display = "none";
 
-            // Buttons container
             const buttonRow = document.createElement("div");
 
-            // buttonRow.style.display = "flex";
-            // buttonRow.style.alignItems = "center";
-            // buttonRow.style.gap = "10px";
-            // buttonRow.style.padding="10px"
-            // buttonRow.style.flexWrap = "wrap";
-
-            // Download label with animated checkbox
             const label = document.createElement("label");
             label.className = "label";
-            label.style.marginBottom="10px";
+            label.style.marginBottom = "10px";
             label.innerHTML = `
-      <input type="checkbox" class="input" />
-      <span class="circle">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-            d="M12 19V5m0 14-4-4m4 4 4-4" />
-        </svg>
-        <div class="square"></div>
-      </span>
-      <p class="title">Download</p>
-      <p class="title open-title" style="cursor: default; user-select:none;">Open</p>
-    `;
+                <input type="checkbox" class="input" />
+                <span class="circle">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 19V5m0 14-4-4m4 4 4-4" />
+                    </svg>
+                    <div class="square"></div>
+                </span>
+                <p class="title">Download</p>
+                <p class="title open-title" style="cursor: default; user-select:none;">Open</p>
+            `;
 
             const checkbox = label.querySelector(".input");
             const openTitle = label.querySelector(".open-title");
-            openTitle.style.pointerEvents = "none"; // Disable open link initially
+            openTitle.style.pointerEvents = "none";
 
             const paperNumber = paperName.endsWith("1") ? "1" : "2";
             const fileUrl = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
 
-            // Handle download checkbox change
             checkbox.addEventListener("change", () => {
                 if (checkbox.checked) {
-                    // Trigger download
                     const downloadLink = document.createElement("a");
                     downloadLink.href = fileUrl;
                     downloadLink.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
@@ -495,29 +496,24 @@ JEE Advanced Papers
                     downloadLink.click();
                     document.body.removeChild(downloadLink);
 
-                    // After animation delay enable Open clickable
                     setTimeout(() => {
                         openTitle.style.cursor = "pointer";
                         openTitle.style.userSelect = "auto";
                         openTitle.style.pointerEvents = "auto";
 
-                        // Add click to open PDF in new tab
                         openTitle.addEventListener("click", () => {
                             window.open(fileUrl, "_blank");
-                        }, { once: true }); // only once to avoid duplicates
-                    }, 3500); // match your animation duration
+                        }, { once: true });
+                    }, 3500);
                 } else {
-                    // Reset Open button when unchecked
                     openTitle.style.cursor = "default";
                     openTitle.style.userSelect = "none";
                     openTitle.style.pointerEvents = "none";
-                    // Remove any attached click event by cloning node (simpler way)
                     const newOpenTitle = openTitle.cloneNode(true);
                     label.replaceChild(newOpenTitle, openTitle);
                 }
             });
 
-            // Test button
             const testBtn = document.createElement("a");
             testBtn.className = "button";
             testBtn.href = `/test/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
@@ -532,28 +528,32 @@ JEE Advanced Papers
             paper.appendChild(options);
             papers.appendChild(paper);
 
-            // Toggle options show/hide when clicking paper toggle
             toggle.addEventListener("click", () => {
-                options.style.display = options.style.display === "block" ? "none" : "block";
+                // Hide previously open options
+                if (currentlyOpenOptions && currentlyOpenOptions !== options) {
+                    currentlyOpenOptions.style.display = "none";
+                }
+
+                // Toggle current options
+                const isVisible = options.style.display === "block";
+                options.style.display = isVisible ? "none" : "block";
+                currentlyOpenOptions = isVisible ? null : options;
             });
         });
 
-        // Toggle showing all papers under year
         header.addEventListener("click", () => {
-            if (papers.style.display === "block") {
-                papers.style.display = "none";
-                header.querySelector(".arrow").classList.remove("rotate");
-            } else {
-                papers.style.display = "block";
-                header.querySelector(".arrow").classList.add("rotate");
-            }
+            const isExpanded = papers.style.display === "flex";
+            papers.style.display = isExpanded ? "none" : "flex";
+            header.querySelector(".arrow").classList.toggle("rotate", !isExpanded);
         });
 
         yearBox.appendChild(header);
         yearBox.appendChild(papers);
         container.appendChild(yearBox);
     });
-
 </script>
+
+
+
 
 {% endblock %}

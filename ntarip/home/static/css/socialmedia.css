@@ -62,7 +62,7 @@
   width: 100px;
  background-color:rgb(40, 39, 39);
   border-radius: 5px;
-  color:white;
+  color:rgb(22, 22, 22);
 
   font-weight: 700;
   transition: 300ms;
@@ -80,12 +80,12 @@
 
 .light-button button.bt:hover .button-holder img {
   opacity: 1;
-  fill: rgb(66, 81, 245);
+  fill: rgb(238, 134, 151);
 }
 
 .light-button button.bt:hover .button-holder {
   color: rgb(238, 134, 151);
-  outline: rgba(66, 81, 245) 2px solid;
+  outline:  rgb(238, 134, 151) 2px solid;
   outline-offset: 2px;
 }
 

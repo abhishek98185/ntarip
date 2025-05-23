@@ -35,14 +35,14 @@ tl.from(".navbar ul li", {
   stagger: 0.2
 })
 
-var path = `M 50 0 Q 50 250 50 500`
-var finalpath = `M 50 0 Q 50 250 50 500`
+var path = `M 50 0 Q 50 200 50 400`
+var finalpath = `M 50 0 Q 50 200 50 400`
 var pathContainer = document.querySelector("#path")
 pathContainer.addEventListener("mousemove", function (dets) {
   const bounds = pathContainer.getBoundingClientRect();
   const x = dets.clientX - bounds.left;
   const y = dets.clientY - bounds.top;
-  path = `M 50 0 Q ${x} ${y} 50 500`
+  path = `M 50 0 Q ${x} ${y} 50 400`
   gsap.to("#path svg path", {
     attr: {
       d: path

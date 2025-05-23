@@ -5,7 +5,9 @@ Resources {% endblock %} {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/socialmedia.css' %}" />
 <link rel="stylesheet" href="{% static 'css/loader.css' %}" />
 <style>
-  
+  body {
+    overflow-x: hidden;
+  }
   .page2 {
     width: 100vw;
     height: 125%;
@@ -69,34 +71,114 @@ Resources {% endblock %} {% block extra_css %}
     height: 100vh;
     background-color: black;
   }
-  .text4{
+  .text4 {
     padding-left: 4vw;
   }
-  main{
-    overflow-y:hidden ;
+  main {
+    overflow-y: hidden;
   }
-  </style>
+  .card {
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 25px 20px;
+    text-align: center;
+    border: 2px solid var(--card-border);
+    overflow: hidden;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .card .text {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: 600;
+  }
+
+  .card .text:nth-child(3) {
+    font-size: 2rem;
+  }
+
+  .buttonjee,
+  .buttonneet , .buttonsubject {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 0 10px; /* add horizontal padding */
+    overflow: hidden;
+  }
+
+  
+
+  .jeebutton,
+  .neetbutton , .subjectbutton{
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transform-origin: center center;
+    will-change: transform;
+    transition: all 0.3s ease;
+  }
+
+  .jeebutton:hover , .neetbutton:hover , .subjectbutton:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  .card,
+  .buttonjee,
+  .buttonneet , .buttonsubject {
+    overflow: hidden;
+  }
+
+  /* Responsive layout for larger screens */
+  @media (min-width: 600px) {
+    .buttonjee,
+    .buttonneet , .buttonsubject {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .buttonjee .button,
+    .buttonneet .button {
+      margin: 0 5px;
+    }
+  }
+</style>
 
 {% endblock %} {% block body %}
-  <!-- Main Section -->
-   <div class="intro">
+<!-- Main Section -->
+<div class="intro">
   <div class="top">STUDY SMART</div>
   <div class="top1">Free JEE/NEET resources</div>
-  </div>
+</div>
 
 <main>
   <div class="card card1">
     <div class="text">JEE</div>
     <div class="text">Resources</div>
     <div class="text">🧪</div>
-    <div class="text buttonjee">
-      <div class="button"><button class="jeebutton">JEE MAINS</button></div>
-      <div class="button"><button class="jeebutton">JEE ADVANCE</button></div>
+    <div class="text buttonjee"><button class="jeebutton">JEE MAINS</button>
+<button class="jeebutton">JEE ADVANCE</button>
     </div>
   </div>
   <div id="path">
-    <svg width="100" height="500">
-      <path d="M 50 0 Q 50 250 50 500" stroke="black" fill="transparent" />
+    <svg width="100" height="400">
+      <path d="M 50 0 Q 50 200 50 500" stroke="black" fill="transparent" />
     </svg>
   </div>
 
@@ -104,14 +186,14 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">NEET</div>
     <div class="text">Resources</div>
     <div class="text">🩺</div>
-    <div class="text">
-      <div class="button"><button type="button"></button></div>
+    <div class="text buttonneet">
+      <button type="button" class="neetbutton">Neet</button>
     </div>
   </div>
 
   <div id="path2">
-    <svg width="100" height="500">
-      <path d="M 50 0 Q 50 250 50 500" stroke="black" fill="transparent" />
+    <svg width="100" height="400">
+      <path d="M 50 0 Q 50 200 50 500" stroke="black" fill="transparent" />
     </svg>
   </div>
 
@@ -119,8 +201,8 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">Formula</div>
     <div class="text">Sheet</div>
     <div class="text">📝</div>
-    <div class="text">
-      <div class="button"><button type="button"></button></div>
+    <div class="text buttonsubject">
+      <button type="button" class="subjectbutton">Subjects</button>
     </div>
   </div>
   <!-- From Uiverse.io by Juanes200122 -->
@@ -227,21 +309,21 @@ Resources {% endblock %} {% block extra_css %}
 <script>
   const tml = gsap.timeline();
   tml.from(".card2", {
-    y:500,
+    y: 500,
     duration: 0.5,
     delay: 0.1,
     opacity: 0,
   });
   gsap.from(".card1", {
     duration: 0.8,
-    delay : 0.8,
+    delay: 0.8,
     x: -100,
     opacity: 0,
     ease: "bounce.out",
   });
   gsap.from(".card3", {
     duration: 0.8,
-    delay:0.8,
+    delay: 0.8,
     x: 100,
     opacity: 0,
     ease: "bounce.out",
@@ -351,85 +433,83 @@ Resources {% endblock %} {% block extra_css %}
 ></script>
 
 <script>
-    gsap.set(".quote1 img", { x: "-100%", opacity: 0 });
-    gsap.set(".text1", { x: "5%", opacity: 0 });
+  gsap.set(".quote1 img", { x: "-100%", opacity: 0 });
+  gsap.set(".text1", { x: "5%", opacity: 0 });
 
-    ScrollTrigger.create({
-      trigger: ".quote1",
-      start: "top 60%",
-      markers: false,
-      onEnter: () => {
-        gsap.to(".quote1 img", { x: "0%", opacity: 1, duration: 0.8 });
-        gsap.to(".text1", { x: "0%", opacity: 1, duration: 0.8 });
-      },
-      onLeaveBack: () => {
-        gsap.to(".quote1 img", { x: "-100%", opacity: 0, duration: 0.8 });
-        gsap.to(".text1", { x: "5%", opacity: 0, duration: 0.8 });
-      },
-    });
+  ScrollTrigger.create({
+    trigger: ".quote1",
+    start: "top 60%",
+    markers: false,
+    onEnter: () => {
+      gsap.to(".quote1 img", { x: "0%", opacity: 1, duration: 0.8 });
+      gsap.to(".text1", { x: "0%", opacity: 1, duration: 0.8 });
+    },
+    onLeaveBack: () => {
+      gsap.to(".quote1 img", { x: "-100%", opacity: 0, duration: 0.8 });
+      gsap.to(".text1", { x: "5%", opacity: 0, duration: 0.8 });
+    },
+  });
 
-    gsap.set(".quote3 img", { x: "-100%", opacity: 0 });
-    gsap.set(".text3", { x: "5%", opacity: 0 });
+  gsap.set(".quote3 img", { x: "-100%", opacity: 0 });
+  gsap.set(".text3", { x: "5%", opacity: 0 });
 
-    ScrollTrigger.create({
-      trigger: ".quote3",
-      start: "top 55%",
-      markers: false,
-      onEnter: () => {
-        gsap.to(".quote3 img", { x: "0%", opacity: 1, duration: 0.8 });
-        gsap.to(".text3", { x: "0%", opacity: 1, duration: 0.8 });
-      },
-      onLeaveBack: () => {
-        gsap.to(".quote3 img", { x: "-100%", opacity: 0, duration: 0.8 });
-        gsap.to(".text3", { x: "5%", opacity: 0, duration: 0.8 });
-      },
-    });
+  ScrollTrigger.create({
+    trigger: ".quote3",
+    start: "top 55%",
+    markers: false,
+    onEnter: () => {
+      gsap.to(".quote3 img", { x: "0%", opacity: 1, duration: 0.8 });
+      gsap.to(".text3", { x: "0%", opacity: 1, duration: 0.8 });
+    },
+    onLeaveBack: () => {
+      gsap.to(".quote3 img", { x: "-100%", opacity: 0, duration: 0.8 });
+      gsap.to(".text3", { x: "5%", opacity: 0, duration: 0.8 });
+    },
+  });
 
-    gsap.set(".quote2 img", {
-      x: "-100%",
-      opacity: 0,
-    });
-    gsap.set(".text2", {
-      x: "10%",
-      opacity: 0,
-    });
-    ScrollTrigger.create({
-      trigger: ".quote2",
-      start: "top 55%",
-      markers: false,
-      onEnter: () => {
-        gsap.to(".quote2 img", { x: "0%", opacity: 1, duration: 0.8 });
-        gsap.to(".text2", { x: "0%", opacity: 1, duration: 0.8 });
-      },
-      onLeaveBack: () => {
-        gsap.to(".quote2 img", { x: "-100%", opacity: 0, duration: 0.8 });
-        gsap.to(".text2", { x: "10%", opacity: 0, duration: 0.8 });
-      },
-    });
+  gsap.set(".quote2 img", {
+    x: "-100%",
+    opacity: 0,
+  });
+  gsap.set(".text2", {
+    x: "10%",
+    opacity: 0,
+  });
+  ScrollTrigger.create({
+    trigger: ".quote2",
+    start: "top 55%",
+    markers: false,
+    onEnter: () => {
+      gsap.to(".quote2 img", { x: "0%", opacity: 1, duration: 0.8 });
+      gsap.to(".text2", { x: "0%", opacity: 1, duration: 0.8 });
+    },
+    onLeaveBack: () => {
+      gsap.to(".quote2 img", { x: "-100%", opacity: 0, duration: 0.8 });
+      gsap.to(".text2", { x: "10%", opacity: 0, duration: 0.8 });
+    },
+  });
 
-
-    gsap.set(".quote4 img", {
-      x: "-100%",
-      opacity: 0,
-    });
-    gsap.set(".text4", {
-      x: "10%",
-      opacity: 0,
-    });
-    ScrollTrigger.create({
-      trigger: ".quote4",
-      start: "top 60%",
-      markers: false,
-      onEnter: () => {
-        gsap.to(".quote4 img", { opacity: 1, x: "0%", duration: 0.8 });
-        gsap.to(".text4", { x: "-10%", opacity: 1, duration: 0.8 });
-      },
-      onLeaveBack: () => {
-        gsap.to(".quote4 img", { x: "-100%", opacity: 0 });
-        gsap.to(".text4 ", { x: "10%", opacity: 0 });
-      },
-    });
-
+  gsap.set(".quote4 img", {
+    x: "-100%",
+    opacity: 0,
+  });
+  gsap.set(".text4", {
+    x: "10%",
+    opacity: 0,
+  });
+  ScrollTrigger.create({
+    trigger: ".quote4",
+    start: "top 60%",
+    markers: false,
+    onEnter: () => {
+      gsap.to(".quote4 img", { opacity: 1, x: "0%", duration: 0.8 });
+      gsap.to(".text4", { x: "-10%", opacity: 1, duration: 0.8 });
+    },
+    onLeaveBack: () => {
+      gsap.to(".quote4 img", { x: "-100%", opacity: 0 });
+      gsap.to(".text4 ", { x: "10%", opacity: 0 });
+    },
+  });
 </script>
 
 {% endblock %}

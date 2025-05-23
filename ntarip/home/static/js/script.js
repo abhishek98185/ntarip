@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 const tl = gsap.timeline()
 tl.from(".navbar h1", {
-  duration: 1,
+  duration: 0.5,
   y: -50,
   opacity: 0,
   scale: 0,
 })
 tl.from(".navbar ul li", {
-  duration: 1,
+  duration: 0.8,
   y: -50,
   opacity: 0,
   stagger: 0.2

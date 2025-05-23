@@ -1,21 +1,23 @@
 .intro {
   text-align: center;
   margin: 20px auto;
-  padding: 20px 0px;
+  padding: 30px 20px;
   max-width: 600px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Title */
 .top {
   font-size: 36px;
   font-weight: 700;
   color: #2c3e50;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }
 
+/* Subtitle */
 .top1 {
   font-size: 20px;
   color: #555;
@@ -23,15 +25,34 @@
 }
 
 
+/* Responsive design */
+@media (max-width: 768px) {
+  .top {
+    font-size: 28px;
+  }
 
-main {
-  display: flex;
-  justify-content: space-evenly;
-  /* margin-top: 40px;
-  margin-left: 10px;
-  margin-right: 50px; */
-  width: 90vw;
+  .top1 {
+    font-size: 18px;
+  }
 
+  .intro {
+    padding: 20px 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .top {
+    font-size: 24px;
+  }
+
+  .top1 {
+    font-size: 16px;
+  }
+
+  .intro {
+    padding: 18px 10px;
+  }
 }
 
 .card {
@@ -41,32 +62,28 @@ main {
   text-align: center;
   min-height: 50vh;
   padding: 5vh;
-
 }
 
-.text{
+.text {
   font-size: xx-large;
 }
 
-.buttonjee{
+.buttonjee {
   display: flex;
-  margin: 2vh 2vw ;
+  margin: 2vh 2vw;
 }
 
-
-.jeebutton{
+.jeebutton {
   width: 8vw;
   gap: 15px;
   margin: 2%;
 }
-::selection{
+::selection {
   color: yellow;
   background-color: black;
-  
 }
-.page2{
+.page2 {
   width: 100vw;
   height: 100vh;
   background-color: black;
 }
-

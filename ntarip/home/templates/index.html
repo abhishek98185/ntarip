@@ -75,8 +75,17 @@ Resources {% endblock %} {% block extra_css %}
     padding-left: 4vw;
   }
   main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    width: 90%;
+    margin: auto;
     overflow-y: hidden;
+    gap: 2rem; /* adds space between items */
+    text-align: center;
   }
+
   .card {
     max-width: 300px;
     margin: 20px auto;
@@ -105,7 +114,8 @@ Resources {% endblock %} {% block extra_css %}
   }
 
   .buttonjee,
-  .buttonneet , .buttonsubject {
+  .buttonneet,
+  .buttonsubject {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -114,10 +124,14 @@ Resources {% endblock %} {% block extra_css %}
     overflow: hidden;
   }
 
-  
+  .card a {
+    color: #fff;
+    text-decoration: none;
+  }
 
   .jeebutton,
-  .neetbutton , .subjectbutton{
+  .neetbutton,
+  .subjectbutton {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
@@ -132,7 +146,9 @@ Resources {% endblock %} {% block extra_css %}
     transition: all 0.3s ease;
   }
 
-  .jeebutton:hover , .neetbutton:hover , .subjectbutton:hover {
+  .jeebutton:hover,
+  .neetbutton:hover,
+  .subjectbutton:hover {
     background-color: #0056b3;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -141,14 +157,16 @@ Resources {% endblock %} {% block extra_css %}
 
   .card,
   .buttonjee,
-  .buttonneet , .buttonsubject {
+  .buttonneet,
+  .buttonsubject {
     overflow: hidden;
   }
 
   /* Responsive layout for larger screens */
   @media (min-width: 600px) {
     .buttonjee,
-    .buttonneet , .buttonsubject {
+    .buttonneet,
+    .buttonsubject {
       flex-direction: row;
       justify-content: center;
     }
@@ -156,6 +174,22 @@ Resources {% endblock %} {% block extra_css %}
     .buttonjee .button,
     .buttonneet .button {
       margin: 0 5px;
+    }
+  }
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    #path,
+    #path2 {
+      display: none;
+    }
+
+    .card {
+      width: 90%;
+      margin: 0 auto;
     }
   }
 </style>
@@ -172,8 +206,9 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">JEE</div>
     <div class="text">Resources</div>
     <div class="text">🧪</div>
-    <div class="text buttonjee"><button class="jeebutton">JEE MAINS</button>
-<button class="jeebutton">JEE ADVANCE</button>
+    <div class="text buttonjee">
+      <button class="jeebutton"><a href="/jee">JEE MAINS</a></button>
+      <button class="jeebutton"><a href="/jeeadvance">JEE ADVANCE</a></button>
     </div>
   </div>
   <div id="path">
@@ -187,7 +222,7 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">Resources</div>
     <div class="text">🩺</div>
     <div class="text buttonneet">
-      <button type="button" class="neetbutton">Neet</button>
+      <button type="button" class="neetbutton"><a href="/neet">NEET</a></button>
     </div>
   </div>
 
@@ -202,54 +237,31 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">Sheet</div>
     <div class="text">📝</div>
     <div class="text buttonsubject">
-      <button type="button" class="subjectbutton">Subjects</button>
-    </div>
-  </div>
-  <!-- From Uiverse.io by Juanes200122 -->
-  <!-- <div class="light-button">
-  <button class="bt">
-    <div class="light-holder">
-      <div class="dot"></div>
-      <div class="light"></div>
-    </div>
-    <div class="button-holder">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="36"
-        height="36"
-        fill="currentColor"
-        class="bi bi-facebook"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-        ></path>
-      </svg>
-      <p>Facebook</p>
-    </div>
-  </button>
-</div> -->
-
-  <!-- Instagram Button -->
-  <div class="light-button">
-    <a href="https://instagram.com" target="_blank">
-      <button class="bt">
-        <div class="light-holder">
-          <div class="dot"></div>
-          <div class="light"></div>
-        </div>
-        <div class="button-holder">
-          <img
-            src="{% static 'media/instagram.png' %}"
-            alt="instagram"
-            id="instagramlogo"
-          />
-          <p>Instagram</p>
-        </div>
+      <button type="button" class="subjectbutton">
+        <a href="/formulasheet">Subjects</a>
       </button>
-    </a>
+    </div>
   </div>
 </main>
+<!-- Instagram Button -->
+<div class="light-button">
+  <a href="https://instagram.com" target="_blank">
+    <button class="bt">
+      <div class="light-holder">
+        <div class="dot"></div>
+        <div class="light"></div>
+      </div>
+      <div class="button-holder">
+        <img
+          src="{% static 'media/instagram.png' %}"
+          alt="instagram"
+          id="instagramlogo"
+        />
+        <p>Instagram</p>
+      </div>
+    </button>
+  </a>
+</div>
 <div class="page2">
   <div class="quote1">
     <img

@@ -397,7 +397,7 @@ Resources {% endblock %} {% block extra_css %}
     <div class="quotecontent">
       <div class="header">
         <span>Quote on</span>
-        <span>24-May-2025</span>
+        <span id="quote-date"></span>
       </div>
       <p class="heading">${quote}</p>
       <!-- <div class="categories">
@@ -595,6 +595,18 @@ Resources {% endblock %} {% block extra_css %}
   if (headingElement) {
     headingElement.textContent = quotes[randomNumber];
   }
+    const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+    const formattedDate = formatDate(today);
+    document.getElementById('quote-date').textContent = formattedDate;
+  });
 </script>
 
 {% endblock %}

@@ -68,12 +68,11 @@
 
 .buttonjee {
   display: flex;
-  margin: 2vh 2vw;
 }
 
 .jeebutton {
-  width: 8vw;
   gap: 15px;
+  padding: 0 2px;
   margin: 2%;
 }
 

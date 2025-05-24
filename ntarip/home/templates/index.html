@@ -150,7 +150,7 @@ Resources {% endblock %} {% block extra_css %}
   }
 
   .card a {
-    color: #fff;
+    color: #1f1f1f;
     text-decoration: none;
   }
 
@@ -248,26 +248,34 @@ Resources {% endblock %} {% block extra_css %}
   /* second type code */
   /* From Uiverse.io by gharsh11032000 */ 
   .quotecontainer{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    position: relative;
     margin-left: 20vw;
     padding-top: 20vh;
+    height: 80vh;
+    width: 100%;
+    width: fit-content;
   }
 .quotecard {
-  rotate: 10deg;
-  width: 320px;
-  height: 350px;
-  padding: 20px;
-  color: white;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  cursor: pointer;
-  transform-origin: right bottom;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
+ /* position: absolute; */
+    /* rotate: 10deg; */
+    width: 320px;
+    height: 350px;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(#212121, #212121) padding-box,
+      linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    cursor: pointer;
+    /* transform-origin: right bottom; */
+    /* transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 
 .quotecard .quotecontent {
   flex: 1;
@@ -379,23 +387,36 @@ Resources {% endblock %} {% block extra_css %}
 
 <!-- quote container 2 --> 
 <div class="quotecontainer">
-  <div class="quotecard">
-  <div class="quotecontent">
-    <div class="header">
-  <span>Quote on</span>
-  <span>24-May-2025</span>
-</div>
-<p class="heading">“Push yourself, because no one else is going to do it for you.”
-</p>
-<!-- <div class="categories">
-  <span>React</span>
-  <span>Css</span>
-</div> -->
+  <div class="quotecard qcard1">
+    <div class="quotecontent">
+      <div class="header">
+        <span>Quote on</span>
+        <span id="quote-date"></span>
+      </div>
+      <p class="heading">${quote}</p>
+    </div>
+    <div class="footer">by NtaRip</div>
   </div>
-<div class="footer">
-  by NtaRip
-</div>
-</div>
+  <div class="quotecard qcard2">
+    <div class="quotecontent">
+      <div class="header">
+        <span>Quote on</span>
+        <span id="quote-date"></span>
+      </div>
+      <p class="heading">${quote}</p>
+    </div>
+    <div class="footer">by NtaRip</div>
+  </div>
+  <div class="quotecard qcard3">
+    <div class="quotecontent">
+      <div class="header">
+        <span>Quote on</span>
+        <span id="quote-date"></span>
+      </div>
+      <p class="heading">${quote}</p>
+    </div>
+    <div class="footer">by NtaRip</div>
+  </div>
 </div>
 <div class="page2">
   <div class="quote1">
@@ -548,6 +569,54 @@ Resources {% endblock %} {% block extra_css %}
       gsap.to(".quote4 img", { x: "-100%", opacity: 0 });
       gsap.to(".text4 ", { x: "10%", opacity: 0 });
     },
+  });
+   let randomNumber = Math.floor(Math.random() * 10); // 0, 1, or 2
+
+  const quotes = [
+    ' " The best way to predict the future is to create it " ',
+    ' " Don\'t be sorry, be better" ',
+    ' " Be so good at what you do, no one can replace you " ',
+    ' " Success is not final, failure is not fatal: It is the courage to continue that counts " ',
+    ' " The only limit to our realization of tomorrow is our doubts of today " ',
+    ' " Hard work beats talent when talent doesn\'t work hard " ',
+    " \" Your time is limited, so don't waste it living someone else's life \" ",
+    ' " Dream big. Start small. Act now " ',
+    ' " Discipline is the bridge between goals and accomplishment " ',
+    ' " Believe you can and you\'re halfway there " ',
+  ];
+
+  const headingElement = document.querySelector(".quotecontainer .heading");
+
+  if (headingElement) {
+    headingElement.textContent = quotes[randomNumber];
+  }
+  const formatDate = (date) => {
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = date.toLocaleString("default", { month: "short" });
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const today = new Date();
+    const formattedDate = formatDate(today);
+    document.getElementById("quote-date").textContent = formattedDate;
+  });
+  const qcard1 = document.querySelector(".qcard1");
+  const qcard2 = document.querySelector(".qcard2");
+  const qcard3 = document.querySelector(".qcard3");
+  gsap.set(qcard2, {
+    x: "-100%",
+  });
+  gsap.set(qcard3, {
+    x: "-100%",
+  });
+  qcard1.addEventListener("click", function () {
+    gsap.to(qcard2, {
+      x: 0,
+      duration: 1,
+      ease: "power1.out",
+    });
   });
 </script>
 

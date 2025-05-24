@@ -3,40 +3,47 @@ Resources {% endblock %} {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 <link rel="stylesheet" href="{% static 'css/theme.css' %}" />
 <link rel="stylesheet" href="{% static 'css/socialmedia.css' %}" />
-<link rel="stylesheet" href="{% static 'css/loader.css' %}" />
 <style>
   body {
     overflow-x: hidden;
   }
-  button{
+
+  button {
     color: #1F1F1F;
   }
-  .toptext{
+
+  .toptext {
     font-size: 30px;
   }
-  .emoji{
+
+  .emoji {
     font-size: 80px;
   }
-  .head{
+
+  .head {
     font-size: 30px;
   }
+
   .page2 {
     width: 100vw;
     height: 125%;
-    
+
     margin-top: 3vh;
     padding: 12vh 10vw;
   }
+
   .quote1 {
     height: auto;
     display: flex;
     padding: 50px 20px 10px 20px;
   }
+
   .quote1 img {
     height: 100px;
     width: auto;
     padding: 5px;
   }
+
   .text1,
   .text2,
   .text3,
@@ -48,6 +55,7 @@ Resources {% endblock %} {% block extra_css %}
     width: 50%;
     padding: 2vh 3vw;
   }
+
   .quote2 {
     height: auto;
     display: flex;
@@ -55,46 +63,56 @@ Resources {% endblock %} {% block extra_css %}
     align-items: center;
     justify-content: right;
   }
+
   .quote2 img {
     height: 100px;
     width: auto;
     margin-right: 5px;
   }
+
   .quote3 {
     height: auto;
     display: flex;
     padding: 50px 20px 10px 20px;
   }
+
   .quote3 img {
     height: 100px;
     width: auto;
   }
+
   .quote4 {
     height: auto;
     display: flex;
     padding: 50px 20px 10px 20px;
     justify-content: right;
   }
+
   .quote4 img {
     height: 100px;
     width: auto;
   }
+
   .page3 {
     height: 100vh;
     background-color: black;
   }
+
   .text4 {
     padding-left: 4vw;
   }
+
   main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    flex-wrap: wrap;
+    /* allows wrapping on smaller screens */
     width: 90%;
     margin: auto;
     overflow-y: hidden;
-    gap: 2rem; /* adds space between items */
+    gap: 2rem;
+    /* adds space between items */
     text-align: center;
   }
 
@@ -129,7 +147,8 @@ Resources {% endblock %} {% block extra_css %}
     flex-direction: column;
     gap: 10px;
     margin-top: 15px;
-    padding: 0 10px; /* add horizontal padding */
+    padding: 0 10px;
+    /* add horizontal padding */
     overflow: hidden;
   }
 
@@ -156,17 +175,20 @@ Resources {% endblock %} {% block extra_css %}
     /* color: #1F1F1F; */
   }
 
-  .jeebutton{
-    background-color: #007bff  ;
+  .jeebutton {
+    background-color: #007bff;
     color: #1F1F1F;
   }
-  .neetbutton{
-    background-color:  #007bff;
-  
+
+  .neetbutton {
+    background-color: #007bff;
+
   }
-  .subjectbutton{
+
+  .subjectbutton {
     background-color: #007bff;
   }
+
   .jeebutton:hover,
   .neetbutton:hover,
   .subjectbutton:hover {
@@ -185,6 +207,7 @@ Resources {% endblock %} {% block extra_css %}
 
   /* Responsive layout for larger screens */
   @media (min-width: 600px) {
+
     .buttonjee,
     .buttonneet,
     .buttonsubject {
@@ -197,6 +220,7 @@ Resources {% endblock %} {% block extra_css %}
       margin: 0 5px;
     }
   }
+
   @media (max-width: 768px) {
     main {
       flex-direction: column;
@@ -213,6 +237,71 @@ Resources {% endblock %} {% block extra_css %}
       margin: 0 auto;
     }
   }
+
+
+  /* second type code */
+  /* From Uiverse.io by gharsh11032000 */ 
+  .quotecontainer{
+    margin-left: 20vw;
+    padding-top: 20vh;
+  }
+.quotecard {
+  rotate: 10deg;
+  width: 320px;
+  height: 350px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  cursor: pointer;
+  transform-origin: right bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.quotecard .quotecontent {
+  flex: 1;
+}
+
+.quotecard .header span:first-child {
+  font-weight: 600;
+  color: #717171;
+  margin-right: 4px;
+}
+
+.quotecard .heading {
+  font-size: 24px;
+  margin: 24px 0 16px;
+  font-weight: 600;
+}
+
+.quotecard .categories {
+  display: flex;
+  gap: 8px;
+}
+
+.quotecard .categories span {
+  background-color: #e81cff;
+  padding: 4px 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-radius: 50em;
+}
+
+.quotecard .footer {
+  font-weight: 600;
+  color: #717171;
+  margin-right: 4px;
+}
+
+.quotecard:hover {
+  rotate: 0deg;
+}
 </style>
 
 {% endblock %} {% block body %}
@@ -224,12 +313,12 @@ Resources {% endblock %} {% block extra_css %}
 
 <main>
   <div class="card card1">
-    <div class="text toptext" >JEE</div>
+    <div class="text toptext">JEE</div>
     <div class="text">Resources</div>
     <div class="text emoji">🧪</div>
     <div class="text buttonjee">
-      <button class="jeebutton"><a href="/jee">JEE MAINS</a></button>
-      <button class="jeebutton"><a href="/jeeadvance">JEE ADVANCE</a></button>
+      <a href="/jee"><button class="jeebutton">JEE MAINS</button></a>
+      <a href="/jeeadvance"></a><button class="jeebutton">JEE ADVANCE</button></a>
     </div>
   </div>
   <div id="path">
@@ -243,7 +332,7 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text ">Resources</div>
     <div class="text emoji">🩺</div>
     <div class="text buttonneet">
-      <button type="button" class="neetbutton"><a href="/neet">NEET</a></button>
+      <a href="/neet"></a><button type="button" class="neetbutton">NEET</button></a>
     </div>
   </div>
 
@@ -258,9 +347,9 @@ Resources {% endblock %} {% block extra_css %}
     <div class="text">Sheet</div>
     <div class="text emoji">📝</div>
     <div class="text buttonsubject">
-      <button type="button" class="subjectbutton">
-        <a href="/formulasheet">Subjects</a>
-      </button>
+      <a href="/formulasheet"></a><button type="button" class="subjectbutton">
+        Subjects
+      </button></a>
     </div>
   </div>
 </main>
@@ -273,22 +362,38 @@ Resources {% endblock %} {% block extra_css %}
         <div class="light"></div>
       </div>
       <div class="button-holder">
-        <img
-          src="{% static 'media/instagram.png' %}"
-          alt="instagram"
-          id="instagramlogo"
-        />
+        <img src="{% static 'media/instagram.png' %}" alt="instagram" id="instagramlogo" />
         <p>Instagram</p>
       </div>
     </button>
   </a>
 </div>
+
+
+
+<!-- quote container 2 --> 
+<div class="quotecontainer">
+  <div class="quotecard">
+  <div class="quotecontent">
+    <div class="header">
+  <span>Quote on</span>
+  <span>24-May-2025</span>
+</div>
+<p class="heading">“Push yourself, because no one else is going to do it for you.”
+</p>
+<!-- <div class="categories">
+  <span>React</span>
+  <span>Css</span>
+</div> -->
+  </div>
+<div class="footer">
+  by NtaRip
+</div>
+</div>
+</div>
 <div class="page2">
   <div class="quote1">
-    <img
-      src="https://www.cambiumassessment.com/assets/icon-trusted-technology.svg"
-      alt=""
-    />
+    <img src="https://www.cambiumassessment.com/assets/icon-trusted-technology.svg" alt="" />
     <div class="text1">
       <h1>Every Paper You Need, At Your Fingertips</h1>
       <h3>
@@ -298,10 +403,7 @@ Resources {% endblock %} {% block extra_css %}
     </div>
   </div>
   <div class="quote2">
-    <img
-      src="https://www.cambiumassessment.com/assets/icon-actionable-reports.svg"
-      alt=""
-    />
+    <img src="https://www.cambiumassessment.com/assets/icon-actionable-reports.svg" alt="" />
     <div class="text2">
       <h1>Crack JEE & NEET with Confidence</h1>
       <h3>
@@ -311,10 +413,7 @@ Resources {% endblock %} {% block extra_css %}
     </div>
   </div>
   <div class="quote3">
-    <img
-      src="https://www.cambiumassessment.com/assets/icon-constant-innovation.svg"
-      alt=""
-    />
+    <img src="https://www.cambiumassessment.com/assets/icon-constant-innovation.svg" alt="" />
     <div class="text3">
       <h1>Practice. Perform. Prevail.</h1>
       <h3>
@@ -324,10 +423,7 @@ Resources {% endblock %} {% block extra_css %}
     </div>
   </div>
   <div class="quote4">
-    <img
-      src="https://www.cambiumassessment.com/assets/icon-sound-psychometrics.svg"
-      alt=""
-    />
+    <img src="https://www.cambiumassessment.com/assets/icon-sound-psychometrics.svg" alt="" />
     <div class="text4">
       <h1>Your Ultimate Study Companion for JEE & NEET Success!</h1>
       <h3>
@@ -337,6 +433,12 @@ Resources {% endblock %} {% block extra_css %}
     </div>
   </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+  integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script>
@@ -362,108 +464,6 @@ Resources {% endblock %} {% block extra_css %}
     ease: "bounce.out",
   });
 </script>
-
-<!-- Loader container -->
-<div id="loader" aria-hidden="true">
-  <!-- Paste your SVG here -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    height="200px"
-    width="200px"
-    viewBox="0 0 200 200"
-    class="pencil"
-    aria-label="Loading animation"
-    role="img"
-  >
-    <defs>
-      <clipPath id="pencil-eraser">
-        <rect height="30" width="30" ry="5" rx="5"></rect>
-      </clipPath>
-    </defs>
-    <circle
-      transform="rotate(-113,100,100)"
-      stroke-linecap="round"
-      stroke-dashoffset="439.82"
-      stroke-dasharray="439.82 439.82"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      r="70"
-      class="pencil__stroke"
-    ></circle>
-    <g transform="translate(100,100)" class="pencil__rotate">
-      <g fill="none">
-        <circle
-          transform="rotate(-90)"
-          stroke-dashoffset="402"
-          stroke-dasharray="402.12 402.12"
-          stroke-width="30"
-          stroke="hsl(223,90%,50%)"
-          r="64"
-          class="pencil__body1"
-        ></circle>
-        <circle
-          transform="rotate(-90)"
-          stroke-dashoffset="465"
-          stroke-dasharray="464.96 464.96"
-          stroke-width="10"
-          stroke="hsl(223,90%,60%)"
-          r="74"
-          class="pencil__body2"
-        ></circle>
-        <circle
-          transform="rotate(-90)"
-          stroke-dashoffset="339"
-          stroke-dasharray="339.29 339.29"
-          stroke-width="10"
-          stroke="hsl(223,90%,40%)"
-          r="54"
-          class="pencil__body3"
-        ></circle>
-      </g>
-      <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
-        <g class="pencil__eraser-skew">
-          <rect
-            height="30"
-            width="30"
-            ry="5"
-            rx="5"
-            fill="hsl(223,90%,70%)"
-          ></rect>
-          <rect
-            clip-path="url(#pencil-eraser)"
-            height="30"
-            width="5"
-            fill="hsl(223,90%,60%)"
-          ></rect>
-          <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
-          <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
-          <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
-          <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
-          <rect
-            height="2"
-            width="30"
-            y="13"
-            fill="hsla(223,10%,10%,0.2)"
-          ></rect>
-        </g>
-      </g>
-      <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
-        <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
-        <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
-        <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
-      </g>
-    </g>
-  </svg>
-</div>
-
-<script src="{% static 'js/loader.js' %}"></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
-  integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
 
 <script>
   gsap.set(".quote1 img", { x: "-100%", opacity: 0 });

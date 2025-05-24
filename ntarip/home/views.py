@@ -16,4 +16,7 @@ def neet(request):
 def formulasheet(request):
     return render(request,'formulasheet.html')
 
+def about(request):
+    return render(request,'about.html')
+
 

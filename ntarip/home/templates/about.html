@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About Us - ExamPrepHub
+{% endblock %}
+
+{% block extra_css %}
+  <style>
+    .about-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      color: #333;
+    }
+
+    .about-section h1 {
+      color: rgb(91, 91, 240);
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .about-section .highlight {
+      color: rgb(91, 91, 240);
+      font-weight: 600;
+    }
+
+    .about-section footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 20px 15px;
+      }
+
+      .about-section h1 {
+        font-size: 28px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+  <div class="about-section">
+    <h1>About NtaRip</h1>
+
+    <p>
+      <span class="highlight">NtaRip</span> is built to support students preparing for competitive exams
+      like <span class="highlight">JEE Mains</span> and <span class="highlight">NEET</span>.
+      We aim to be your one-stop platform for previous year papers, formula sheets, and much more.
+    </p>
+
+    <p>
+      Our resources are designed to help you stay focused and organized while you prepare. With
+      <span class="highlight">clean UI</span> and <span class="highlight">easy navigation</span>,
+      you can find exactly what you need — no distractions, just productivity.
+    </p>
+
+    <p>
+      We're working hard to add new features like mock tests, performance tracking, and study planners.
+      Stay tuned — and if you're preparing, we're cheering for you! 🚀
+    </p>
+
+    <footer>
+      &copy; 2025 ExamPrepHub | Made by DTU Students ❤️
+    </footer>
+  </div>
+
+{% endblock %}

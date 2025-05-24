@@ -2,78 +2,281 @@
 {% load static %}
 
 {% block title %}
-JEE Mains Papers (2015–2020)
+JEE Mains
 {% endblock %}
+
 {% block extra_css %}
-  <style>
-    
-    .section { margin: 15px 0; }
-    .hidden { display: none; }
-    .button {
-      cursor: pointer;
-      padding: 8px 12px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      margin: 5px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    .subsection, .papers { margin-left: 20px; }
-    .paper-option { margin-left: 40px; margin-bottom: 8px; }
-  </style>
+<style>
+  .section { margin: 15px 0; }
+  .hidden { display: none; }
+  .button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .subsection, .papers { margin-left: 20px; }
+  .paper-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    width: 250px;
+    background: #f9f9f9;
+  }
+  .paper-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .paper-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .papers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Download button from Uiverse */
+  .label {
+    background-color: transparent;
+    border: 2px solid rgb(91, 91, 240);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    width: 160px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 5px;
+    position: relative;
+  }
+
+  .label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 8px;
+    height: 8px;
+    transition: all 0.4s ease;
+    border-radius: 100%;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input {
+    display: none;
+  }
+
+  .label .title {
+    font-size: 17px;
+    color: #000;
+    transition: all 0.4s ease;
+    position: absolute;
+    right: 18px;
+    bottom: 14px;
+    text-align: center;
+  }
+
+  .label .title:last-child {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgb(91, 91, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    overflow: hidden;
+  }
+
+  .label .circle .icon {
+    color: #fff;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle .square {
+    aspect-ratio: 1;
+    width: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #3333a8;
+    width: 100%;
+    height: 0;
+    transition: all 0.4s ease;
+  }
+
+  .label:has(.input:checked) {
+    width: 57px;
+    animation: installed 0.4s ease 3.5s forwards;
+  }
+
+  .label:has(.input:checked)::before {
+    animation: rotate 3s ease-in-out 0.4s forwards;
+  }
+
+  .label .input:checked + .circle {
+    animation: pulse 1s forwards, circleDelete 0.2s ease 3.5s forwards;
+    rotate: 180deg;
+  }
+
+  .label .input:checked + .circle::before {
+    animation: installing 3s ease-in-out forwards;
+  }
+
+  .label .input:checked + .circle .icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked ~ .circle .square {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .label .input:checked ~ .title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked ~ .title:last-child {
+    animation: showInstalledMessage 0.4s ease 3.5s forwards;
+  }
+
+  @keyframes pulse {
+    0% { scale: 0.95; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { scale: 1; box-shadow: 0 0 0 16px rgba(255, 255, 255, 0); }
+    100% { scale: 0.95; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+  }
+
+  @keyframes installing { from { height: 0; } to { height: 100%; } }
+
+  @keyframes rotate {
+    0% { transform: rotate(-90deg) translate(27px) rotate(0); opacity: 1; visibility: visible; }
+    99% { transform: rotate(270deg) translate(27px) rotate(270deg); opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes installed {
+    100% { width: 150px; border-color: rgb(35, 174, 35); }
+  }
+
+  @keyframes circleDelete {
+    100% { opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes showInstalledMessage {
+    100% { opacity: 1; visibility: visible; right: 56px; }
+  }
+</style>
 {% endblock %}
 
 {% block body %}
+<h1>JEE Mains</h1>
+<div id="main-container"></div>
 
-  <h1>JEE Mains Previous Year Papers (2015–2020)</h1>
+<script>
+  const container = document.getElementById('main-container');
+  const years = [2025, 2024];
+  const dates = ['1', '2', '3', '4', '5'];
+  const shifts = ['Morning', 'Evening'];
 
-  <div id="main-container"></div>
+  for (let year of years) {
+    const yearId = `year${year}`;
+    const janId = `jan${year}`;
+    const aprId = `apr${year}`;
 
-  <script>
-    const container = document.getElementById('main-container');
-    
-    for (let year = 2020; year >= 2015; year--) {
-      const yearId = `year${year}`;
-      const janId = `jan${year}`;
-      const aprId = `apr${year}`;
+    container.innerHTML += `
+      <div class="section">
+        <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
+        <div id="${yearId}" class="subsection hidden">
+          <button class="button" onclick="toggleVisibility('${janId}')">January Attempt</button>
+          <div id="${janId}" class="papers hidden">
+            <div class="papers-container">${generateBoxes(year, 'January')}</div>
+          </div>
 
-      container.innerHTML += `
-        <div class="section">
-          <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
-          <div id="${yearId}" class="subsection hidden">
-            <button class="button" onclick="toggleVisibility('${janId}')">January</button>
-            <div id="${janId}" class="papers hidden">
-              ${generatePapers(year, 'Jan')}
-            </div>
-
-            <button class="button" onclick="toggleVisibility('${aprId}')">April</button>
-            <div id="${aprId}" class="papers hidden">
-              ${generatePapers(year, 'Apr')}
-            </div>
+          <button class="button" onclick="toggleVisibility('${aprId}')">April Attempt</button>
+          <div id="${aprId}" class="papers hidden">
+            <div class="papers-container">${generateBoxes(year, 'April')}</div>
           </div>
         </div>
-      `;
-    }
+      </div>
+    `;
+  }
 
-    function generatePapers(year, session) {
-      let papersHTML = '';
-      for (let i = 1; i <= 10; i++) {
-        papersHTML += `
-          <div class="paper-option">
-            <strong>Paper ${i} (${session} ${year})</strong><br>
-            <button class="button">Download</button>
-            <button class="button">Take Test</button>
-          </div>  
+  function generateBoxes(year, month) {
+    let boxesHTML = '';
+    let paperIndex = 0;
+    for (let date of ['1', '2', '3', '4', '5']) {
+      for (let shift of ['Morning', 'Evening']) {
+        paperIndex++;
+        const checkboxId = `download${year}${month}${paperIndex}`;
+        boxesHTML += `
+          <div class="paper-box">
+            <div class="paper-header">${month} ${date}, ${year} - ${shift}</div>
+            <div class="paper-actions">
+              <label class="label">
+                <input type="checkbox" class="input" id="${checkboxId}" />
+                <span class="circle">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19V5m0 14-4-4m4 4 4-4"/>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">Download</p>
+                <p class="title">Open</p>
+              </label>
+              <button class="button">Take Test</button>
+            </div>
+          </div>
         `;
       }
-      return papersHTML;
     }
+    return boxesHTML;
+  }
 
-    function toggleVisibility(id) {
-      const el = document.getElementById(id);
-      if (el) el.classList.toggle('hidden');
-    }
-  </script>
-
+  function toggleVisibility(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('hidden');
+  }
+</script>
 {% endblock %}

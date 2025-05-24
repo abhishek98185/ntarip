@@ -297,14 +297,146 @@ JEE Advanced Papers
 
 {% block body %}
 <h1>JEE Advanced Previous Year Papers</h1>
+<div style="display: flex; justify-content: flex-end; margin: 20px 4vw;">
+    <label for="sort-order" style="margin-right: 10px; font-weight: bold;">Sort:</label>
+    <select id="sort-order" style="padding: 5px 10px; border-radius: 5px; border: 1px solid #ccc;">
+        <option value="newest">Newest to Oldest</option>
+        <option value="oldest">Oldest to Newest</option>
+    </select>
+</div>
 
 <div id="main-container"></div>
 <script>
 
 
-    
-    const years = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007];
+
     const container = document.getElementById("main-container");
+    const sortOrderSelect = document.getElementById("sort-order");
+
+    let years = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007];
+
+    function renderYears() {
+        container.innerHTML = ""; // Clear current content
+        const sortedYears = [...years];
+
+        if (sortOrderSelect.value === "oldest") {
+            sortedYears.reverse();
+        }
+
+        sortedYears.forEach(year => {
+            const yearBox = document.createElement("div");
+            yearBox.className = "year-container";
+
+            const header = document.createElement("div");
+            header.className = "year-header";
+            header.innerHTML = `<span>JEE Advanced ${year}</span><span class="arrow rotate">▶</span>`;
+
+            const papers = document.createElement("div");
+            papers.className = "papers";
+            papers.style.display = "flex";
+
+            ["Paper 1", "Paper 2"].forEach(paperName => {
+                const paper = document.createElement("div");
+                paper.className = "paper";
+
+                const toggle = document.createElement("div");
+                toggle.className = "toggle";
+                toggle.textContent = paperName;
+
+                const options = document.createElement("div");
+                options.className = "options";
+                options.style.display = "none";
+
+                const buttonRow = document.createElement("div");
+
+                const label = document.createElement("label");
+                label.className = "label";
+                label.style.marginBottom = "10px";
+                label.innerHTML = `
+                <input type="checkbox" class="input" />
+                <span class="circle">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 19V5m0 14-4-4m4 4 4-4" />
+                    </svg>
+                    <div class="square"></div>
+                </span>
+                <p class="title">Download</p>
+                <p class="title open-title" style="cursor: default; user-select:none;">Open</p>
+            `;
+
+                const checkbox = label.querySelector(".input");
+                const openTitle = label.querySelector(".open-title");
+                openTitle.style.pointerEvents = "none";
+
+                const paperNumber = paperName.endsWith("1") ? "1" : "2";
+                const fileUrl = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
+
+                checkbox.addEventListener("change", () => {
+                    if (checkbox.checked) {
+                        const downloadLink = document.createElement("a");
+                        downloadLink.href = fileUrl;
+                        downloadLink.download = `JEE-ADV-${year}-Paper-${paperNumber}.pdf`;
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+
+                        setTimeout(() => {
+                            openTitle.style.cursor = "pointer";
+                            openTitle.style.userSelect = "auto";
+                            openTitle.style.pointerEvents = "auto";
+
+                            openTitle.addEventListener("click", () => {
+                                window.open(fileUrl, "_blank");
+                            }, { once: true });
+                        }, 3500);
+                    } else {
+                        openTitle.style.cursor = "default";
+                        openTitle.style.userSelect = "none";
+                        openTitle.style.pointerEvents = "none";
+                        const newOpenTitle = openTitle.cloneNode(true);
+                        label.replaceChild(newOpenTitle, openTitle);
+                    }
+                });
+
+                const testBtn = document.createElement("a");
+                testBtn.className = "button";
+                testBtn.href = `/test/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
+                testBtn.textContent = "Give as a Test";
+
+                buttonRow.appendChild(label);
+                buttonRow.appendChild(testBtn);
+                options.appendChild(buttonRow);
+
+                paper.appendChild(toggle);
+                paper.appendChild(options);
+                papers.appendChild(paper);
+
+                toggle.addEventListener("click", () => {
+                    if (currentlyOpenOptions && currentlyOpenOptions !== options) {
+                        currentlyOpenOptions.style.display = "none";
+                    }
+
+                    const isVisible = options.style.display === "block";
+                    options.style.display = isVisible ? "none" : "block";
+                    currentlyOpenOptions = isVisible ? null : options;
+                });
+            });
+
+            header.addEventListener("click", () => {
+                const isExpanded = papers.style.display === "flex";
+                papers.style.display = isExpanded ? "none" : "flex";
+                header.querySelector(".arrow").classList.toggle("rotate", !isExpanded);
+            });
+
+            yearBox.appendChild(header);
+            yearBox.appendChild(papers);
+            container.appendChild(yearBox);
+        });
+    }
+
+    sortOrderSelect.addEventListener("change", renderYears);
+    renderYears();
 
     let currentlyOpenOptions = null;
 

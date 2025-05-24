@@ -4,61 +4,435 @@
 {% block title %}
 NEET Previous Year Papers (2018–2025)
 {% endblock %}
+
 {% block extra_css %}
-  <style>
-    .neet-container{
-      min-width: 15vw;
+<style>
+  .neet-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    column-gap: 10vw;
+    row-gap: 10vh;
+    margin-top: 20px;
+  }
+
+  .neet-card {
+    min-width: 20vw;
+    max-width: 20vw;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .neet-year {
+    font-weight: bold;
+    font-size: 20px;
+    color: #343a40;
+    margin-bottom: 15px;
+  }
+
+  .paper-option {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Animated download button styles from Uiverse */
+  .container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .label {
+    background-color: transparent;
+    border: 2px solid rgb(91, 91, 240);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    width: 130px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 5px;
+    position: relative;
+  }
+
+  .label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 8px;
+    height: 8px;
+    transition: all 0.4s ease;
+    border-radius: 100%;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input {
+    display: none;
+  }
+
+  .label .title {
+    font-size: 17px;
+    color: rgb(91, 91, 240);
+    transition: all 0.4s ease;
+    position: absolute;
+    right: 18px;
+    bottom: 14px;
+    text-align: center;
+  }
+
+  .label .title:last-child {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .circle {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: rgb(91, 91, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    overflow: hidden;
+  }
+
+  .label .circle .icon {
+    color: #fff;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle .square {
+    aspect-ratio: 1;
+    width: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #3333a8;
+    width: 100%;
+    height: 0;
+    transition: all 0.4s ease;
+  }
+
+  .label:has(.input:checked) {
+    width: 57px;
+    animation: installed 0.4s ease 3.5s forwards;
+  }
+
+  .label:has(.input:checked)::before {
+    animation: rotate 3s ease-in-out 0.4s forwards;
+  }
+  .label .input:checked + .circle {
+    animation: pulse 1s forwards, circleDelete 0.2s ease 3.5s forwards;
+    rotate: 180deg;
+  }
+
+  .label .input:checked + .circle::before {
+    animation: installing 3s ease-in-out forwards;
+  }
+
+  .label .input:checked + .circle .icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked ~ .circle .square {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .label .input:checked ~ .title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked ~ .title:last-child {
+    animation: showInstalledMessage 0.4s ease 3.5s forwards;
+  } */
+  .label {
+    background-color: transparent;
+    border: 2px solid  #007bff;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    width: 140px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 1.5px;
+    position: relative;
+  }
+
+  .label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 8px;
+    height: 8px;
+    transition: all 0.4s ease;
+    border-radius: 100%;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input {
+    display: none;
+  }
+
+  .label .title {
+    font-size: 14px;
+    color:  #007bff;
+    transition: all 0.4s ease;
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    text-align: center;
+  }
+
+  .label .title:last-child {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .circle {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color:  #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+    overflow: hidden;
+  }
+
+  .label .circle .icon {
+    color: #fff;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle .square {
+    aspect-ratio: 1;
+    width: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+  }
+
+  .label .circle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #007bff;
+    width: 100%;
+    height: 0;
+    transition: all 0.4s ease;
+  }
+
+  .label:has(.input:checked) {
+    width: 57px;
+    animation: installed 0.4s ease 3.5s forwards;
+  }
+
+  .label:has(.input:checked)::before {
+    animation: rotate 3s ease-in-out 0.4s forwards;
+  }
+
+  .label .input:checked+.circle {
+    animation: pulse 1s forwards, circleDelete 0.2s ease 3.5s forwards;
+    rotate: 180deg;
+  }
+
+  .label .input:checked+.circle::before {
+    animation: installing 3s ease-in-out forwards;
+  }
+
+  .label .input:checked+.circle .icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked~.circle .square {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .label .input:checked~.title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .label .input:checked~.title:last-child {
+    animation: showInstalledMessage 0.4s ease 3.5s forwards;
+  }
+
+  @keyframes pulse {
+    0% {
+      scale: 0.95;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
     }
-    .section { margin: 15px 0; }
-    .hidden { display: none; }
-    .button {
-      cursor: pointer;
-      padding: 8px 12px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      margin: 5px;
-      border-radius: 5px;
-      font-size: 14px;
-      text-decoration: none;
-      display: inline-block;
+
+    70% {
+      scale: 1;
+      box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
     }
-    .paper-option { margin-left: 20px; margin-top: 10px; }
-  </style>
+
+    100% {
+      scale: 0.95;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+
+  @keyframes installing {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: 100%;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(-90deg) translate(27px) rotate(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    99% {
+      transform: rotate(270deg) translate(27px) rotate(270deg);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes installed {
+    100% {
+      width: 150px;
+      border-color: rgb(35, 174, 35);
+    }
+  }
+
+  @keyframes circleDelete {
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes showInstalledMessage {
+    100% {
+      opacity: 1;
+      visibility: visible;
+      right: 56px;
+    }
+  }
+
+  .test-btn {
+    padding: 8px 14px;
+    background-color:  #007bff;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+</style>
 {% endblock %}
 
 {% block body %}
-  <h1>NEET Previous Year Papers (2018–2025)</h1>
+<h1>NEET Previous Year Papers (2018–2025)</h1>
 
-  <div id="neet-container"></div>
+<div class="neet-wrapper" id="neet-container"></div>
 
-  <script>
-    const neetContainer = document.getElementById('neet-container');
+<script>
+  const neetContainer = document.getElementById('neet-container');
 
-    for (let year = 2025; year >= 2018; year--) {
-      const yearId = `neet${year}`;
-      const pdfLink = `papers/neet-${year}.pdf`;      // Placeholder PDF path
-      const testLink = `test/neet-${year}.html`;       // Placeholder test path
+  for (let year = 2025; year >= 2018; year--) {
+    const pdfLink = `papers/neet-${year}.pdf`;
+    const testLink = `test/neet-${year}.html`;
 
-      neetContainer.innerHTML += `
-        <div class="section">
-          <button class="button" onclick="toggleVisibility('${yearId}')">${year}</button>
-          <div id="${yearId}" class="hidden">
-            <div class="paper-option">
-              <strong>NEET Paper ${year}</strong><br>
-              <a href="${pdfLink}" class="button" download>Download</a>
-              <a href="${testLink}" class="button">Take Test</a>
-            </div>
+    neetContainer.innerHTML += `
+      <div class="neet-card">
+        <div class="neet-year">NEET ${year}</div>
+        <div class="paper-option">
+          <div class="container">
+            <label class="label">
+              <a href="${pdfLink}" download>
+                <input type="checkbox" class="input" />
+                <span class="circle">
+                  <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">Download</p>
+                <p class="title">Open</p>
+              </a>
+            </label>
           </div>
+          <a href="${testLink}" class="test-btn">Take Test</a>
         </div>
-      `;
-    }
-
-    function toggleVisibility(id) {
-      const el = document.getElementById(id);
-      if (el) el.classList.toggle('hidden');
-    }
-  </script>
-
-
+      </div>
+    `;
+  }
+</script>
 {% endblock %}

@@ -11,6 +11,15 @@
     --page2-color: black;
     --nav2-bg: darkblue;
     --nav-text: white;
+    --intro-bg: #8af6d2;
+    --intro-text:#0F172A;
+  }
+  .intro{
+    background-color: var(--intro-bg);
+    /* color: var(--intro-text); */
+  }
+  .top{
+    color: var(--intro-text);
   }
 
   .page2 {
@@ -110,5 +119,7 @@
     --page2-color: #e2e8f0;
     --nav2-bg: #0a0e19;
     --nav2-text: white;
+    --intro-bg:#034432;
+    --intro-text:#ECFCCB;
     
   }

@@ -8,6 +8,18 @@ Resources {% endblock %} {% block extra_css %}
   body {
     overflow-x: hidden;
   }
+  button{
+    color: #1F1F1F;
+  }
+  .toptext{
+    font-size: 30px;
+  }
+  .emoji{
+    font-size: 80px;
+  }
+  .head{
+    font-size: 30px;
+  }
   .page2 {
     width: 100vw;
     height: 125%;
@@ -104,14 +116,11 @@ Resources {% endblock %} {% block extra_css %}
   }
 
   .card .text {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     margin: 10px 0;
     font-weight: 600;
   }
 
-  .card .text:nth-child(3) {
-    font-size: 2rem;
-  }
 
   .buttonjee,
   .buttonneet,
@@ -135,8 +144,8 @@ Resources {% endblock %} {% block extra_css %}
     width: 100%;
     padding: 12px;
     font-size: 1rem;
-    background-color: var(--primary-color);
-    color: #fff;
+    /* background-color: var(--primary-color); */
+    /* color: #fff; */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -144,12 +153,24 @@ Resources {% endblock %} {% block extra_css %}
     transform-origin: center center;
     will-change: transform;
     transition: all 0.3s ease;
+    /* color: #1F1F1F; */
   }
 
+  .jeebutton{
+    background-color: #007bff  ;
+    color: #1F1F1F;
+  }
+  .neetbutton{
+    background-color:  #007bff;
+  
+  }
+  .subjectbutton{
+    background-color: #007bff;
+  }
   .jeebutton:hover,
   .neetbutton:hover,
   .subjectbutton:hover {
-    background-color: #0056b3;
+    /* background-color: #0056b3; */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
     transition: all 0.3s ease;
@@ -198,14 +219,14 @@ Resources {% endblock %} {% block extra_css %}
 <!-- Main Section -->
 <div class="intro">
   <div class="top">STUDY SMART</div>
-  <div class="top1">Free JEE/NEET resources</div>
+  <div class="top top1">Free JEE/NEET resources</div>
 </div>
 
 <main>
   <div class="card card1">
-    <div class="text">JEE</div>
+    <div class="text toptext" >JEE</div>
     <div class="text">Resources</div>
-    <div class="text">🧪</div>
+    <div class="text emoji">🧪</div>
     <div class="text buttonjee">
       <button class="jeebutton"><a href="/jee">JEE MAINS</a></button>
       <button class="jeebutton"><a href="/jeeadvance">JEE ADVANCE</a></button>
@@ -213,14 +234,14 @@ Resources {% endblock %} {% block extra_css %}
   </div>
   <div id="path">
     <svg width="100" height="400">
-      <path d="M 50 0 Q 50 200 50 500" stroke="black" fill="transparent" />
+      <path d="M 50 0 Q 50 200 50 400" stroke="black" fill="transparent" />
     </svg>
   </div>
 
   <div class="card card2">
-    <div class="text">NEET</div>
-    <div class="text">Resources</div>
-    <div class="text">🩺</div>
+    <div class="text toptext">NEET</div>
+    <div class="text ">Resources</div>
+    <div class="text emoji">🩺</div>
     <div class="text buttonneet">
       <button type="button" class="neetbutton"><a href="/neet">NEET</a></button>
     </div>
@@ -228,14 +249,14 @@ Resources {% endblock %} {% block extra_css %}
 
   <div id="path2">
     <svg width="100" height="400">
-      <path d="M 50 0 Q 50 200 50 500" stroke="black" fill="transparent" />
+      <path d="M 50 0 Q 50 200 50 400" stroke="black" fill="transparent" />
     </svg>
   </div>
 
   <div class="card card3">
-    <div class="text">Formula</div>
+    <div class="text toptext">Formula</div>
     <div class="text">Sheet</div>
-    <div class="text">📝</div>
+    <div class="text emoji">📝</div>
     <div class="text buttonsubject">
       <button type="button" class="subjectbutton">
         <a href="/formulasheet">Subjects</a>
@@ -245,7 +266,7 @@ Resources {% endblock %} {% block extra_css %}
 </main>
 <!-- Instagram Button -->
 <div class="light-button">
-  <a href="https://instagram.com" target="_blank">
+  <a href="https://www.instagram.com/ntarip_ofc/" target="_blank">
     <button class="bt">
       <div class="light-holder">
         <div class="dot"></div>

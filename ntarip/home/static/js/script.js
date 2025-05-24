@@ -66,7 +66,7 @@ path2Container.addEventListener("mousemove", function (dets) {
   const bounds = path2Container.getBoundingClientRect();
   const x = dets.clientX - bounds.left;
   const y = dets.clientY - bounds.top;
-  path = `M 50 0 Q ${x} ${y} 50 500`
+  path = `M 50 0 Q ${x} ${y} 50 400`
   gsap.to("#path2 svg path", {
     attr: {
       d: path

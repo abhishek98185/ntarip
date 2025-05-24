@@ -8,9 +8,6 @@ Resources {% endblock %} {% block extra_css %}
     overflow-x: hidden;
   }
 
-  button {
-    color: #1F1F1F;
-  }
 
   .toptext {
     font-size: 30px;
@@ -140,7 +137,7 @@ Resources {% endblock %} {% block extra_css %}
   }
 
 
-  .buttonjee,
+  /* .buttonjee, */
   .buttonneet,
   .buttonsubject {
     display: flex;
@@ -157,14 +154,8 @@ Resources {% endblock %} {% block extra_css %}
     text-decoration: none;
   }
 
-  .jeebutton,
-  .neetbutton,
-  .subjectbutton {
-    width: 100%;
-    padding: 12px;
+  .jeebutton{
     font-size: 1rem;
-    /* background-color: var(--primary-color); */
-    /* color: #fff; */
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -172,7 +163,22 @@ Resources {% endblock %} {% block extra_css %}
     transform-origin: center center;
     will-change: transform;
     transition: all 0.3s ease;
-    /* color: #1F1F1F; */
+    width: 80%;
+  }
+  
+  .neetbutton,
+  .subjectbutton {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transform-origin: center center;
+    will-change: transform;
+    transition: all 0.3s ease;
+   
   }
 
   .jeebutton {

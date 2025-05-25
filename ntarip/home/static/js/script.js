@@ -39,6 +39,7 @@ var path = `M 50 0 Q 50 200 50 400`
 var finalpath = `M 50 0 Q 50 200 50 400`
 var pathContainer = document.querySelector("#path")
 pathContainer.addEventListener("mousemove", function (dets) {
+
   const bounds = pathContainer.getBoundingClientRect();
   const x = dets.clientX - bounds.left;
   const y = dets.clientY - bounds.top;
@@ -85,3 +86,4 @@ path2Container.addEventListener("mouseleave", function () {
     ease: "elastic.out(1, 0.2)"
   })
 })
+

@@ -520,8 +520,9 @@ JEE Advanced Papers
             const testBtn = document.createElement("a");
             testBtn.className = "button";
             
-            testBtn.href = `/exam/paper/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
-
+           testBtn.href = `/exam/paper/${year}/${paperName.toLowerCase().replace(" ", "-")}`;
+            // testBtn.href = "exam/paper/";
+            testBtn.target = "_blank"; // Open in a new tab
             console.log(testBtn.href);
             testBtn.textContent = "Give as a Test";
 

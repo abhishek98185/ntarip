@@ -371,7 +371,7 @@ JEE Advanced Papers
                 openTitle.style.pointerEvents = "none";
 
                 const paperNumber = paperName.endsWith("1") ? "1" : "2";
-                const fileUrl = `/static/media/advance/${year}/paper-${paperNumber}.pdf`;
+                const fileUrl = "{% static 'papers/advance/' %}" + year + "/paper-" + paperNumber + ".pdf";
 
                 checkbox.addEventListener("change", () => {
                     if (checkbox.checked) {

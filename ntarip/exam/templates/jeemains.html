@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      padding: 0%;
+      margin: 0%;
+    }
+    
+
+    .top {
+      background-color: #0047ab;
+      padding: 15px;
+      color: white;
+    }
+
+    .top1 {
+      display: flex;
+      justify-content: space-between;
+      font-size: x-large;
+    }
+
+    .top2 {
+      display: flex;
+      padding-top: 5px;
+      justify-content: center;
+      gap: 5vw;
+      font-size: 19px;
+    }
+    .subject{
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .main {
+      display: flex;
+    }
+
+    .question_display {
+      background-color: white;
+      width: 70vw;
+      border: 2px solid black;
+      height: 70vh;
+      padding: 3vh;
+      overflow-y: auto;
+    }
+    .question_number{
+      font-size: 35px;
+    }
+    .question_status {
+      padding: 10px 20px;
+      width: 30vw;
+      
+    }
+
+    .main {
+      margin-top: 20px;
+      margin-left: 20px;
+
+    }
+    .attempted {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      background-color: #21A957;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.4s ease;
+      position: relative;
+      box-shadow: 0 0 0 0 rgb(255, 255, 255);
+      overflow: hidden;
+    }
+
+    .question_here {
+      font-size: 30px;
+      min-height: 30vh;
+    }
+
+    .option-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .option-group input[type="radio"] {
+      display: none;
+    }
+
+    .option-group label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      font-family: sans-serif;
+    }
+
+    .option-group input[type="radio"]:checked+label {
+      border: 2px solid #1976d2;
+      background-color: #e3f2fd;
+    }
+
+    .option-circle {
+      width: 28px;
+      height: 28px;
+      background-color: #1976d2;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .notvisited,
+    .notanswered,
+    .answered,
+    .marked,
+    .answeredandmarked {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-number {
+      width: 40px;
+      height: 40px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .unanswerednumber {
+
+      width: 45px;
+      height: 35px;
+      background: linear-gradient(to bottom, #e75b1e, #d64500);
+      color: white;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+      border-radius: 0 6px 6px 0;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .up2 {
+      display: flex;
+      gap: 2vw;
+    }
+
+
+
+    .footer {
+      display: flex;
+      padding-left: 30vw;
+      padding-top: 10px;
+      width: 35vw;
+      justify-content: space-evenly;
+    }
+
+    .previous-button {
+      padding: 8px 20px;
+      background-color: rgb(91, 91, 240);
+      color: white;
+      border: 1px solid rgb(20, 20, 179);
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .previous-button:hover {
+      background-color: rgb(41, 41, 227);
+      border-color: rgb(5, 5, 81);
+    }
+
+    .questions {
+      display: flex;
+
+      flex-wrap: wrap;
+    }
+
+    #button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 1000px;
+      margin: 40px auto;
+      justify-content: center;
+    }
+
+    .button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+
+      color: black;
+      border: none;
+      text-align: center;
+      line-height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .questions {
+      display: flex;
+      flex-wrap: wrap;
+      height: 60vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .question_status {
+      padding: 10px 20px;
+      width: 30vw;
+      height: 70vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #button-container {
+      width: 100%;
+    }
+
+    .submitbutton {
+      background-color: #1976d2 ;
+      border-color: #032c55;
+      width: 150px;
+      margin-left: 150px;
+      margin-top: 30px;
+      
+    }
+
+    .submitbutton:hover {
+      background-color: #0657a9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="top1">
+      <div class="ntarip">NTARIP</div>
+      <div>JEE MAINS</div>
+      <div>Candidate name:</div> <!-- candidate name -->
+      <div><span> Time: </span> <span id="timer">03:00:00</span></div>
+    </div>
+    <div class="top2">
+      <div class="subject">Chemistry</div>
+      <div class="subject">Physics</div>
+      <div class="subject">Mathematics</div>
+    </div>
+  </div>
+
+
+
+  <!-- main box contains question  -->
+
+  <div class="main">
+    <div class="question_display">
+
+      <!-- question number  -->
+      <div class="question_number"> Question 1:</div>
+
+      <!-- question  -->
+      <div class="question_here">The characteristic distance at which quantum gravitational effects are significant, the
+        Planck length, can be determined from a suitable combination of the fundamental physical constants G, ℏ and c.
+        Which of the following correctly gives the Planck length?</div>
+
+      <!-- options -->
+      <div class="options">
+        <div class="option-group">
+          <input type="radio" id="optA" name="option" value="A">
+          <label for="optA">
+            <div class="option-circle">A</div>
+            <span><strong>Statement I</strong> is incorrect but <strong>Statement II</strong> is correct</span>
+          </label>
+
+          <input type="radio" id="optB" name="option" value="B">
+          <label for="optB">
+            <div class="option-circle">B</div>
+            <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are incorrect</span>
+          </label>
+
+          <input type="radio" id="optC" name="option" value="C">
+          <label for="optC">
+            <div class="option-circle">C</div>
+            <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are correct</span>
+          </label>
+
+          <input type="radio" id="optD" name="option" value="D">
+          <label for="optD">
+            <div class="option-circle">D</div>
+            <span><strong>Statement I</strong> is correct but <strong>Statement II</strong> is incorrect</span>
+          </label>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="question_status">
+      <!-- upperpart -->
+      <div class="tell">
+        <div class="up2">
+          <div class="notvisited">
+            <div class="status-number">89</div>
+            <div class="status-text">Not Visited</div>
+          </div>
+          <div class="notanswered">
+            <div class="unanswerednumber">1</div>
+            <div class="status-text">Not Answered</div>
+          </div>
+        </div>
+        <div class="up2">
+          <div class="answered">
+
+          </div>
+          <div class="marked"></div>
+          <div class="answeredandmarked"></div>
+        </div>
+      </div>
+      <!-- lowerpart -->
+      <div class="questions">
+        <div id="button-container"></div>
+        
+      </div>
+      <button class="previous-button submitbutton">Submit</button>
+
+    </div>
+  </div>
+  <div class="footer">
+    <div class="clear_resp">
+      <button class="previous-button clearresponse">Clear Response</button>
+    </div>
+    <div class="prev_button">
+      <button class="previous-button previousbutton">Previous</button>
+    </div>
+    <div class="next_button">
+      <button class="previous-button nextbutton">Next</button>
+    </div>
+  </div>
+
+
+  <script>
+    function startTimer(duration, display) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + ":" + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = 0;
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      const timerDisplay = document.getElementById("timer");
+      startTimer(3 * 60 * 60, timerDisplay); // 3 hours
+    };
+    const container = document.getElementById("button-container");
+
+    for (let i = 1; i <= 90; i++) {
+      const btn = document.createElement("button");
+      btn.innerText = i;
+      btn.className = "button";
+      container.appendChild(btn);
+    }
+  </script>
+</body>
+
+</html>

@@ -100,63 +100,122 @@ JEE Mains
 
 
 <script>
+  // const startYear = 2015;
+  // const endYear = 2025;
+  // const container = document.getElementById('papers-container');
+
+  // for (let year = startYear; year <= endYear; year++) {
+  //   const yearDiv = document.createElement('div');
+  //   yearDiv.className = 'year-section';
+
+  //   const yearHeading = document.createElement('h2');
+  //   yearHeading.textContent = `JEE Mains ${year}`;
+  //   yearDiv.appendChild(yearHeading);
+
+  //   ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
+  //     const month = attempt.split(' ')[0]; 
+  //     const attemptDiv = document.createElement('div');
+  //     attemptDiv.className = 'attempt';
+
+  //     const attemptHeading = document.createElement('h3');
+  //     attemptHeading.textContent = attempt;
+  //     attemptDiv.appendChild(attemptHeading);
+
+  //     const buttonsContainer = document.createElement('div');
+  //     buttonsContainer.className = 'buttons-container';
+
+  //     for (let day = 1; day <= 5; day++) {
+  //       for (let shift = 1; shift <= 2; shift++) {
+  //         const paperCard = document.createElement('div');
+  //         paperCard.className = 'paper-card';
+
+  //         const paperTitle = document.createElement('div');
+  //         paperTitle.className = 'paper-title';
+  //         paperTitle.textContent = `Day ${day} - Shift ${shift}`;
+  //         paperCard.appendChild(paperTitle);
+
+  //         const downloadBtn = document.createElement('button');
+  //         downloadBtn.className = 'download-btn';
+  //         downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
+  //         // downloadBtn.onclick = () => { window.open('link-to-pdf'); };
+
+  //         const testBtn = document.createElement('button');
+  //         testBtn.className = 'test-btn';
+  //         // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
+  //         testBtn.textContent = 'Give as a Test';
+  //         testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`; };
+
+  //         paperCard.appendChild(downloadBtn);
+  //         paperCard.appendChild(testBtn);
+
+  //         buttonsContainer.appendChild(paperCard);
+  //       }
+  //     }
+
+  //     attemptDiv.appendChild(buttonsContainer);
+  //     yearDiv.appendChild(attemptDiv);
+  //   });
+
+  //   container.appendChild(yearDiv);
+  // }
   const startYear = 2015;
-  const endYear = 2025;
-  const container = document.getElementById('papers-container');
+const endYear = 2025;
+const container = document.getElementById('papers-container');
 
-  for (let year = startYear; year <= endYear; year++) {
-    const yearDiv = document.createElement('div');
-    yearDiv.className = 'year-section';
+// Loop from endYear to startYear (descending)
+for (let year = endYear; year >= startYear; year--) {
+  const yearDiv = document.createElement('div');
+  yearDiv.className = 'year-section';
 
-    const yearHeading = document.createElement('h2');
-    yearHeading.textContent = `JEE Mains ${year}`;
-    yearDiv.appendChild(yearHeading);
+  const yearHeading = document.createElement('h2');
+  yearHeading.textContent = `JEE Mains ${year}`;
+  yearDiv.appendChild(yearHeading);
 
-    ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
-      const month = attempt.split(' ')[0]; 
-      const attemptDiv = document.createElement('div');
-      attemptDiv.className = 'attempt';
+  ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
+    const month = attempt.split(' ')[0];
+    const attemptDiv = document.createElement('div');
+    attemptDiv.className = 'attempt';
 
-      const attemptHeading = document.createElement('h3');
-      attemptHeading.textContent = attempt;
-      attemptDiv.appendChild(attemptHeading);
+    const attemptHeading = document.createElement('h3');
+    attemptHeading.textContent = attempt;
+    attemptDiv.appendChild(attemptHeading);
 
-      const buttonsContainer = document.createElement('div');
-      buttonsContainer.className = 'buttons-container';
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'buttons-container';
 
-      for (let day = 1; day <= 5; day++) {
-        for (let shift = 1; shift <= 2; shift++) {
-          const paperCard = document.createElement('div');
-          paperCard.className = 'paper-card';
+    for (let day = 1; day <= 5; day++) {
+      for (let shift = 1; shift <= 2; shift++) {
+        const paperCard = document.createElement('div');
+        paperCard.className = 'paper-card';
 
-          const paperTitle = document.createElement('div');
-          paperTitle.className = 'paper-title';
-          paperTitle.textContent = `Day ${day} - Shift ${shift}`;
-          paperCard.appendChild(paperTitle);
+        const paperTitle = document.createElement('div');
+        paperTitle.className = 'paper-title';
+        paperTitle.textContent = `Day ${day} - Shift ${shift}`;
+        paperCard.appendChild(paperTitle);
 
-          const downloadBtn = document.createElement('button');
-          downloadBtn.className = 'download-btn';
-          downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
-          // downloadBtn.onclick = () => { window.open('link-to-pdf'); };
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'download-btn';
+        downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
 
-          const testBtn = document.createElement('button');
-          testBtn.className = 'test-btn';
-          // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
-          testBtn.textContent = 'Give as a Test';
-          testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`; };
+        const testBtn = document.createElement('button');
+        testBtn.className = 'test-btn';
+        testBtn.textContent = 'Give as a Test';
+        testBtn.onclick = () => {
+          window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`;
+        };
 
-          paperCard.appendChild(downloadBtn);
-          paperCard.appendChild(testBtn);
-
-          buttonsContainer.appendChild(paperCard);
-        }
+        paperCard.appendChild(downloadBtn);
+        paperCard.appendChild(testBtn);
+        buttonsContainer.appendChild(paperCard);
       }
+    }
 
-      attemptDiv.appendChild(buttonsContainer);
-      yearDiv.appendChild(attemptDiv);
-    });
+    attemptDiv.appendChild(buttonsContainer);
+    yearDiv.appendChild(attemptDiv);
+  });
 
-    container.appendChild(yearDiv);
-  }
+  container.appendChild(yearDiv);
+}
+
 </script>
 {% endblock %}

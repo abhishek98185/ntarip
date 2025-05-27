@@ -271,7 +271,7 @@
     <div class="top1">
       <div class="ntarip">NTARIP</div>
       <div>JEE MAINS</div>
-      <div>Candidate name:</div> <!-- candidate name -->
+      <div>Candidate name:{{request.user}}</div> <!-- candidate name -->
       <div><span> Time: </span> <span id="timer">03:00:00</span></div>
     </div>
     <div class="top2">
@@ -408,19 +408,24 @@
   
   // Convert Django context into JS object
   const questions = [
-    {% for q in mcq_questions %}
-      {
-        id: {{ forloop.counter }},
-        question: "{{ q.question_text|escapejs }}",
-        options: [
-          "{{ q.option1|escapejs }}",
-          "{{ q.option2|escapejs }}",
-          "{{ q.option3|escapejs }}",
-          "{{ q.option4|escapejs }}"
-        ]
-      }{% if not forloop.last %},{% endif %}
-    {% endfor %}
-  ];
+  {% for q in Questions %}
+    {
+      id: {{ forloop.counter }},
+      question: "{{ q.question_text|escapejs }}",
+      {% if q.option1 %}
+      options: [
+        "{{ q.option1|escapejs }}",
+        "{{ q.option2|escapejs }}",
+        "{{ q.option3|escapejs }}",
+        "{{ q.option4|escapejs }}"
+      ],
+      {% else %}
+      answer: "{{ q.answer|escapejs }}",
+      {% endif %}
+    }{% if not forloop.last %},{% endif %}
+  {% endfor %}
+];
+
 
   // console.log(questions);
 

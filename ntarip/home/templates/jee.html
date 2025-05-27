@@ -101,7 +101,7 @@ JEE Mains
 
 <script>
   const startYear = 2015;
-  const endYear = 2024;
+  const endYear = 2025;
   const container = document.getElementById('papers-container');
 
   for (let year = startYear; year <= endYear; year++) {
@@ -113,6 +113,7 @@ JEE Mains
     yearDiv.appendChild(yearHeading);
 
     ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
+      const month = attempt.split(' ')[0]; 
       const attemptDiv = document.createElement('div');
       attemptDiv.className = 'attempt';
 
@@ -140,8 +141,9 @@ JEE Mains
 
           const testBtn = document.createElement('button');
           testBtn.className = 'test-btn';
+          // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
           testBtn.textContent = 'Give as a Test';
-          // testBtn.onclick = () => { window.location.href = 'test-mode.html'; };
+          testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`; };
 
           paperCard.appendChild(downloadBtn);
           paperCard.appendChild(testBtn);

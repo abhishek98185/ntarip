@@ -12,11 +12,15 @@ def load_database():
     # Safer way to get the correct paper name
     paper_name = PaperName.objects.get(name__iexact="jee-mains")
     shift = 1
-    date = datetime.date(2025, 1, 22)  # Use real date instead of year + month + day
-
+    # date = datetime.date(2025, 1, 22)  # Use real date instead of year + month + day
+    year = 2025
+    month = "January"
+    day = 1
     paper, created = Paper.objects.get_or_create(
         paper_name=paper_name,
-        date=date,
+        year=year,
+        month=month,
+        day=day,
         shift=shift
     )
 

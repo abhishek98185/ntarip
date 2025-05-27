@@ -197,12 +197,11 @@ for (let year = endYear; year >= startYear; year--) {
         downloadBtn.className = 'download-btn';
         downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
 
-        const testBtn = document.createElement('button');
-        testBtn.className = 'test-btn';
-        testBtn.textContent = 'Give as a Test';
-        testBtn.onclick = () => {
-          window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`;
-        };
+          const testBtn = document.createElement('button');
+          testBtn.className = 'test-btn';
+          // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
+          testBtn.textContent = 'Give as a Test';
+          testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=${day}&shift=${shift}`; };
 
         paperCard.appendChild(downloadBtn);
         paperCard.appendChild(testBtn);

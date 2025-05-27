@@ -13,12 +13,12 @@ def exam(request):
     shift = request.GET.get('shift')  # 1
     if exam is None or year is None or month is None or day is None or shift is None:
         return render(request, 'error.html', {'message': 'Invalid parameters'})
-    date = datetime.datetime.strptime(f"{year}-{month}-{day}", "%Y-%B-%d")
+    # date = datetime.datetime.strptime(f"{year}-{month}-{day}", "%Y-%B-%d")
     if exam == "jee-mains":
         # Get the PaperName object
         paper_name_obj = get_object_or_404(PaperName, name="jee-mains")
         # Get the Paper object for the given year and name
-        paper = get_object_or_404(Paper, paper_name=paper_name_obj, shift=shift, date=date)
+        paper = get_object_or_404(Paper, paper_name=paper_name_obj, shift=shift,year=year, month=month, day=day)
 
         
         physics_questions = list(paper.physics_mcq_questions.all()) + list(paper.physics_numerical_questions.all())

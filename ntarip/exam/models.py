@@ -14,7 +14,7 @@ class Paper(models.Model):
     def __str__(self):
         return f"{self.paper_name} ({self.year}) - {self.number}"
 class QuestionAndOptions(models.Model):
-    paper = models.ForeignKey(Paper, on_delete=models.CASCADE, related_name='questions')
+    paper = models.ForeignKey(Paper, on_delete=models.CASCADE, related_name='mcq_questions')
     question_text = models.CharField(max_length=255)
     option1 = models.CharField(max_length=255)
     option2 = models.CharField(max_length=255)
@@ -23,7 +23,13 @@ class QuestionAndOptions(models.Model):
     answer = models.CharField(max_length=255)
     def __str__(self):
         return f"{self.question_text} - {self.paper.paper_name.name}"
-
+class QuestionAndNumerical(models.Model):
+    paper = models.ForeignKey(Paper, on_delete=models.CASCADE, related_name='numerical_questions')
+    question_text = models.CharField(max_length=255)
+    
+    answer = models.CharField(max_length=255)
+    def __str__(self):
+        return f"{self.question_text} - {self.paper.paper_name.name}"
 class AnswerSheet(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     paper = models.ForeignKey(Paper, on_delete=models.CASCADE)

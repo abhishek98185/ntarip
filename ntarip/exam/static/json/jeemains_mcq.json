@@ -1,0 +1,613 @@
+{
+    "Maths": [
+        {
+            "question": "The number of non-empty equivalence relations on the set {1,2,3} is :",
+            "options": [
+                "6",
+                "7",
+                "5",
+                "4"
+            ],
+            "answer": "5",
+            "question_number": 1
+        },
+        {
+            "question": "Let f: R → R be a twice differentiable function such that f(x+y)=f(x)f(y) for all x, y ∈ R. If f'(0)=4a and f satisfies f''(x)-3a f'(x)-f(x)=0, a>0, then the area of the region R = {(x, y) | 0 ≤ y ≤ f(ax), 0 ≤ x ≤ 2} is :",
+            "options": [
+                "e^{2}-1",
+                "e^{4}+1",
+                "e^{4}-1",
+                "e^{2}+1"
+            ],
+            "answer": "e^{2}-1",
+            "question_number": 2
+        },
+        {
+            "question": "Let the triangle PQR be the image of the triangle with vertices (1,3),(3,1) and (2,4) in the line x+2y=2. If the centroid of ΔPQR is the point (α, β), then 15(α-β) is equal to :",
+            "options": [
+                "24",
+                "19",
+                "21",
+                "22"
+            ],
+            "answer": "22",
+            "question_number": 3
+        },
+        {
+            "question": "Let z₁, z₂ and z₃ be three complex numbers on the circle |z|=1 with arg(z₁)=−π/4, arg(z₂)=0 and arg(z₃)=π/4. If |z₁ overline{z₂} + z₂ overline{z₃} + z₃ overline{z₁}|²=α+β√2, α, β ∈ Z, then the value of α²+β² is :",
+            "options": [
+                "24",
+                "41",
+                "31",
+                "29"
+            ],
+            "answer": "29",
+            "question_number": 4
+        },
+        {
+            "question": "Using the principal values of the inverse trigonometric functions the sum of the maximum and the minimum values of 16[(sec⁻¹x)² + (cosec⁻¹x)²] is :",
+            "options": [
+                "24π²",
+                "18π²",
+                "31π²",
+                "22π²"
+            ],
+            "answer": "22π²",
+            "question_number": 5
+        },
+        {
+            "question": "A coin is tossed three times. Let X denote the number of times a tail follows a head. If μ and σ² denote the mean and variance of X, then the value of 64(μ+σ²) is :",
+            "options": [
+                "51",
+                "48",
+                "32",
+                "64"
+            ],
+            "answer": "48",
+            "question_number": 6
+        },
+        {
+            "question": "Let a₁, a₂, a₃ ... be a G.P. of increasing positive terms. If a₁a₅=28 and a₂+a₄=29, the a₆ is equal to",
+            "options": [
+                "628",
+                "526",
+                "784",
+                "812"
+            ],
+            "answer": "784",
+            "question_number": 7
+        },
+        {
+            "question": "Let L₁: (x−1)/2 = (y−2)/3 = (z−3)/4 and L₂: (x−2)/3 = (y−4)/4 = (z−5)/5 be two lines. Then which of the following points lies on the line of the shortest distance between L₁ and L₂?",
+            "options": [
+                "(−5/3,−7,1)",
+                "(2,3,1/3)",
+                "(8/3,−1,1/3)",
+                "(14/3,−3,22/3)"
+            ],
+            "answer": "(14/3,−3,22/3)",
+            "question_number": 8
+        },
+        {
+            "question": "The product of all solutions of the equation e^{5(logₑ x)²+3}=x⁸, x>0, is :",
+            "options": [
+                "e^{8/5}",
+                "e^{6/5}",
+                "e^{2}",
+                "e"
+            ],
+            "answer": "e^{8/5}",
+            "question_number": 9
+        },
+        {
+            "question": "If ∑_{r=1}^n T_r = [(2n−1)(2n+1)(2n+3)(2n+5)]/64, then lim_{n→∞} ∑_{r=1}^n (1/T_r) is equal to :",
+            "options": [
+                "1",
+                "0",
+                "2/3",
+                "1/3"
+            ],
+            "answer": "2/3",
+            "question_number": 10
+        },
+        {
+            "question": "From all the English alphabets, five letters are chosen and are arranged in alphabetical order. The total number of ways, in which the middle letter is 'M', is :",
+            "options": [
+                "14950",
+                "6084",
+                "4356",
+                "5148"
+            ],
+            "answer": "5148",
+            "question_number": 11
+        },
+        {
+            "question": "Let x=x(y) be the solution of the differential equation y² dx + (x−1/y) dy = 0. If x(1)=1, then x(1/2) is :",
+            "options": [
+                "1/2+e",
+                "3/2+e",
+                "3−e",
+                "3+e"
+            ],
+            "answer": "3−e",
+            "question_number": 12
+        },
+        {
+            "question": "Let the parabola y=x²+px−3, meet the coordinate axes at the points P, Q and R. If the circle C with centre at (−1,−1) passes through the points P, Q and R, then the area of ΔPQR is :",
+            "options": [
+                "4",
+                "6",
+                "7",
+                "5"
+            ],
+            "answer": "6",
+            "question_number": 13
+        },
+        {
+            "question": "A circle C of radius 2 lies in the second quadrant and touches both the coordinate axes. Let r be the radius of a circle that has centre at the point (2,5) and intersects the circle C at exactly two points. If the set of all possible values of r is the interval (α, β), then 3β−2α is equal to :",
+            "options": [
+                "15",
+                "14",
+                "12",
+                "10"
+            ],
+            "answer": "15",
+            "question_number": 14
+        },
+        {
+            "question": "Let for f(x)=7 tan⁸x + 7 tan⁶x − 3 tan⁴x − 3 tan²x, I₁=∫₀^{π/4} f(x) dx and I₂=∫₀^{π/4} x f(x) dx. Then 7I₁+12I₂ is equal to :",
+            "options": [
+                "2π",
+                "π",
+                "1",
+                "2"
+            ],
+            "answer": "1",
+            "question_number": 15
+        },
+        {
+            "question": "Let f(x) be a real differentiable function such that f(0)=1 and f(x+y)=f(x)f'(y)+f'(x)f(y) for all x, y ∈ R. Then ∑_{n=1}^{100} logₑ f(n) is equal to :",
+            "options": [
+                "2384",
+                "2525",
+                "5220",
+                "2406"
+            ],
+            "answer": "2525",
+            "question_number": 16
+        },
+        {
+            "question": "Let A={1,2,3,...,10} and B={m/n: m,n ∈ A, m<n and gcd(m,n)=1}. Then n(B) is equal to :",
+            "options": [
+                "31",
+                "36",
+                "37",
+                "29"
+            ],
+            "answer": "31",
+            "question_number": 17
+        },
+        {
+            "question": "The area of the region, inside the circle (x−2√3)²+y²=12 and outside the parabola y²=2√3 x is",
+            "options": [
+                "6π−8",
+                "3π−8",
+                "6π−16",
+                "3π+8"
+            ],
+            "answer": "6π−16",
+            "question_number": 18
+        },
+        {
+            "question": "Two balls are selected at random one by one without replacement from a bag containing 4 white and 6 black balls. If the probability that the first selected ball is black, given that the second selected ball is also black, is m/n, where gcd(m, n)=1, then m+n is equal to :",
+            "options": [
+                "14",
+                "4",
+                "11",
+                "13"
+            ],
+            "answer": "14",
+            "question_number": 19
+        },
+        {
+            "question": "Let the foci of a hyperbola be (1,14) and (1,−12). If it passes through the point (1,6), then the length of its latus-rectum is:",
+            "options": [
+                "25/6",
+                "24/5",
+                "288/5",
+                "144/5"
+            ],
+            "answer": "288/5",
+            "question_number": 20
+        }
+    ],
+    "Physics": [
+        {
+            "question": "A line charge of length 'a'/2 is kept at the center of ... The total electric flux through all the faces of the cube will be",
+            "options": [
+                "λa/(8ε₀)",
+                "λa/(16ε₀)",
+                "λa/(2ε₀)",
+                "λa/(4ε₀)"
+            ],
+            "answer": "λa/(8ε₀)",
+            "question_number": 28
+        },
+        {
+            "question": "Given below are two statements: one is labelled as Assertion (A) and the other is labelled as Reason (R). Assertion (A): If Young's double slit experiment is performed in an optically denser medium than air, then the consecutive fringes come closer. Reason (R): The speed of light reduces in an optically denser medium than air while its frequency does not change. In the light of the above statements, choose the most appropriate answer from the options given below:",
+            "options": [
+                "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                "(A) is false but (R) is true.",
+                "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+                "(A) is true but (R) is false."
+            ],
+            "answer": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+            "question_number": 29
+        },
+        {
+            "question": "Two spherical bodies of same materials having radii 0.2 m and 0.8 m are placed in same atmosphere. The temperature of the smaller body is 800 K and temperature of bigger body is 400 K. If the energy radiate from the smaller body is E, the energy radiated from the bigger body is (assume, effect of the surrounding to be negligible)",
+            "options": [
+                "256 E",
+                "E",
+                "64 E",
+                "16 E"
+            ],
+            "answer": "E",
+            "question_number": 30
+        },
+        {
+            "question": "An amount of ice of mass 10^{-3} kg and temperature -10°C is transformed to vapour of temperature 110° by applying heat. The total amount of work required for this conversion is ...",
+            "options": [
+                "3022 J",
+                "3043 J",
+                "3003 J",
+                "3024 J"
+            ],
+            "answer": "3043 J",
+            "question_number": 31
+        },
+        {
+            "question": "An electron in the ground state of the hydrogen atom has the orbital radius of 5.3×10^{-11} m while that for the electron in third excited state is 8.48×10^{-10} m. The ratio of the de Broglie wavelengths of electron in the ground state to that in excited state is",
+            "options": [
+                "4",
+                "9",
+                "3",
+                "16"
+            ],
+            "answer": "4",
+            "question_number": 32
+        },
+        {
+            "question": "In the diagram given below, there are three lenses formed. Considering negligible thickness of each of them as compared to [R₁] and [R₂], i.e., the radii of curvature for upper and lower surfaces of the glass lens, the power of the combination is",
+            "options": [
+                "-1/6(1/|R₁|+1/|R₂|)",
+                "-1/6(1/|R₁|−1/|R₂|)",
+                "1/6(1/|R₁|+1/|R₂|)",
+                "1/6(1/|R₁|−1/|R₂|)"
+            ],
+            "answer": "-1/6(1/|R₁|−1/|R₂|)",
+            "question_number": 33
+        },
+        {
+            "question": "An electron is made to enters symmetrically between two parallel and equally but oppositely charged metal plates, each of 10 cm length. The electron emerges out of the field region with a horizontal component of velocity 10⁶ m/s. If the magnitude of the electric between the plates is 9.1 V/cm, then the vertical component of velocity of electron is ...",
+            "options": [
+                "1×10⁶ m/s",
+                "0",
+                "16×10⁶ m/s",
+                "16×10⁴ m/s"
+            ],
+            "answer": "16×10⁶ m/s",
+            "question_number": 34
+        },
+        {
+            "question": "Which of the following resistivity (ρ) v/s temperature (T) curves is most suitable to be used in wire bound standard resistors?",
+            "options": [
+                "(1)",
+                "(2)",
+                "(3)",
+                "(4)"
+            ],
+            "answer": "(1)",
+            "question_number": 35
+        },
+        {
+            "question": "A closed organ and an open organ tube filled by two different gases having same bulk modulus but different densities ρ₁ and ρ₂ respectively. The frequency of 9th harmonic of closed tube is identical with 4th harmonic of open tube. If the length of the closed tube is 10 cm and the density ratio of the gases is ρ₁: ρ₂=1:16, then the length of the open tube is :",
+            "options": [
+                "20/7 cm",
+                "15/7 cm",
+                "20/9 cm",
+                "15/9 cm"
+            ],
+            "answer": "20/9 cm",
+            "question_number": 36
+        },
+        {
+            "question": "A uniform circular disc of radius 'R' and mass 'M' is rotating about an axis perpendicular to its plane and passing through its centre. A small circular part of radius R/2 is removed from the original disc as shown in the figure. Find the moment of inertia of the remaining part of the original disc about the axis as given above.",
+            "options": [
+                "7/32 MR²",
+                "9/32 MR²",
+                "17/32 MR²",
+                "13/32 MR²"
+            ],
+            "answer": "13/32 MR²",
+            "question_number": 37
+        },
+        {
+            "question": "A small point of mass m is placed at a distance 2R from the centre 'O' of a big uniform solid sphere of mass M and radius R. The gravitational force on 'm' due to M is F₁. A spherical part of radius R/3 is removed from the big sphere as shown in the figure and the gravitational force on m due to remaining part of M is found to be F₂. The value of ratio F₁:F₂ is",
+            "options": [
+                "16:9",
+                "11:10",
+                "12:11",
+                "12:9"
+            ],
+            "answer": "12:11",
+            "question_number": 38
+        },
+        {
+            "question": "The work functions of cesium (Cs) and lithium (Li) metals are 1.9 eV and 2.5 eV, respectively. If we incident a light of wavelength 550 nm on these two metal surface, then photo-electric effect is possible for the case of",
+            "options": [
+                "Li only",
+                "Cs only",
+                "Neither Cs nor Li",
+                "Both Cs and Li"
+            ],
+            "answer": "Cs only",
+            "question_number": 39
+        },
+        {
+            "question": "If B is magnetic field and μ₀ is permeability of free space, then the dimensions of (B/μ₀) is",
+            "options": [
+                "M T^{-2} A^{-1}",
+                "L^{-1} A",
+                "LT^{-2}A^{-1}",
+                "ML^{2}T^{-2}A^{-1}"
+            ],
+            "answer": "L^{-1} A",
+            "question_number": 40
+        },
+        {
+            "question": "A bob of mass m is suspended at a point O by a light string of length l and left to perform vertical motion (circular) as shown in figure. Initially, by applying horizontal velocity v₀ at the point 'A'. the string becomes slack when, the bob reaches at the point 'D'. The ratio of the kinetic energy of the bob at the points B and C is",
+            "options": [
+                "2",
+                "1",
+                "4",
+                "3"
+            ],
+            "answer": "2",
+            "question_number": 41
+        },
+        {
+            "question": "Given below are two statements: Statement-I: The equivalent emf of two nonideal batteries connected in parallel is smaller than either of the two emfs. Statement-II: The equivalent internal resistance of two nonideal batteries connected in parallel is smaller than the internal resistance of either of the two batteries. In the light of the above statements, choose the correct answer from the options given below.",
+            "options": [
+                "Statement-I is true but Statement-II is false",
+                "Both Statement-I and Statement-II are false",
+                "Both Statement-I and Statement-II are true",
+                "Statement-I is false but Statement-II is true"
+            ],
+            "answer": "Statement-I is false but Statement-II is true",
+            "question_number": 42
+        },
+        {
+            "question": "Which of the following circuits represents a forward biased diode ? (A) (B) (C) (D) (E) Choose the correct answer from the options given below :",
+            "options": [
+                "(B), (D) and (E) only",
+                "(A) and (D) only",
+                "(B), (C) and (E) only",
+                "(C) and (E) only"
+            ],
+            "answer": "(B), (C) and (E) only",
+            "question_number": 43
+        },
+        {
+            "question": "A parallel-plate capacitor of capacitance 40 μF is connected to a 100 V power supply. Now the intermediate space between the plates is filled with a dielectric material of dielectric constant K=2. Due to the introduction of dielectric material, the extra charge and the change in the electrostatic energy in the capacitor, respectively, are -",
+            "options": [
+                "2 mC and 0.2 J",
+                "8 mC and 2.0 J",
+                "4 mC and 0.2 J",
+                "2 mC and 0.4 J"
+            ],
+            "answer": "4 mC and 0.2 J",
+            "question_number": 44
+        },
+        {
+            "question": "Given is a thin convex lens of glass (refractive index μ) and each side having radius of curvature R. One side is polished for complete reflection. At what distance from the lens, an object be placed on the optic axis so that the image gets formed on the object itself.",
+            "options": [
+                "R/μ",
+                "R/(2μ−3)",
+                "μR",
+                "R/(2μ−1)"
+            ],
+            "answer": "R/(2μ−1)",
+            "question_number": 45
+        }
+    ],
+    "Chemistry": [
+        {
+            "question": "A solution of aluminium chloride is electrolysed for 30 minutes using a current of 2 A. The amount of the aluminium deposited at the cathode is",
+            "options": [
+                "1.660 g",
+                "1.007 g",
+                "0.336 g",
+                "0.441 g"
+            ],
+            "answer": "0.336 g",
+            "question_number": 51
+        },
+        {
+            "question": "Which of the following electronegativity order is incorrect?",
+            "options": [
+                "Al<Mg<B<N",
+                "Al<Si<C<N",
+                "Mg<Be<B<N",
+                "S<Cl<O<F"
+            ],
+            "answer": "Mg<Be<B<N",
+            "question_number": 52
+        },
+        {
+            "question": "Match List-I with List-II (A) Al³⁺<Mg²⁺<Na⁺<F (I) Ionisation Enthalpy (B) B<C<O<N (II) Metallic character (C) B<Al<Mg<K (III) Electronegativity (D) Si<P<S<Cl (IV) Ionic radii) Choose the correct answer from the options given below:",
+            "options": [
+                "A-IV, B-I, C-III, D-II",
+                "A-II, B-III, C-IV, D-I",
+                "A-IV, B-I, C-II, D-III",
+                "A-III, B-IV, C-II, D-I"
+            ],
+            "answer": "A-IV, B-I, C-II, D-III",
+            "question_number": 54
+        },
+        {
+            "question": "Which of the following acids is a vitamin?",
+            "options": [
+                "Adipic acid",
+                "Aspartic acid",
+                "Ascorbic acid",
+                "Saccharic acid"
+            ],
+            "answer": "Ascorbic acid",
+            "question_number": 55
+        },
+        {
+            "question": "A liquid when kept inside a thermally insulated closed vessel at 25°C was mechanically stirred from outside. What will be the correct option for the following thermodynamic parameters?",
+            "options": [
+                "ΔU>0, q=0, w>0",
+                "ΔU=0, q=0, w=0",
+                "ΔU<0, q=0, w>0",
+                "ΔU=0, q<0, w>0"
+            ],
+            "answer": "ΔU>0, q=0, w>0",
+            "question_number": 56
+        },
+        {
+            "question": "Radius of the first excited state of Helium ion is given as : a₀ → radius of first stationary state of hydrogen atom.",
+            "options": [
+                "r=a₀/2",
+                "r=a₀/4",
+                "r=4a₀",
+                "r=2a₀"
+            ],
+            "answer": "r=2a₀",
+            "question_number": 57
+        },
+        {
+            "question": "Given below are two statements: Statement I: CH₃−O−CH₂−Cl will undergo SN1 reaction though it is a primary halide. Statement II: CC(C)(C)CCl will not undergo SN2 reaction very easily though it is a primary halide. In the light of the above statements, choose the most appropriate answer from the options given below:",
+            "options": [
+                "Statement I is incorrect but Statement II is correct.",
+                "Both Statement I and Statement II are incorrect",
+                "Statement I is correct but Statement II is incorrect",
+                "Both Statement I and Statement II are correct."
+            ],
+            "answer": "Both Statement I and Statement II are correct.",
+            "question_number": 58
+        },
+        {
+            "question": "Given below are two statements: Statement I: One mole of propyne reacts with excess of sodium to liberate half a mole of H₂ gas. Statement II: Four g of propyne reacts with NaNH₂ to liberate NH₃ gas which occupies 224 mL at STP. In the light of the above statements, choose the most appropriate answer from the options given below:",
+            "options": [
+                "Statement I is correct but Statement II is incorrect.",
+                "Both Statement I and Statement II are incorrect",
+                "Statement I is incorrect but Statement II is correct",
+                "Both Statement I and Statement II are correct."
+            ],
+            "answer": "Statement I is correct but Statement II is incorrect.",
+            "question_number": 59
+        },
+        {
+            "question": "A vessel at 1000 K contains CO₂ with a pressure of 0.5 atm. Some of CO₂ is converted into CO on addition of graphite. If total pressure at equilibrium is 0.8 atm, then K_P is :",
+            "options": [
+                "0.18 atm",
+                "1.8 atm",
+                "0.3 atm",
+                "3 atm"
+            ],
+            "answer": "1.8 atm",
+            "question_number": 60
+        },
+        {
+            "question": "The IUPAC name of the following compound is : COC(=O)C(C)CCC(C)C(=O)O",
+            "options": [
+                "2-Carboxy-5-methoxycarbonylhexane.",
+                "Methyl-6-carboxy-2,5-dimethylhexanoate.",
+                "Methyl-5-carboxy-2-methylhexanoate.",
+                "6-Methoxycarbonyl-2,5-dimethylhexanoic acid."
+            ],
+            "answer": "6-Methoxycarbonyl-2,5-dimethylhexanoic acid.",
+            "question_number": 61
+        },
+        {
+            "question": "Which of the following electrolyte can be sued to obtain H₂S₂O₈ by the process of electrolysis?",
+            "options": [
+                "Dilute solution of sodium sulphate",
+                "Dilute solution of sulphuric acid",
+                "Concentrated solution of sulphuric acid",
+                "Acidified dilute solution of sodium sulphate."
+            ],
+            "answer": "Concentrated solution of sulphuric acid",
+            "question_number": 62
+        },
+        {
+            "question": "The compounds which give positive Fehling's test are: (A) O=Cc1ccccc1 (B) CC(=O)c1ccccc1 (C) HOCH₂−CO−(CHOH)₃−CH₂−OH (D) CC=O (E) O=CCc1ccccc1 Choose the CORRECT answer from the options given below :",
+            "options": [
+                "(A),(C) and (D) Only",
+                "(A),(D) and (E) Only",
+                "(C), (D) and (E) Only",
+                "(A), (B) and (C) Only"
+            ],
+            "answer": "(C), (D) and (E) Only",
+            "question_number": 63
+        },
+        {
+            "question": "In which of the following complexes the CFSE, Δ₀ will be equal to zero?",
+            "options": [
+                "[Fe(NH₃)₆]Br₂",
+                "[Fe(en)₃]Cl₃",
+                "K₄[Fe(CN)₆]",
+                "K₃[Fe(SCN)₆]"
+            ],
+            "answer": "K₃[Fe(SCN)₆]",
+            "question_number": 64
+        },
+        {
+            "question": "Arrange the following solutions in order of their increasing boiling points. (i) 10^{-4} M NaCl (ii) 10^{-4} M Urea (iii) 10^{-3} M NaCl (iv) 10^{-2} M NaCl",
+            "options": [
+                "(ii) < (i) < (iii) < (iv)",
+                "(ii) < (i) ≅ (iii) < (iv)",
+                "(i) < (ii) < (iii) < (iv)",
+                "(iv) < (iii) < (i) < (ii)"
+            ],
+            "answer": "(ii) < (i) < (iii) < (iv)",
+            "question_number": 65
+        },
+        {
+            "question": "The products formed in the following reaction sequence are: ...",
+            "options": [
+                "CCOc1cc(Br)cc(Br)c1",
+                "CCOc1cccc(Br)c1",
+                "[B]c1ccccc1, CH₃−CHO",
+                "CCCC=O"
+            ],
+            "answer": "[B]c1ccccc1, CH₃−CHO",
+            "question_number": 66
+        },
+        {
+            "question": "From the magnetic behaviour of [NiCl₄]²⁻ (paramagnetic) and [Ni(CO)₄] (diamagnetic), choose the correct geometry and oxidation state.",
+            "options": [
+                "[NiCl₄]²⁻: Ni(II), square planar; [Ni(CO)₄]: Ni(0), square planar",
+                "[NiCl₄]²⁻: Ni(II), tetrahedral; [Ni(CO)₄]: Ni(0), tetrahedral",
+                "[NiCl₄]²⁻: Ni(II), tetrahedral; [Ni(CO)₄]: Ni(II), square planar",
+                "[NiCl₄]²⁻: Ni(0), tetrahedral; [Ni(CO)₄]: Ni(0), square planar"
+            ],
+            "answer": "[NiCl₄]²⁻: Ni(II), tetrahedral; [Ni(CO)₄]: Ni(0), tetrahedral",
+            "question_number": 67
+        },
+        {
+            "question": "The incorrect statements regarding geometrical isomerism are: (A) Propene shows geometrical isomerism. (B) Trans isomer has identical atoms/groups on the opposite sides of the double bond. (C) Cis-but-2-ene has higher dipole moment than trans-but-2-ene. (D) 2-methylbut-2-ene shows two geometrical isomers. (E) Trans-isomer has lower melting point that cis isomer. Choose the CORRECT answer from the options given below:",
+            "options": [
+                "(A), (D) and (E) only",
+                "(C), (D) and (E) only",
+                "(B) and (C) only",
+                "(A) and (E) only"
+            ],
+            "answer": "(A), (D) and (E) only",
+            "question_number": 68
+        }
+    ]
+}

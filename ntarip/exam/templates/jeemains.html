@@ -80,7 +80,7 @@
 
     .question_here {
       font-size: 30px;
-      min-height: 30vh;
+      /* min-height: 30vh; */
     }
 
     .option-group {
@@ -88,7 +88,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       
-      max-width: 800px;
+      /* max-width: 800px; */
       margin: auto;
       padding: 20px;
     }
@@ -289,41 +289,39 @@
     <div class="question_display">
 
       <!-- question number  -->
-      <div class="question_number"> Question 1:</div>
+      <!-- <div class="question_number"> Question 1:</div> -->
 
       <!-- question  -->
       <div class="question_here">The characteristic distance at which quantum gravitational effects are significant, the
         Planck length, can be determined from a suitable combination of the fundamental physical constants G, ℏ and c.
-        Which of the following correctly gives the Planck length?</div>
-
-      <!-- options -->
-      <div class="options">
-        <div class="option-group">
-          <input type="radio" id="optA" name="option" value="A">
-          <label for="optA">
-            <div class="option-circle">A</div>
-            <span><strong>Statement I</strong> is incorrect but <strong>Statement II</strong> is correct</span>
-          </label>
-
-          <input type="radio" id="optB" name="option" value="B">
-          <label for="optB">
-            <div class="option-circle">B</div>
-            <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are incorrect</span>
-          </label>
-
-          <input type="radio" id="optC" name="option" value="C">
-          <label for="optC">
-            <div class="option-circle">C</div>
-            <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are correct</span>
-          </label>
-
-          <input type="radio" id="optD" name="option" value="D">
-          <label for="optD">
-            <div class="option-circle">D</div>
-            <span><strong>Statement I</strong> is correct but <strong>Statement II</strong> is incorrect</span>
-          </label>
-        </div>
-
+        Which of the following correctly gives the Planck length?</div> 
+        <div class="options">
+          <div class="option-group">
+            <input type="radio" id="optA" name="option" value="A">
+            <label for="optA">
+              <div class="option-circle">A</div>
+              <span><strong>Statement I</strong> is incorrect but <strong>Statement II</strong> is correct</span>
+            </label>
+            
+            <input type="radio" id="optB" name="option" value="B">
+            <label for="optB">
+              <div class="option-circle">B</div>
+              <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are incorrect</span>
+            </label>
+            
+            <input type="radio" id="optC" name="option" value="C">
+            <label for="optC">
+              <div class="option-circle">C</div>
+              <span>Both <strong>Statement I</strong> and <strong>Statement II</strong> are correct</span>
+            </label>
+            
+            <input type="radio" id="optD" name="option" value="D">
+            <label for="optD">
+              <div class="option-circle">D</div>
+              <span><strong>Statement I</strong> is correct but <strong>Statement II</strong> is incorrect</span>
+            </label>
+          </div>
+        
 
       </div>
     </div>
@@ -395,13 +393,70 @@
       startTimer(3 * 60 * 60, timerDisplay); // 3 hours
     };
     const container = document.getElementById("button-container");
+    let buttons_list = [];
 
     for (let i = 1; i <= 90; i++) {
       const btn = document.createElement("button");
       btn.innerText = i;
       btn.className = "button";
+      btn.onclick = function () {
+        loadQuestions(i);
+      };
       container.appendChild(btn);
+      buttons_list.push(btn);
     }
+  
+  // Convert Django context into JS object
+  const questions = [
+    {% for q in mcq_questions %}
+      {
+        id: {{ forloop.counter }},
+        question: "{{ q.question_text|escapejs }}",
+        options: [
+          "{{ q.option1|escapejs }}",
+          "{{ q.option2|escapejs }}",
+          "{{ q.option3|escapejs }}",
+          "{{ q.option4|escapejs }}"
+        ]
+      }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ];
+
+  console.log(questions);
+
+  // DOM Elements
+  const questionContainer = document.querySelector(".question_here");
+  const labels = document.querySelectorAll('.option-group label');
+  const buttons = null;
+
+  function loadQuestions(id) {
+    for (let i = 0; i < buttons_list.length; i++) {
+      if (buttons_list[i].innerText == id) {
+        buttons_list[i].style.backgroundColor = "#1976d2"; // Highlight selected button
+      } else {
+        buttons_list[i].style.backgroundColor = ""; // Reset other buttons
+      }
+    }
+    const questionObj = questions.find(q => q.id == id);
+    if (questionObj) {
+      questionContainer.textContent = "Q" + id + ") " + questionObj.question;
+      loadOptions(questionObj.options);
+    }
+  }
+
+  function loadOptions(options) {
+    labels.forEach((label, index) => {
+      const span = label.querySelector("span");
+      if (span) {
+        span.textContent = options[index];
+      }
+    });
+  }
+
+  // Load question 1 initially
+  loadQuestions(1);
+
+
   </script>
 </body>
 

@@ -2,155 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JEE Mains Previous Year Papers</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-
-    h1, h2, h3 {
-      color: #333;
-    }
-
-    .year-section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .attempt {
-      margin-top: 20px;
-    }
-
-    .paper-card {
-      width: 200px;
-      padding: 10px;
-      background-color: #e9f3fd;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin: 10px;
-      text-align: center;
-    }
-
-    .buttons-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .paper-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 8px 14px;
-      color: #007bff;
-      background-color: white;
-      border: 2px solid #007bff;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .download-btn:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-    .test-btn {
-      margin-top: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .test-btn:hover {
-      background-color: #0056b3;
-    }
-
-    .arrow-down {
-      font-size: 16px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-5xl mx-auto space-y-10">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center">📚 Study Planner</h1>
 
-  <h1>JEE Mains Previous Year Papers</h1>
-  <div id="papers-container"></div>
+    <!-- Section 1: Expandable Study Grid -->
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-xl font-semibold mb-4">📊 Study Progress Grid</h2>
+      <div class="overflow-auto">
+        <table id="studyTable" class="table-auto w-full border border-gray-300">
+          <thead>
+            <tr id="headerRow">
+              <th class="border px-4 py-2">Chapter</th>
+              <th class="border px-4 py-2">DPP</th>
+              <th class="border px-4 py-2">Module</th>
+              <th class="border px-4 py-2">Revision</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td class="border px-4 py-2"><input class="w-full border p-1" placeholder="Chapter Name"></td>
+              <td class="border px-4 py-2 text-center"><input type="checkbox"></td>
+              <td class="border px-4 py-2 text-center"><input type="checkbox"></td>
+              <td class="border px-4 py-2 text-center"><input type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 flex gap-4">
+        <button onclick="addRow()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded">+ Add Row</button>
+        <button onclick="addColumn()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded">+ Add Column</button>
+      </div>
+    </div>
+
+    <!-- Section 2: Task List with Deadlines -->
+    <div class="bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-xl font-semibold mb-4">🗓️ To-Do with Deadline</h2>
+      <div class="flex mb-4 gap-2">
+        <input id="todoText" type="text" placeholder="Task description..." class="flex-grow p-2 border rounded">
+        <input id="todoDate" type="date" class="p-2 border rounded">
+        <button onclick="addTodo()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 rounded">Add</button>
+      </div>
+      <ul id="todoList" class="space-y-2">
+        <!-- Tasks will appear here -->
+      </ul>
+    </div>
+  </div>
 
   <script>
-    const startYear = 2015;
-    const endYear = 2024;
-    const container = document.getElementById('papers-container');
+    function addRow() {
+      const tbody = document.getElementById("tableBody");
+      const headerCols = document.getElementById("headerRow").children.length;
+      const tr = document.createElement("tr");
 
-    for (let year = startYear; year <= endYear; year++) {
-      const yearDiv = document.createElement('div');
-      yearDiv.className = 'year-section';
+      for (let i = 0; i < headerCols; i++) {
+        const td = document.createElement("td");
+        td.className = "border px-4 py-2";
 
-      const yearHeading = document.createElement('h2');
-      yearHeading.textContent = `JEE Mains ${year}`;
-      yearDiv.appendChild(yearHeading);
-
-      ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
-        const attemptDiv = document.createElement('div');
-        attemptDiv.className = 'attempt';
-
-        const attemptHeading = document.createElement('h3');
-        attemptHeading.textContent = attempt;
-        attemptDiv.appendChild(attemptHeading);
-
-        const buttonsContainer = document.createElement('div');
-        buttonsContainer.className = 'buttons-container';
-
-        for (let day = 1; day <= 5; day++) {
-          for (let shift = 1; shift <= 2; shift++) {
-            const paperCard = document.createElement('div');
-            paperCard.className = 'paper-card';
-
-            const paperTitle = document.createElement('div');
-            paperTitle.className = 'paper-title';
-            paperTitle.textContent = `Day ${day} - Shift ${shift}`;
-            paperCard.appendChild(paperTitle);
-
-            const downloadBtn = document.createElement('button');
-            downloadBtn.className = 'download-btn';
-            downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
-            // downloadBtn.onclick = () => { window.open('link-to-pdf'); };
-
-            const testBtn = document.createElement('button');
-            testBtn.className = 'test-btn';
-            testBtn.textContent = 'Give as a Test';
-            // testBtn.onclick = () => { window.location.href = 'test-mode.html'; };
-
-            paperCard.appendChild(downloadBtn);
-            paperCard.appendChild(testBtn);
-
-            buttonsContainer.appendChild(paperCard);
-          }
+        if (i === 0) {
+          td.innerHTML = '<input class="w-full border p-1" placeholder="Chapter Name">';
+        } else {
+          td.innerHTML = '<input type="checkbox">';
+          td.classList.add("text-center");
         }
 
-        attemptDiv.appendChild(buttonsContainer);
-        yearDiv.appendChild(attemptDiv);
-      });
+        tr.appendChild(td);
+      }
 
-      container.appendChild(yearDiv);
+      tbody.appendChild(tr);
+    }
+
+    function addColumn() {
+      const table = document.getElementById("studyTable");
+      const headerRow = document.getElementById("headerRow");
+      const newHeader = document.createElement("th");
+      const newLabel = prompt("Enter column label (e.g., Practice Test):");
+
+      if (!newLabel) return;
+
+      newHeader.textContent = newLabel;
+      newHeader.className = "border px-4 py-2";
+      headerRow.appendChild(newHeader);
+
+      const rows = document.querySelectorAll("#tableBody tr");
+      rows.forEach(row => {
+        const cell = document.createElement("td");
+        cell.className = "border px-4 py-2 text-center";
+        cell.innerHTML = '<input type="checkbox">';
+        row.appendChild(cell);
+      });
+    }
+
+    function addTodo() {
+      const textInput = document.getElementById("todoText");
+      const dateInput = document.getElementById("todoDate");
+      const text = textInput.value.trim();
+      const date = dateInput.value;
+
+      if (text === "" || date === "") return;
+
+      const li = document.createElement("li");
+      li.className = "bg-gray-50 p-2 rounded flex justify-between items-center shadow-sm";
+
+      const span = document.createElement("span");
+      span.textContent = `${text} (Due: ${date})`;
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "✖";
+      delBtn.className = "text-red-500 hover:text-red-700";
+      delBtn.onclick = () => li.remove();
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      document.getElementById("todoList").appendChild(li);
+
+      textInput.value = "";
+      dateInput.value = "";
     }
   </script>
-
 </body>
 </html>

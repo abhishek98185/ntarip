@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            padding: 8px;
+            width: 75%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .add-row {
+            background-color: #28a745;
+        }
+
+        .add-col {
+            background-color: #007bff;
+        }
+
+        .add-task {
+            background-color: #6f42c1;
+        }
+
+        .downloadbutton {
+            margin-left: 60vw;
+        }
+
+        .download-pdf {
+            background-color: #ff9800;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: red;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .task-inputs {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            min-height: 70px;
+            /* Increased height */
+            align-items: center;
+        }
+
+        #todoText {
+            flex: 3;
+            font-size: 16px;
+            height: 40px;
+        }
+
+        #todoDate {
+            flex: 1;
+            font-size: 16px;
+            height: 40px;
+        }
+
+        .add-task {
+            height: 40px;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+    </style>
+
+    <!-- Add libraries for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 Study Planner</h1>
+
+        <!-- Section 1: Study Progress Grid -->
+        <h2>📊 Study Progress Grid</h2>
+        <table id="studyTable">
+            <div class="downloadbutton">
+                <button class="btn download-pdf" onclick="downloadPDF()">📄 Download PDF</button>
+            </div>
+            <thead>
+                <tr id="headerRow">
+                    <th>Chapter</th>
+                    <th>DPP</th>
+                    <th>Module</th>
+                    <th>Revision</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td><input type="text" placeholder="Chapter name" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                    <td><input type="checkbox" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn add-row" onclick="addRow()">+ Add Row</button>
+        <button class="btn add-col" onclick="addColumn()">+ Add Column</button>
+        <!-- <button class="btn download-pdf" onclick="downloadPDF()">📄 Download PDF</button> -->
+
+        <!-- Section 2: To-Do List with Deadline -->
+        <h2>🗓️ To-Do with Deadline</h2>
+        <div class="task-inputs">
+            <input type="text" id="todoText" placeholder="Task description..." />
+            <input type="date" id="todoDate" />
+            <button class="btn add-task" onclick="addTodo()">Add</button>
+        </div>
+        <ul id="todoList"></ul>
+    </div>
+
+    <!-- Script section -->
+    <script>
+        function addRow() {
+            const tableBody = document.getElementById("tableBody");
+            const cols = document.getElementById("headerRow").children.length;
+            const newRow = document.createElement("tr");
+
+            for (let i = 0; i < cols; i++) {
+                const cell = document.createElement("td");
+                if (i === 0) {
+                    cell.innerHTML = '<input type="text" placeholder="Chapter name" />';
+                } else {
+                    cell.innerHTML = '<input type="checkbox" />';
+                }
+                newRow.appendChild(cell);
+            }
+            tableBody.appendChild(newRow);
+        }
+
+        function addColumn() {
+            const newLabel = prompt("Enter column label:");
+            if (!newLabel) return;
+
+            const headerRow = document.getElementById("headerRow");
+            const newHeader = document.createElement("th");
+            newHeader.textContent = newLabel;
+            headerRow.appendChild(newHeader);
+
+            const rows = document.querySelectorAll("#tableBody tr");
+            rows.forEach(row => {
+                const cell = document.createElement("td");
+                cell.className = "border px-4 py-2 text-center";
+                cell.innerHTML = '<input type="checkbox">';
+                row.appendChild(cell);
+            });
+        }
+
+        function addTodo() {
+            const text = document.getElementById("todoText").value.trim();
+            const date = document.getElementById("todoDate").value;
+            if (!text || !date) return;
+
+            const li = document.createElement("li");
+            li.innerHTML = `<span>${text} (Due: ${date})</span> <button class="delete-btn" onclick="this.parentElement.remove()">✖</button>`;
+            document.getElementById("todoList").appendChild(li);
+
+            document.getElementById("todoText").value = '';
+            document.getElementById("todoDate").value = '';
+        }
+
+        async function downloadPDF() {
+            const table = document.getElementById("studyTable");
+            const canvas = await html2canvas(table);
+            const imageData = canvas.toDataURL('image/png');
+
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const imgProps = pdf.getImageProperties(imageData);
+            const imgWidth = pageWidth - 20;
+            const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+            pdf.addImage(imageData, 'PNG', 10, 10, imgWidth, imgHeight);
+            pdf.save("Study_Progress_Grid.pdf");
+        }
+    </script>
+</body>
+
+</html>

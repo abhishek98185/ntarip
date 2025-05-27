@@ -360,10 +360,10 @@
       <button class="previous-button clearresponse">Clear Response</button>
     </div>
     <div class="prev_button">
-      <button class="previous-button previousbutton">Previous</button>
+      <button class="previous-button previousbutton" onclick="previousButtonFunction()">Previous</button>
     </div>
     <div class="next_button">
-      <button class="previous-button nextbutton">Next</button>
+      <button class="previous-button nextbutton" onclick="nextButtonFunction()">Next</button>
     </div>
   </div>
 
@@ -422,12 +422,12 @@
     {% endfor %}
   ];
 
-  console.log(questions);
+  // console.log(questions);
 
   // DOM Elements
   const questionContainer = document.querySelector(".question_here");
   const labels = document.querySelectorAll('.option-group label');
-  const buttons = null;
+  let currentQuestionID = null;
 
   function loadQuestions(id) {
     for (let i = 0; i < buttons_list.length; i++) {
@@ -442,6 +442,7 @@
       questionContainer.textContent = "Q" + id + ") " + questionObj.question;
       loadOptions(questionObj.options);
     }
+    currentQuestionID = id;
   }
 
   function loadOptions(options) {
@@ -455,6 +456,17 @@
 
   // Load question 1 initially
   loadQuestions(1);
+
+  function nextButtonFunction() {
+    if (currentQuestionID < questions.length) {
+      loadQuestions(currentQuestionID + 1);
+    }
+  }
+  function previousButtonFunction() {
+    if (currentQuestionID > 1) {
+      loadQuestions(currentQuestionID - 1);
+    }
+  }
 
 
   </script>

@@ -5,7 +5,8 @@ Welcome to **Ntarip**, your ultimate destination for mastering **JEE Mains**, **
 ---
 
 ## Preview
-![image](https://github.com/user-attachments/assets/3aef745d-f3cc-49eb-bd59-61b8b0687c21)
+![image](https://github.com/user-attachments/assets/a0b941ca-c6b5-406c-8ab7-3f5f00fd335b)
+
 
 ---
 

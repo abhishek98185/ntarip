@@ -10,7 +10,7 @@ JEE Mains
   body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 0px;
   }
 
   h1,
@@ -84,12 +84,68 @@ JEE Mains
     transition: background-color 0.3s;
   }
 
-  .test-btn:hover {
+  .test-btn:hover:not(:disabled) {
     background-color: #0056b3;
+  }
+
+  .test-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
   }
 
   .arrow-down {
     font-size: 16px;
+  }
+
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: none; /* hidden initially */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+    color: #000;
+  }
+
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .note {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
   }
 </style>
 {% endblock %}
@@ -98,123 +154,132 @@ JEE Mains
 <h1>JEE Mains Previous Year Papers</h1>
 <div id="papers-container"></div>
 
+<!-- Instruction Modal -->
+<div id="instructionModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Test Instructions</h2>
+    <ul>
+      <li>The test contains <strong>90 questions</strong>.</li>
+      <li>Total time: <strong>3 hours</strong>.</li>
+      <li><strong>+4</strong> for correct, <strong>-1</strong> for wrong answers.</li>
+      <li>Don't close or refresh the tab during the test.</li>
+      <li>Ensure a stable internet connection.</li>
+    </ul>
+    <div class="note">
+      <strong>Note:</strong> The timer starts immediately once you begin. No pauses allowed.
+    </div>
+
+    <label for="acceptInstructions">
+      <input type="checkbox" id="acceptInstructions" />
+      I have read and accept the instructions.
+    </label>
+
+    <button id="startTestBtn" class="test-btn" disabled>Start Test</button>
+  </div>
+</div>
 
 <script>
-  // const startYear = 2015;
-  // const endYear = 2025;
-  // const container = document.getElementById('papers-container');
-
-  // for (let year = startYear; year <= endYear; year++) {
-  //   const yearDiv = document.createElement('div');
-  //   yearDiv.className = 'year-section';
-
-  //   const yearHeading = document.createElement('h2');
-  //   yearHeading.textContent = `JEE Mains ${year}`;
-  //   yearDiv.appendChild(yearHeading);
-
-  //   ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
-  //     const month = attempt.split(' ')[0]; 
-  //     const attemptDiv = document.createElement('div');
-  //     attemptDiv.className = 'attempt';
-
-  //     const attemptHeading = document.createElement('h3');
-  //     attemptHeading.textContent = attempt;
-  //     attemptDiv.appendChild(attemptHeading);
-
-  //     const buttonsContainer = document.createElement('div');
-  //     buttonsContainer.className = 'buttons-container';
-
-  //     for (let day = 1; day <= 5; day++) {
-  //       for (let shift = 1; shift <= 2; shift++) {
-  //         const paperCard = document.createElement('div');
-  //         paperCard.className = 'paper-card';
-
-  //         const paperTitle = document.createElement('div');
-  //         paperTitle.className = 'paper-title';
-  //         paperTitle.textContent = `Day ${day} - Shift ${shift}`;
-  //         paperCard.appendChild(paperTitle);
-
-  //         const downloadBtn = document.createElement('button');
-  //         downloadBtn.className = 'download-btn';
-  //         downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
-  //         // downloadBtn.onclick = () => { window.open('link-to-pdf'); };
-
-  //         const testBtn = document.createElement('button');
-  //         testBtn.className = 'test-btn';
-  //         // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
-  //         testBtn.textContent = 'Give as a Test';
-  //         testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=22&shift=${shift}`; };
-
-  //         paperCard.appendChild(downloadBtn);
-  //         paperCard.appendChild(testBtn);
-
-  //         buttonsContainer.appendChild(paperCard);
-  //       }
-  //     }
-
-  //     attemptDiv.appendChild(buttonsContainer);
-  //     yearDiv.appendChild(attemptDiv);
-  //   });
-
-  //   container.appendChild(yearDiv);
-  // }
   const startYear = 2015;
-const endYear = 2025;
-const container = document.getElementById('papers-container');
+  const endYear = 2025;
+  const container = document.getElementById('papers-container');
 
-// Loop from endYear to startYear (descending)
-for (let year = endYear; year >= startYear; year--) {
-  const yearDiv = document.createElement('div');
-  yearDiv.className = 'year-section';
+  const instructionModal = document.getElementById('instructionModal');
+  const closeModalBtn = document.getElementById('closeModal');
+  const startTestBtn = document.getElementById('startTestBtn');
+  const acceptCheckbox = document.getElementById('acceptInstructions');
 
-  const yearHeading = document.createElement('h2');
-  yearHeading.textContent = `JEE Mains ${year}`;
-  yearDiv.appendChild(yearHeading);
+  let testUrl = '';
 
-  ['January Attempt', 'April Attempt'].forEach((attempt, attemptIndex) => {
-    const month = attempt.split(' ')[0];
-    const attemptDiv = document.createElement('div');
-    attemptDiv.className = 'attempt';
+  // Function to open modal and set test URL
+  function openInstructionModal(url) {
+    testUrl = url;
+    instructionModal.style.display = 'flex';
+    acceptCheckbox.checked = false;        // reset checkbox
+    startTestBtn.disabled = true;          // disable start button
+  }
 
-    const attemptHeading = document.createElement('h3');
-    attemptHeading.textContent = attempt;
-    attemptDiv.appendChild(attemptHeading);
+  // Close modal function
+  closeModalBtn.onclick = () => {
+    instructionModal.style.display = 'none';
+  };
 
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.className = 'buttons-container';
+  // Close modal if user clicks outside the modal content
+  window.onclick = (event) => {
+    if (event.target === instructionModal) {
+      instructionModal.style.display = 'none';
+    }
+  };
 
-    for (let day = 1; day <= 5; day++) {
-      for (let shift = 1; shift <= 2; shift++) {
-        const paperCard = document.createElement('div');
-        paperCard.className = 'paper-card';
+  // Enable or disable start button based on checkbox
+  acceptCheckbox.addEventListener('change', () => {
+    startTestBtn.disabled = !acceptCheckbox.checked;
+  });
 
-        const paperTitle = document.createElement('div');
-        paperTitle.className = 'paper-title';
-        paperTitle.textContent = `Day ${day} - Shift ${shift}`;
-        paperCard.appendChild(paperTitle);
+  // On clicking "Start Test" button, go to test URL and close modal
+  startTestBtn.onclick = () => {
+    instructionModal.style.display = 'none';
+    if (testUrl) {
+      window.location.href = testUrl;
+    }
+  };
 
-        const downloadBtn = document.createElement('button');
-        downloadBtn.className = 'download-btn';
-        downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
+  // Generate the papers sections from endYear to startYear (descending)
+  for (let year = endYear; year >= startYear; year--) {
+    const yearDiv = document.createElement('div');
+    yearDiv.className = 'year-section';
+
+    const yearHeading = document.createElement('h2');
+    yearHeading.textContent = `JEE Mains ${year}`;
+    yearDiv.appendChild(yearHeading);
+
+    ['January Attempt', 'April Attempt'].forEach((attempt) => {
+      const month = attempt.split(' ')[0];
+      const attemptDiv = document.createElement('div');
+      attemptDiv.className = 'attempt';
+
+      const attemptHeading = document.createElement('h3');
+      attemptHeading.textContent = attempt;
+      attemptDiv.appendChild(attemptHeading);
+
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.className = 'buttons-container';
+
+      for (let day = 1; day <= 5; day++) {
+        for (let shift = 1; shift <= 2; shift++) {
+          const paperCard = document.createElement('div');
+          paperCard.className = 'paper-card';
+
+          const paperTitle = document.createElement('div');
+          paperTitle.className = 'paper-title';
+          paperTitle.textContent = `Day ${day} - Shift ${shift}`;
+          paperCard.appendChild(paperTitle);
+
+          const downloadBtn = document.createElement('button');
+          downloadBtn.className = 'download-btn';
+          downloadBtn.innerHTML = `<span class="arrow-down">⬇</span> Download`;
+          // TODO: Add download link or functionality here if needed
 
           const testBtn = document.createElement('button');
           testBtn.className = 'test-btn';
-          // testBtn.href = `exam/paper/${year}/${attemptIndex + 1}/day${day}/shift${shift}`;
           testBtn.textContent = 'Give as a Test';
-          testBtn.onclick = () => { window.location.href = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=${day}&shift=${shift}`; };
 
-        paperCard.appendChild(downloadBtn);
-        paperCard.appendChild(testBtn);
-        buttonsContainer.appendChild(paperCard);
+          testBtn.onclick = () => {
+            const url = `/exam/paper/?exam=jee-mains&year=${year}&month=${month}&day=${day}&shift=${shift}`;
+            openInstructionModal(url);
+          };
+
+          paperCard.appendChild(downloadBtn);
+          paperCard.appendChild(testBtn);
+          buttonsContainer.appendChild(paperCard);
+        }
       }
-    }
 
-    attemptDiv.appendChild(buttonsContainer);
-    yearDiv.appendChild(attemptDiv);
-  });
+      attemptDiv.appendChild(buttonsContainer);
+      yearDiv.appendChild(attemptDiv);
+    });
 
-  container.appendChild(yearDiv);
-}
-
+    container.appendChild(yearDiv);
+  }
 </script>
 {% endblock %}

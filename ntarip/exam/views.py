@@ -34,5 +34,5 @@ def exam(request):
         }
 
         return render(request, 'jeemains.html', context)
-    return render(request, 'jeemains.html')
+    # return render(request, 'jeemains.html')
 

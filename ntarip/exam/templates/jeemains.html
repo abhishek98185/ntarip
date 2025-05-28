@@ -408,7 +408,7 @@
   
   // Convert Django context into JS object
   const questions = [
-    {% for q in mcq_questions %}
+    {% for q in Questions %}
       {
         id: {{ forloop.counter }},
         question: "{{ q.question_text|escapejs }}",
@@ -422,7 +422,7 @@
     {% endfor %}
   ];
 
-  // console.log(questions);
+   console.log(questions);
 
   // DOM Elements
   const questionContainer = document.querySelector(".question_here");

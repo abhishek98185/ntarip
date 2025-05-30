@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Status Button</title>
+  <style>
+    .status-container {
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .circle-button {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at center, #7b1fa2, #4a148c);
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .tick-icon {
+      position: absolute;
+      bottom: -2px;
+      left: -2px;
+      width: 14px;
+      height: 14px;
+      background-color: #00c853; /* green */
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .tick-icon::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+
+<div class="status-container">
+  <div class="circle-button">
+    0
+    <div class="tick-icon"></div>
+  </div>
+  <span>Answered & Marked for Review (will be considered for evaluation)</span>
+</div>
+
+</body>
+</html>

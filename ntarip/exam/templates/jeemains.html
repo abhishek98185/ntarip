@@ -150,12 +150,12 @@
       font-size: 16px;
       box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
     }
-
+    .answerednumber,
     .unanswerednumber {
 
       width: 45px;
       height: 35px;
-      background: linear-gradient(to bottom, #e75b1e, #d64500);
+      
       color: white;
       font-weight: bold;
       font-family: Arial, sans-serif;
@@ -167,10 +167,28 @@
       border-radius: 0 6px 6px 0;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     }
+    .unanswerednumber{
+      background: linear-gradient(to bottom, #e75b1e, #d64500);
+    }
+    .answerednumber{
+      background: linear-gradient(to bottom, rgb(15, 231, 15), rgb(6, 239, 6)
+      );
+    }
+    .markednumber{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #7b1fa2, #4a148c);
+      font-size: x-large;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .up2 {
       display: flex;
       gap: 2vw;
+      margin-bottom: 2vh;
     }
 
 
@@ -341,10 +359,16 @@
         </div>
         <div class="up2">
           <div class="answered">
-            
+            <div class="answerednumber">0</div>
+            <div class="status-text">Answered</div>
           </div>
-          <div class="marked"></div>
+          <div class="marked">
+            <div class="markednumber">0</div>
+            <div class="status-text">Marked</div>
+          </div>
+          <div class="up2">
           <div class="answeredandmarked"></div>
+          </div>
         </div>
       </div>
       <!-- lowerpart -->

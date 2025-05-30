@@ -18,5 +18,7 @@ def formulasheet(request):
 
 def about(request):
     return render(request,'about.html')
+def todolist(request):
+    return render(request,'to-do.html')
 
 

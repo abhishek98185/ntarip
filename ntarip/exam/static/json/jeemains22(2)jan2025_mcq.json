@@ -1,0 +1,758 @@
+{
+    "Maths": [
+        {
+            "question_number": 1,
+            "question": "For a 3 × 3 matrix M, let trace (M) denote the sum of all the diagonal elements of M. Let A be a 3 × 3 matrix such that |A| = ½ and trace (A) = 3. If B = adj(adj(2A)), then the value of |B|+ trace (B) equals :",
+            "options": [
+                "56",
+                "132",
+                "174",
+                "280"
+            ],
+            "answer": "280"
+        },
+        {
+            "question_number": 2,
+            "question": "In a group of 3 girls and 4 boys, there are two boys B₁ and B2. The number of ways, in which these girls and boys can stand in a queue such that all the girls stand together, all the boys stand together, but B₁ and B2 are not adjacent to each other, is :",
+            "options": [
+                "96",
+                "144",
+                "120",
+                "72"
+            ],
+            "answer": "144"
+        },
+        {
+            "question_number": 3,
+            "question": "Let α, β, γ and d be the coefficients of x⁷, x⁵, 2³ and a respectively in the expansion of (x + √x³ - 1) + (x - √x³ − 1) °, 2 > 1. If u and v satisfy the equations αι + βυ = 18, γυ + δυ = 20 then u + v equals :",
+            "options": [
+                "15",
+                "3",
+                "4",
+                "8"
+            ],
+            "answer": "15"
+        },
+        {
+            "question_number": 4,
+            "question": "Let a line pass through two distinct points P(−2, -1, 3) and Q, and be parallel to the vector 3i + 2j + 2k. If the distance of the point Q from the point R(1, 3, 3) is 5, then the square of the area of △PQR is equal to :",
+            "options": [
+                "148",
+                "136",
+                "144",
+                "140"
+            ],
+            "answer": "136"
+        },
+        {
+            "question_number": 5,
+            "question": "If A and B are two events such that P(A ∩ B) = 0.1, and P(A | B) and P(B | A) are the roots of the equation 12x² - 7x + 1 = 0, then the value of P(AUB)/P(A∩B) is :",
+            "options": [
+                "14",
+                "12",
+                "9",
+                "7"
+            ],
+            "answer": "7"
+        },
+        {
+            "question_number": 6,
+            "question": "If ∫(sin⁻¹ x)/(√1-x²) dx = g(x) + C, where C is the constant of integration, then g(½) equals :",
+            "options": [
+                "√",
+                "픔√",
+                "√",
+                "√"
+            ],
+            "answer": "픔√"
+        },
+        {
+            "question_number": 7,
+            "question": "The area of the region enclosed by the curves y = x² - 4x + 4 and y² = 168x is :",
+            "options": [
+                "8",
+                "4",
+                "x",
+                "5"
+            ],
+            "answer": "8"
+        },
+        {
+            "question_number": 8,
+            "question": "Let f(x) = ∫184+15 dt, x ∈ R. Then the numbers of local maximum and local minimum points of f, respectively, are :",
+            "options": [
+                "2 and 30",
+                "2 and 2",
+                "3 and 2",
+                "1 and 3"
+            ],
+            "answer": "2 and 30"
+        },
+        {
+            "question_number": 9,
+            "question": "Let P(4, 4√3) be a point on the parabola y² = 4ax and PQ be a focal chord of the parabola. If M and N are the foot of perpendiculars drawn from P and Q respectively on the directrix of the parabola, then the area of the quadrilateral PQMN is equal to :",
+            "options": [
+                "1730",
+                "2633",
+                "343/3",
+                "343/8"
+            ],
+            "answer": "343/8"
+        },
+        {
+            "question_number": 10,
+            "question": "Let a and b be two unit vectors such that the angle between them is θ. If xả + 2b and 3a – λb are perpendicular to each other, then the number of values of λ in [-1, 3] is :",
+            "options": [
+                "2",
+                "1",
+                "0",
+                "3"
+            ],
+            "answer": "0"
+        },
+        {
+            "question_number": 11,
+            "question": "If limx→∞ ((1)/(1+x)) = a, then the value of loga(1+log a) equals:",
+            "options": [
+                "e",
+                "e",
+                "e-2",
+                "e"
+            ],
+            "answer": "e"
+        },
+        {
+            "question_number": 12,
+            "question": "Let A = {1,2,3,4} and B = {1,4,9,16}. Then the number of many-one functions f : A → B such that 1 ∈ f(A) is equal to :",
+            "options": [
+                "151",
+                "139",
+                "163",
+                "127"
+            ],
+            "answer": "151"
+        },
+        {
+            "question_number": 13,
+            "question": "Suppose that the number of terms in an A.P. is 2k, k ∈ N. If the sum of all odd terms of the A.P. is 40, the sum of all even terms is 55 and the last term of the A.P. exceeds the first term by 27, then k is equal to :",
+            "options": [
+                "6",
+                "5",
+                "8",
+                "4"
+            ],
+            "answer": "5"
+        },
+        {
+            "question_number": 14,
+            "question": "The perpendicular distance, of the line x/2 = y/(-1) = z/2 from the point P(2, -10, 1), is :",
+            "options": [
+                "512",
+                "4√3",
+                "3√5",
+                "3√5"
+            ],
+            "answer": "3√5"
+        },
+        {
+            "question_number": 15,
+            "question": "If the system of linear equations: x+y+2z = 6, 2x + 3y + az = a + 1 where a, b ∈ R, has infinitely many solutions, then 7a + 3b is equal to :",
+            "options": [
+                "16",
+                "12",
+                "22",
+                "9"
+            ],
+            "answer": "16"
+        },
+        {
+            "question_number": 16,
+            "question": "If x = f(y) is the solution of the differential equation (1 + y²) dy/dx + (x - 2e^{tan⁻¹y}) = 1, y ∈ (-∞, ∞) with f(0) = 1, then f(π/6) is equal to :",
+            "options": [
+                "e^{π/12}",
+                "e^{74}",
+                "e^{π/3}",
+                "e^{π/6}"
+            ],
+            "answer": "e^{π/6}"
+        },
+        {
+            "question_number": 17,
+            "question": "Let α and β be the distinct roots of 2x² + (cos θ)x − 1 = 0, θ ∈ (0, 2π). If m and M are the minimum and the maximum values of α + β, then 16(M + m) equals:",
+            "options": [
+                "24",
+                "25",
+                "17",
+                "27"
+            ],
+            "answer": "25"
+        },
+        {
+            "question_number": 18,
+            "question": "The sum of all values of θ ∈ [0, 2π] satisfying 2 sin²θ = cos 2θ and 2 cos²θ = 3 sin θ is",
+            "options": [
+                "4π",
+                "π",
+                "π",
+                ""
+            ],
+            "answer": "π"
+        },
+        {
+            "question_number": 19,
+            "question": "Let the curve z(1 + i) + (1 − i) = 4, z ∈ C, divide the region |z – 3| ≤ 1 into two parts of areas α and β. Then |α – β| equals :",
+            "options": [
+                "1+",
+                "1",
+                "1+",
+                "1+"
+            ],
+            "answer": "1+"
+        },
+        {
+            "question_number": 20,
+            "question": "Let E: x²/A² + y²/B² = 1, a > b and H: x²/A² - y²/B² = 1. Let the distance between the foci of E and the foci of H be 2√3. If a – A = 2, and the ratio of the eccentricities of E and H is 7, then the sum of the lengths of their latus rectums is equal to:",
+            "options": [
+                "10",
+                "9",
+                "8",
+                "7"
+            ],
+            "answer": "8"
+        },
+        {
+            "question_number": 21,
+            "question": "If \\(\\sum_{r=1}^{30} \\binom{30}{r-1}^2 = a \\times 2^{29}\\), then a is equal to:",
+            "options": [],
+            "answer": "465"
+        },
+        {
+            "question_number": 22,
+            "question": "Let A = {1, 2, 3}. The number of relations on A, containing (1, 2) and (2, 3), which are reflexive and transitive but not symmetric, is",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 23,
+            "question": "Let A(6,8), B(10 cos a, –10 sin a) and C(−10 sin a, 10 cos a), be the vertices of a triangle. If La, 9) and G(h, k) be its orthocenter and centroid respectively, then (5a – 3h + 6k + 100 sin 2a) is equal to...",
+            "options": [],
+            "answer": "145"
+        },
+        {
+            "question_number": 24,
+            "question": "Let y = f(x) be the solution of the differential equation \\(\\frac{dy}{dx} = \\frac{x^2-1}{\\sqrt{1-x^2}}\\), -1 < x < 1 such that mf(0) = 0. If \\(\\int_{-1/2}^{1/2} f(x)dx = 2\\pi/a\\) then a² is equal to",
+            "options": [],
+            "answer": "27"
+        },
+        {
+            "question_number": 25,
+            "question": "Let the distance between two parallel lines be 5 units and a point P lie between the lines at a unit distance from one of them. An equilateral triangle PQR is formed such that Q lies on one of the parallel lines, while R lies on the other. Then (QR)² is equal to",
+            "options": [],
+            "answer": "28"
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 26,
+            "question": "To obtain the given truth table, following logic gate should be placed at G:\nA B Y\n0 0 1\n0 1 1\n1 0 0\n1 1 1",
+            "options": [
+                "OR Gate",
+                "AND Gate",
+                "NOR Gate",
+                "NAND Gate"
+            ],
+            "answer": "NOR Gate"
+        },
+        {
+            "question_number": 27,
+            "question": "A small rigid spherical ball of mass M is dropped in a long vertical tube containing glycerine. The velocity of the ball becomes constant after some time. If the density of glycerine is half of the density of the ball, then the viscous force acting on the ball will be (consider g as acceleration due to gravity)",
+            "options": [
+                "2Mg",
+                "Mg",
+                "Mg",
+                ""
+            ],
+            "answer": ""
+        },
+        {
+            "question_number": 28,
+            "question": "The torque due to the force (2i + j + 2k) about the origin, acting on a particle whose position vector is (i + j + k), would be",
+            "options": [
+                "i-k",
+                "i+k",
+                "j+k",
+                "-j+k"
+            ],
+            "answer": "i-k"
+        },
+        {
+            "question_number": 29,
+            "question": "A symmetric thin biconvex lens is cut into four equal parts by two planes AB and CD as shown in figure. If the power of original lens is 4 D then the power of a part of the divided lens is",
+            "options": [
+                "D",
+                "8D",
+                "2D",
+                "4D"
+            ],
+            "answer": "2D"
+        },
+        {
+            "question_number": 30,
+            "question": "For a short dipole placed at origin O, the dipole moment P is along x-axis, as shown in the figure. If the electric potential and electric field at A are Vo and E0, respectively, then the correct combination of the electric potential and electric field, respectively, at point B on the y-axis is given by",
+            "options": [
+                "Vo and Eo",
+                "zero and Eo",
+                "zero and Eo/4",
+                "Vo and Eo/16"
+            ],
+            "answer": "zero and Eo"
+        },
+        {
+            "question_number": 31,
+            "question": "A transparent film of refractive index, 2.0 is coated on a glass slab of refractive index, 1.45. What is the minimum thickness of transparent film to be coated for the maximum transmission of Green light of wavelength 550 nm . [Assume that the light is incident nearly perpendicular to the glass surface.]",
+            "options": [
+                "137.5 nm",
+                "275 nm",
+                "94.8 nm",
+                "68.7 nm"
+            ],
+            "answer": "137.5 nm"
+        },
+        {
+            "question_number": 32,
+            "question": "Given are statements for certain thermodynamic variables, (A) Internal energy, volume (V) and mass (M) are extensive variables. (B) Pressure (P), temperature (T) and density (p) are intensive variables. (C) Volume (V), temperature (T) and density (p) are intensive variables. (D) Mass (M), temperature (T) and internal energy are extensive variables. Choose the correct answer from the options given below :",
+            "options": [
+                "(B) and (C) Only",
+                "(C) and (D) Only",
+                "(D) and (A) Only",
+                "(A) and (B) Only"
+            ],
+            "answer": "(A) and (B) Only"
+        },
+        {
+            "question_number": 33,
+            "question": "An electron projected perpendicular to a uniform magnetic field B moves in a circle. If Bohr's quantization is applicable, then the radius of the electronic orbit in the first excited state is :",
+            "options": [
+                "h/sqrt(2πeB)",
+                "2h/sqrt(eB)",
+                "h/sqrt(πeB)",
+                "4h/sqrt(πeB)"
+            ],
+            "answer": "h/sqrt(2πeB)"
+        },
+        {
+            "question_number": 34,
+            "question": "Given below are two statements. One is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : In Young's double slit experiment, the fringes produced by red light are closer as compared to those produced by blue light.\nReason (R): The fringe width is directly proportional to the wavelength of light.\nIn the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                "(A) is true but (R) is false",
+                "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                "(A) is false but (R) is true"
+            ],
+            "answer": "(A) is false but (R) is true"
+        },
+        {
+            "question_number": 35,
+            "question": "A rectangular metallic loop is moving out of a uniform magnetic field region to a field free region with a constant speed. When the loop is partially inside the magnate field, the plot of magnitude of induced emf (ε) with time (t) is given by",
+            "options": [
+                "(1)",
+                "(2)",
+                "(3)",
+                "(4)"
+            ],
+            "answer": "(4)"
+        },
+        {
+            "question_number": 36,
+            "question": "A ball of mass 100 g is projected with velocity 20 m/s at 60° with horizontal. The decrease in kinetic energy of the ball during the motion from point of projection to highest point is",
+            "options": [
+                "(1)",
+                "15",
+                "20 J",
+                "zero"
+            ],
+            "answer": "15"
+        },
+        {
+            "question_number": 37,
+            "question": "A body of mass 100 g is moving in circular path of radius 2 m on vertical plane as shown in figure. The velocity of the body at point A is 10 m/s. The ratio of its kinetic energies at point B and C is :",
+            "options": [
+                "2+√2/3",
+                "2+√3",
+                "3+34/2",
+                "3-"
+            ],
+            "answer": "3+34/2"
+        },
+        {
+            "question_number": 38,
+            "question": "Given below are two statements. One is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A): A simple pendulum is taken to a planet of mass and radius, 4 times and 2 times, respectively, than the Earth. The time period of the pendulum remains same on earth and the planet. Reason (R): The mass of the pendulum remains unchanged at Earth and the other planet. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "(A) is false but (R) is true",
+                "(A) is true but (R) is false",
+                "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)"
+            ],
+            "answer": "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)"
+        },
+        {
+            "question_number": 39,
+            "question": "A series LCR circuit is connected to an alternating source of emf E. The current amplitude at resonant frequency is I0. If the value of resistance R becomes twice of its initial value then amplitude of current at resonance will be",
+            "options": [
+                "2I",
+                "I",
+                "I/√2",
+                ""
+            ],
+            "answer": "I/√2"
+        },
+        {
+            "question_number": 40,
+            "question": "Which one of the following is the correct dimensional formula for the capacitance in F ? M, L, T and C stand for unit of mass, length, time and charge.",
+            "options": [
+                "[F] = [C²M⁻¹L⁻²T²]",
+                "[F] = [C²M⁻²]",
+                "[F] = [CM⁻²L⁻²T⁻²]",
+                "[F] = [CM⁻¹L⁻²T²]"
+            ],
+            "answer": "[F] = [C²M⁻¹L⁻²T²]"
+        },
+        {
+            "question_number": 41,
+            "question": "A tube of length L is shown in the figure. The radius of cross section at the point (1) is 2 cm and at the point (2) is 1 cm, respectively. If the velocity of water entering at point (1) is 2 m/s, then velocity of water leaving the point (2) will be",
+            "options": [
+                "4 m/s",
+                "2 m/s",
+                "6 m/s",
+                "8 m/s"
+            ],
+            "answer": "8 m/s"
+        },
+        {
+            "question_number": 42,
+            "question": "A light source of wavelength λ illuminates a metal surface and electrons are ejected with maximum kinetic energy of 2 eV. If the same surface is illuminated by a light source of wavelength λ/2, then the maximum kinetic energy of the ejected electrons is",
+            "options": [
+                "3 eV",
+                "2 eV",
+                "6 eV",
+                "5 eV"
+            ],
+            "answer": "5 eV"
+        },
+        {
+            "question_number": 43,
+            "question": "The maximum percentage error in the measurement of density of a wire is [Given, mass of wire = (0.60 ± 0.003)g, radius of wire = (0.50 ± 0.01)cm, length of wire = (10.00±0.05)cm]",
+            "options": [
+                "8",
+                "5",
+                "7",
+                ""
+            ],
+            "answer": "8"
+        },
+        {
+            "question_number": 44,
+            "question": "For a diatomic gas, if γ₁ = (for rigid molecules) and γ₂ = (for another diatomic molecules, but also having vibrational modes). Then, which one of the following options is correct? (Cp and Cv are specific heats of the gas at constant pressure and volume)",
+            "options": [
+                "γ₂ = γ₁",
+                "γ₂ =",
+                "γ₂ < γ₁",
+                "γ₂ > γ₁"
+            ],
+            "answer": "γ₂ < γ₁"
+        },
+        {
+            "question_number": 45,
+            "question": "A force F = 2i + bj + k is applied on a particle and it undergoes a displacement i - 2j – k. What will be the value of b, if work done on the particle is zero.",
+            "options": [
+                "0",
+                "",
+                "2",
+                ""
+            ],
+            "answer": "2"
+        },
+        {
+            "question_number": 46,
+            "question": "A proton is moving undeflected in a region of crossed electric and magnetic fields at a constant speed of 2 × 10⁵ m/s. When the electric field is switched off, the proton moves along a circular path of radius 2 cm. The magnitude of electric field is x × 10⁴ N/C. The value of x is (Take the mass of the proton 1.6 × 10⁻²⁷ kg.)",
+            "options": [],
+            "answer": "4"
+        },
+        {
+            "question_number": 47,
+            "question": "The net current flowing in the given circuit is",
+            "options": [],
+            "answer": "2"
+        },
+        {
+            "question_number": 48,
+            "question": "A parallel plate capacitor of area A = 16 cm² and separation between the plates 10 cm, is charged by a DC current. Consider a hypothetical plane surface of area A₀ = 3.2 cm² inside the capacitor and parallel to the plates. At an instant, the current through the circuit is 6A. At the same instant the displacement current through A₀ is",
+            "options": [],
+            "answer": "1.2"
+        },
+        {
+            "question_number": 49,
+            "question": "A tube of length 1 m is filled completely with an ideal liquid of mass 2 M, and closed at both ends. The tube is rotated uniformly in horizontal plane about one of its ends. If the force exerted by the liquid at the other end is F then angular velocity of the tube is Fin SI unit. The value of a is",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 50,
+            "question": "Two long parallel wires X and Y, separated by a distance of 6 cm, carry currents of 5A and 4A, respectively, in opposite directions as shown in the figure. Magnitude of the resultant magnetic field at point P at a distance of 4 cm from wire Y is x × 10⁻⁵ T. The value of x is (Take permeability of free space as μ₀ = 4π × 10⁻⁷ SI units.)",
+            "options": [],
+            "answer": "5"
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 51,
+            "question": "Given below are two statements : Statement (I) : Nitrogen, sulphur, halogen and phosphorus present in an organic compound are detected by Lassaigne's Test. Statement (II) : The elements present in the compound are converted from covalent form into ionic form by fusing the compound with Magnesium in Lassaigne's test. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Statement I is false but Statement II is true",
+                "Both Statement I and Statement II are true",
+                "Both Statement I and Statement II are false",
+                "Statement I is true but Statement II is false"
+            ],
+            "answer": "Statement I is true but Statement II is false"
+        },
+        {
+            "question_number": 52,
+            "question": "Density of 3 M NaCl solution is 1.25 g/mL. The molality of the solution is :",
+            "options": [
+                "1.79 m",
+                "2.79 m",
+                "2 m",
+                "3"
+            ],
+            "answer": "2.79 m"
+        },
+        {
+            "question_number": 53,
+            "question": "The correct order of the following complexes in terms of their crystal field stabilization energies is :",
+            "options": [
+                "[Co(NH3)4]2+ < [Co(NH3)6]2+ < [Co(en)3]3+ < [Co(NH3)6]3+",
+                "[Co(NH3)6]2+ < [Co(NH3)6]3+ < [Co(NH3)4]2+ < [Co(en)3]3+",
+                "[Co(en)3]3+ < [Co(NH3)6]3+ < [Co(NH3)6]2+ < [Co(NH3)4]2+",
+                "[Co(NH3)4]2+ < [Co(NH3)6]2+ < [Co(NH3)6]3+ < [Co(en)3]3+"
+            ],
+            "answer": "[Co(NH3)4]2+ < [Co(NH3)6]2+ < [Co(NH3)6]3+ < [Co(en)3]3+"
+        },
+        {
+            "question_number": 54,
+            "question": "Given below are two statements : Statement (I) : Corrosion is an electrochemical phenomenon in which pure metal acts as an anode and impure metal as a cathode. Statement (II) : The rate of corrosion is more in alkaline medium than in acidic medium. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both Statement I and Statement II are true",
+                "Statement I is false but Statement II is true",
+                "Statement I is true but Statement II is false",
+                "Both Statement I and Statement II are false"
+            ],
+            "answer": "Statement I is false but Statement II is true"
+        },
+        {
+            "question_number": 55,
+            "question": "Consider the given figure and choose the correct option :",
+            "options": [
+                "Activation energy of both forward and backward reaction is E1 + E2 and reactant is more stable than product.",
+                "Activation energy of forward reaction is E1 + E2",
+                "Activation energy of backward reaction is E₁ and product is more stable than reactant.",
+                "Activation energy of forward reaction is E1 + E2 and product is more stable than reactant."
+            ],
+            "answer": "Activation energy of forward reaction is E1 + E2 and product is more stable than reactant."
+        },
+        {
+            "question_number": 56,
+            "question": "The maximum number of RBr producing 2-methylbutane by above sequence of reactions is (Consider the structural isomers only)",
+            "options": [
+                "5",
+                "4",
+                "3",
+                "1"
+            ],
+            "answer": "4"
+        },
+        {
+            "question_number": 57,
+            "question": "The species which does not undergo disproportionation reaction is :",
+            "options": [
+                "ClO3",
+                "ClO",
+                "ClO2",
+                "ClO4"
+            ],
+            "answer": "ClO4"
+        },
+        {
+            "question_number": 58,
+            "question": "The molar solubility(s) of zirconium phosphate with molecular formula (Zr4+), (PO), is given by relation :",
+            "options": [
+                "(Ksp/8435)1/13",
+                "(Ksp/13)1/8",
+                "(Ksp/8)1/13",
+                "(Ksp/13)1/8"
+            ],
+            "answer": "(Ksp/8435)1/13"
+        },
+        {
+            "question_number": 59,
+            "question": "Identify the homoleptic complex(es) that is/are low spin. (A) [Fe(CN)5NO]²¯ (B) [COF6]³ (C) [Fe(CN)6]4- (D) [Co(NH3)6]3+ (E) [Cr(H2O)6] 2+ Choose the correct answer from the options given below:",
+            "options": [
+                "(C) only",
+                "(C) and (D) only",
+                "(A) and (C) only",
+                "(B) and (E) only"
+            ],
+            "answer": "(C) and (D) only"
+        },
+        {
+            "question_number": 60,
+            "question": "Match List - I with List - II for partial derivatives and thermodynamic quantities.",
+            "options": [
+                "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+                "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+                "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+                "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)"
+            ],
+            "answer": "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)"
+        },
+        {
+            "question_number": 61,
+            "question": "Identify the number of structure/s from the following which can be correlated to D-glyceraldehyde.",
+            "options": [
+                "four",
+                "one",
+                "two",
+                "three"
+            ],
+            "answer": "three"
+        },
+        {
+            "question_number": 62,
+            "question": "Given below are two statements : Statement (I) : A spectral line will be observed for a 2px → 2py transition. Statement (II) : 2px and 2py are degenerate orbitals. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both Statement I and Statement II are true",
+                "Statement I is false but Statement II is true",
+                "Both Statement I and Statement II are false",
+                "Statement I is true but Statement II is false"
+            ],
+            "answer": "Statement I is false but Statement II is true"
+        },
+        {
+            "question_number": 63,
+            "question": "Given below are two statements : Statement (I) : An element in the extreme left of the periodic table forms acidic oxides. Statement (II) : Acid is formed during the reaction between water and oxide of a reactive element present in the extreme right of the periodic table. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Statement I is true but Statement II is false",
+                "Both Statement I and Statement II are true",
+                "Both Statement I and Statement II are false",
+                "Statement I is false but Statement II is true"
+            ],
+            "answer": "Statement I is false but Statement II is true"
+        },
+        {
+            "question_number": 64,
+            "question": "Residue (A) + HCl (dil) → Compound (B) Structure of residue (A) and compound (B) formed respectively is",
+            "options": [
+                "CHO/COONa",
+                "C/OH",
+                "H/CH(OCrOHCl2)2/C",
+                "H/OH/SO3Na"
+            ],
+            "answer": "CHO/COONa"
+        },
+        {
+            "question_number": 65,
+            "question": "The alkane from below having two secondary hydrogens is :",
+            "options": [
+                "4-Ethyl-3,4-dimethyloctane",
+                "2,2,3,3-Tetramethylpentane",
+                "2,2,4,5-Tetramethylheptane",
+                "2,2,4,4-Tetramethylhexane"
+            ],
+            "answer": "2,2,4,5-Tetramethylheptane"
+        },
+        {
+            "question_number": 66,
+            "question": "When sec-butylcyclohexane reacts with bromine in the presence of sunlight, the major product is :",
+            "options": [
+                "Br at 1-position",
+                "Br at 2-position",
+                "Br at 3-position",
+                "Br at 4-position"
+            ],
+            "answer": "Br at 3-position"
+        },
+        {
+            "question_number": 67,
+            "question": "The most stable carbocation from the following is :",
+            "options": [
+                "CH2/OMe",
+                "CH2/Me",
+                "CH2/H3C",
+                "CH2//Me"
+            ],
+            "answer": "CH2/OMe"
+        },
+        {
+            "question_number": 68,
+            "question": "Match the Compounds (List - I) with the appropriate Catalyst/Reagents (List - II) for their reduction into corresponding amines.",
+            "options": [
+                "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+                "(A)-(III), (B)-(II), (C)-(IV), (D)-(I)",
+                "(A)-(II), (B)-(IV), (C)-(III), (D)-(I)",
+                "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)"
+            ],
+            "answer": "(A)-(II), (B)-(IV), (C)-(III), (D)-(I)"
+        },
+        {
+            "question_number": 69,
+            "question": "Arrange the following compounds in increasing order of their dipole moment : HBr, H2S, NF3 and CHCl3",
+            "options": [
+                "H2S < HBr < NF3 < CHCl3",
+                "NF3 < HBr < H2S < CHCl3",
+                "HBr < H2S < NF3 < CHCl3",
+                "CHCl3 < NF3 < HBr < H2S"
+            ],
+            "answer": "H2S < HBr < NF3 < CHCl3"
+        },
+        {
+            "question_number": 70,
+            "question": "The maximum covalency of a non-metallic group 15 element ' E ' with weakest E – E bond is:",
+            "options": [
+                "4",
+                "6",
+                "3",
+                "5"
+            ],
+            "answer": "6"
+        },
+        {
+            "question_number": 71,
+            "question": "The compound with molecular formula C6H6, which gives only one monobromo derivative and takes up four moles of hydrogen per mole for complete hydrogenation has ___ electrons.",
+            "options": [],
+            "answer": "6"
+        },
+        {
+            "question_number": 72,
+            "question": "20 mL of 2 M NaOH solution is added to 400 mL of 0.5 M NaOH solution. The final concentration of the solution is ___ ×10⁻² M. (Nearest integer)",
+            "options": [],
+            "answer": "6"
+        },
+        {
+            "question_number": 73,
+            "question": "Consider the following cases of standard enthalpy of reaction (ΔH in kJmol⁻¹): C2H6(g) + 2O2(g) → 2CO2(g) + 3H2O(l), ΔH = -1550; C (graphite) + O2(g) → CO2(g), ΔH₂ = −393.5; H2(g) + O2(g) → H2O(l), ΔH₃ = -286. The magnitude of ΔHfC2H6(g) is ___ kJmol⁻¹ (Nearest integer).",
+            "options": [],
+            "answer": "-84"
+        },
+        {
+            "question_number": 74,
+            "question": "Niobium ( Nb ) and ruthenium (Ru) have \" x \" and \" y \" number of electrons in their respective 4 d orbitals. The value of x + y is",
+            "options": [],
+            "answer": "9"
+        },
+        {
+            "question_number": 75,
+            "question": "The complex of Ni2+ ion and dimethyl glyoxime contains ___ number of Hydrogen (H) atoms.",
+            "options": [],
+            "answer": "16"
+        }
+    ]
+}

@@ -12,10 +12,10 @@ maths = []
 numerical_physics = []
 numerical_chemistry = []
 numerical_maths = []
-data = get_json('ntarip/exam/jee_main_all_questions.json')
+data = get_json('ntarip/exam/static/json/test.json')
 for paper in data:
     options = paper.get("options")
-    if isinstance(options, list) and len(options) == 4:
+    if options:
         if paper["question_number"] <= 25:
             # new_dict["Maths"] = paper 
             maths.append(paper)
@@ -42,7 +42,7 @@ new_dict["Chemistry"] = chemistry
 nemerical_dict["Maths"] = numerical_maths
 nemerical_dict["Physics"] = numerical_physics
 nemerical_dict["Chemistry"] = numerical_chemistry
-with open('ntarip/exam/jeemains_mcq.json', 'w', encoding='utf-8') as file:
+with open('ntarip/exam/static/json/jeemains28(2)jan2025_mcq.json', 'w', encoding='utf-8') as file:
     json.dump(new_dict, file, indent=4, ensure_ascii=False)
-with open('ntarip/exam/jeemains_numerical.json', 'w', encoding='utf-8') as file:
+with open('ntarip/exam/static/json/jeemains28(2)jan2025_numerical.json', 'w', encoding='utf-8') as file:
     json.dump(nemerical_dict, file, indent=4, ensure_ascii=False)

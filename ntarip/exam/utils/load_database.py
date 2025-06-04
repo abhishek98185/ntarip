@@ -4,19 +4,19 @@ from exam.models import (physicsQuestionAndOptions, physicsQuestionAndNumerical,
 import json, datetime
 
 def load_database():
-    with open('ntarip/exam/static/json/jeemains_mcq.json', 'r', encoding='utf-8') as file:
+    with open('ntarip/exam/static/json/jeemains28(2)jan2025_mcq.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-    with open('ntarip/exam/static/json/jeemains_numerical.json', 'r', encoding='utf-8') as file:
+    with open('ntarip/exam/static/json/jeemains28(2)jan2025_numerical.json', 'r', encoding='utf-8') as file:
         num_data = json.load(file)
 
     # Safer way to get the correct paper name
     paper_name = PaperName.objects.get(name__iexact="jee-mains")
-    shift = 1
+    shift = 2
     # date = datetime.date(2025, 1, 22)  # Use real date instead of year + month + day
     year = 2025
     month = "January"
-    day = 1
-    paper, created = Paper.objects.get_or_create(
+    day = 4
+    paper = Paper.objects.create(
         paper_name=paper_name,
         year=year,
         month=month,

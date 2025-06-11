@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Test Portal</title>
 
     <style>
       body {
@@ -298,447 +298,544 @@
         background: linear-gradient(135deg, #21a957 50%, #7b1fa2 50%);
         color: white;
       }
-      @media screen and (orientation: portrait) and (max-width: 768px) {
-        html,
-        body {
-          width: 100vh;
-          height: 100vw;
-          overflow: hidden;
-        }
+      /* Modal Styles */
+      #confirmModal,
+      #submitModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+      }
 
-        # {
-          transform: rotate(90deg);
-          transform-origin: left top;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
+      .modal-backdrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid #0047ab;
+        border-radius: 12px;
+        padding: 30px 40px;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        max-width: 400px;
+        width: 80%;
+      }
+
+      .modal-box h2 {
+        color: #1976d2;
+        margin-bottom: 15px;
+      }
+
+      .modal-box p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .modal-box .home-button {
+        background-color: #0047ab;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .modal-box .home-button:hover {
+        background-color: #032c55;
       }
     </style>
   </head>
 
   <body>
-    <div id="rotate">
-      <div class="top">
-        <div class="top1">
-          <div class="ntarip">NTARIP</div>
-          <div>JEE MAINS</div>
-          <div>Candidate name:</div>
-          <!-- candidate name -->
-          <div><span> Time: </span> <span id="timer">03:00:00</span></div>
-        </div>
-        <div class="top2">
-          <div class="subject physics"><button>Physics</button></div>
-          <div class="subject chemistry"><button>Chemistry</button></div>
-          <div class="subject mathematics"><button>Mathematics</button></div>
-        </div>
+    <div class="top">
+      <div class="top1">
+        <div class="ntarip">NTARIP</div>
+        <div>JEE MAINS</div>
+        <div>Candidate name:</div>
+        <!-- candidate name -->
+        <div><span> Time: </span> <span id="timer">03:00:00</span></div>
       </div>
+      <div class="top2">
+        <div class="subject physics"><button>Physics</button></div>
+        <div class="subject chemistry"><button>Chemistry</button></div>
+        <div class="subject mathematics"><button>Mathematics</button></div>
+      </div>
+    </div>
 
-      <!-- main box contains question  -->
+    <!-- main box contains question  -->
 
-      <div class="main">
-        <div class="question_display">
-          <!-- question number  -->
-          <!-- <div class="question_number"> Question 1:</div> -->
+    <div class="main">
+      <div class="question_display">
+        <!-- question number  -->
+        <!-- <div class="question_number"> Question 1:</div> -->
 
-          <!-- question  -->
-          <div class="question_here">
-            The characteristic distance at which quantum gravitational effects
-            are significant, the Planck length, can be determined from a
-            suitable combination of the fundamental physical constants G, ℏ and
-            c. Which of the following correctly gives the Planck length?
-          </div>
-          <div class="options">
-            <div class="option-group">
-              <input type="radio" id="optA" name="option" value="A" />
-              <label for="optA">
-                <div class="option-circle">A</div>
-                <span
-                  ><strong>Statement I</strong> is incorrect but
-                  <strong>Statement II</strong> is correct</span
-                >
-              </label>
-
-              <input type="radio" id="optB" name="option" value="B" />
-              <label for="optB">
-                <div class="option-circle">B</div>
-                <span
-                  >Both <strong>Statement I</strong> and
-                  <strong>Statement II</strong> are incorrect</span
-                >
-              </label>
-
-              <input type="radio" id="optC" name="option" value="C" />
-              <label for="optC">
-                <div class="option-circle">C</div>
-                <span
-                  >Both <strong>Statement I</strong> and
-                  <strong>Statement II</strong> are correct</span
-                >
-              </label>
-
-              <input type="radio" id="optD" name="option" value="D" />
-              <label for="optD">
-                <div class="option-circle">D</div>
-                <span
-                  ><strong>Statement I</strong> is correct but
-                  <strong>Statement II</strong> is incorrect</span
-                >
-              </label>
-            </div>
-          </div>
+        <!-- question  -->
+        <div class="question_here">
+          The characteristic distance at which quantum gravitational effects are
+          significant, the Planck length, can be determined from a suitable
+          combination of the fundamental physical constants G, ℏ and c. Which of
+          the following correctly gives the Planck length?
         </div>
-        <div class="question_status">
-          <!-- upperpart -->
-          <div class="tell">
-            <div class="up2">
-              <div class="notvisited">
-                <div class="status-number">89</div>
-                <div class="status-text">Not Visited</div>
-              </div>
-              <div class="notanswered">
-                <div class="unanswerednumber">1</div>
-                <div class="status-text">Not Answered</div>
-              </div>
-            </div>
-            <div class="up2">
-              <div class="answered">
-                <div class="answerednumber">0</div>
-                <div class="status-text">Answered</div>
-              </div>
-              <div class="marked">
-                <div class="markednumber">0</div>
-                <div class="status-text">Marked</div>
-              </div>
-            </div>
-            <div class="up2">
-              <div class="answeredandmarked">
-                <div class="answeredmarkednumber">0</div>
-                <div class="status-text">Answered & Marked</div>
-              </div>
-            </div>
-          </div>
-          <!-- lowerpart -->
-          <div class="questions">
-            <div id="button-container"></div>
-          </div>
-          <div style="display: flex; justify-content: center; gap: 20px">
-            <button class="previous-button markbutton" id="markForReview">
-              Mark for Review
-            </button>
-            <button class="previous-button submitbutton">Submit</button>
+        <div class="options">
+          <div class="option-group">
+            <input type="radio" id="optA" name="option" value="A" />
+            <label for="optA">
+              <div class="option-circle">A</div>
+              <span
+                ><strong>Statement I</strong> is incorrect but
+                <strong>Statement II</strong> is correct</span
+              >
+            </label>
+
+            <input type="radio" id="optB" name="option" value="B" />
+            <label for="optB">
+              <div class="option-circle">B</div>
+              <span
+                >Both <strong>Statement I</strong> and
+                <strong>Statement II</strong> are incorrect</span
+              >
+            </label>
+
+            <input type="radio" id="optC" name="option" value="C" />
+            <label for="optC">
+              <div class="option-circle">C</div>
+              <span
+                >Both <strong>Statement I</strong> and
+                <strong>Statement II</strong> are correct</span
+              >
+            </label>
+
+            <input type="radio" id="optD" name="option" value="D" />
+            <label for="optD">
+              <div class="option-circle">D</div>
+              <span
+                ><strong>Statement I</strong> is correct but
+                <strong>Statement II</strong> is incorrect</span
+              >
+            </label>
           </div>
         </div>
       </div>
-      <div class="footer">
-        <div class="clear_resp">
-          <button class="previous-button clearresponse">Clear Response</button>
+      <div class="question_status">
+        <!-- upperpart -->
+        <div class="tell">
+          <div class="up2">
+            <div class="notvisited">
+              <div class="status-number">89</div>
+              <div class="status-text">Not Visited</div>
+            </div>
+            <div class="notanswered">
+              <div class="unanswerednumber">1</div>
+              <div class="status-text">Not Answered</div>
+            </div>
+          </div>
+          <div class="up2">
+            <div class="answered">
+              <div class="answerednumber">0</div>
+              <div class="status-text">Answered</div>
+            </div>
+            <div class="marked">
+              <div class="markednumber">0</div>
+              <div class="status-text">Marked</div>
+            </div>
+          </div>
+          <div class="up2">
+            <div class="answeredandmarked">
+              <div class="answeredmarkednumber">0</div>
+              <div class="status-text">Answered & Marked</div>
+            </div>
+          </div>
         </div>
-        <div class="prev_button">
+        <!-- lowerpart -->
+        <div class="questions">
+          <div id="button-container"></div>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 20px">
+          <button class="previous-button markbutton" id="markForReview">
+            Mark for Review
+          </button>
+          <button class="previous-button submitbutton">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="clear_resp">
+        <button class="previous-button clearresponse">Clear Response</button>
+      </div>
+      <div class="prev_button">
+        <button
+          class="previous-button previousbutton"
+          onclick="previousButtonFunction()"
+        >
+          Previous
+        </button>
+      </div>
+      <div class="next_button">
+        <button
+          class="previous-button nextbutton"
+          onclick="nextButtonFunction()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" style="display: none">
+      <div class="modal-backdrop"></div>
+      <div class="modal-box">
+        <h2>Confirm Submission</h2>
+        <p>Are you sure you want to submit your test?</p>
+        <div style="margin-top: 20px">
           <button
-            class="previous-button previousbutton"
-            onclick="previousButtonFunction()"
+            onclick="confirmSubmit()"
+            class="home-button"
+            style="margin-right: 10px"
           >
-            Previous
+            Yes, Submit
+          </button>
+          <button
+            onclick="closeModal('confirmModal')"
+            class="home-button"
+            style="background-color: gray"
+          >
+            Cancel
           </button>
         </div>
-        <div class="next_button">
-          <button
-            class="previous-button nextbutton"
-            onclick="nextButtonFunction()"
-          >
-            Next
-          </button>
-        </div>
       </div>
-    </div>  
+    </div>
+
+    <!-- Thank You Modal -->
+    <div id="submitModal" style="display: none">
+      <div class="modal-backdrop"></div>
+      <div class="modal-box">
+        <h2>Thank You!</h2>
+        <p>Your test has been successfully submitted.</p>
+        <button onclick="goToHome()" class="home-button">Go to Home</button>
+      </div>
+    </div>
+
     <script>
-      function startTimer(duration, display) {
-        let timer = duration,
-          hours,
-          minutes,
-          seconds;
-        setInterval(function () {
-          hours = parseInt(timer / 3600, 10);
-          minutes = parseInt((timer % 3600) / 60, 10);
-          seconds = parseInt(timer % 60, 10);
+            function startTimer(duration, display) {
+              let timer = duration
+                hours,
+                minutes,
+                seconds;
+              setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
-          hours = hours < 10 ? "0" + hours : hours;
-          minutes = minutes < 10 ? "0" + minutes : minutes;
-          seconds = seconds < 10 ? "0" + seconds : seconds;
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
 
-          display.textContent = hours + ":" + minutes + ":" + seconds;
+                display.textContent = hours + ":" + minutes + ":" + seconds;
 
-          if (--timer < 0) {
-            timer = 0;
-          }
-        }, 1000);
-      }
-
-      window.onload = function () {
-        const timerDisplay = document.getElementById("timer");
-        startTimer(3 * 60 * 60, timerDisplay); // 3 hours
-      };
-
-      // Category Buttons
-      const categoryButtons = {
-        physics: document.querySelector(".physics button"),
-        chemistry: document.querySelector(".chemistry button"),
-        mathematics: document.querySelector(".mathematics button")
-      };
-
-      const container = document.getElementById("button-container");
-      let buttons_list = [];
-
-      // Generate 90 question buttons
-      for (let i = 1; i <= 90; i++) {
-        const btn = document.createElement("button");
-        btn.innerText = i;
-        btn.className = "button";
-        btn.onclick = function () {
-          loadQuestions(i);
-        };
-        container.appendChild(btn);
-        buttons_list.push(btn);
-      }
-
-      // Convert Django context into JS object
-      const questions = [
-        {% for q in Questions %}
-          {
-            id: {{ forloop.counter }},
-            question: "{{ q.question_text|escapejs }}",
-            options: [
-              "{{ q.option1|escapejs }}",
-              "{{ q.option2|escapejs }}",
-              "{{ q.option3|escapejs }}",
-              "{{ q.option4|escapejs }}"
-            ]
-          }{% if not forloop.last %},{% endif %}
-        {% endfor %}
-      ];
-
-      const questionContainer = document.querySelector(".question_here");
-      const labels = document.querySelectorAll(".option-group label");
-      let currentQuestionID = null;
-
-      // Stores selected options like { 1: 'A', 2: 'B', ... }
-      let responses = {};
-      let visitedQuestions = new Set();
-      let markedQuestions = new Set();
-
-      function loadQuestions(id) {
-        // Mark as visited
-        visitedQuestions.add(id);
-
-        // Highlight selected question button
-        buttons_list.forEach((btn) => {
-          const btnID = parseInt(btn.innerText);
-          if (btnID === id) {
-            btn.style.backgroundColor = "#1976d2";
-            btn.style.color = "white";
-          } else {
-            btn.style.backgroundColor = getButtonColor(btnID);
-            btn.style.color = "black";
-          }
-        });
-
-        highlightCategory(id);
-
-        const questionObj = questions.find((q) => q.id === id);
-        if (questionObj) {
-          questionContainer.textContent = "Q" + id + ") " + questionObj.question;
-          loadOptions(questionObj.options, id);
-        }
-
-        currentQuestionID = id;
-        updateStatusCounts();
-      }
-
-      function getButtonColor(id) {
-        if (!visitedQuestions.has(id)) return ""; // default (not visited)
-        if (markedQuestions.has(id) && responses[id]) {
-          return ""; // will use gradient for answered and marked
-        } else if (markedQuestions.has(id)) {
-          return "#7b1fa2"; // purple for marked
-        } else if (responses[id]) {
-          return "#21a957"; // green for answered
-        }
-        return "#e75b1e"; // orange for visited but unanswered
-      }
-
-      function loadOptions(options, questionId) {
-        const radios = document.querySelectorAll('input[name="option"]');
-        radios.forEach((radio) => (radio.checked = false)); // Clear previous selection
-
-        labels.forEach((label, index) => {
-          const span = label.querySelector("span");
-          if (span) {
-            span.textContent = options[index];
-          }
-        });
-
-        // If already answered, pre-fill the option
-        if (responses[questionId]) {
-          const selected = responses[questionId];
-          const radio = document.querySelector(`input[value="${selected}"]`);
-          if (radio) radio.checked = true;
-        }
-      }
-
-      // Record answer when selected
-      const radios = document.querySelectorAll('input[name="option"]');
-      radios.forEach((radio) => {
-        radio.addEventListener("change", () => {
-          if (currentQuestionID !== null) {
-            responses[currentQuestionID] = radio.value;
-            updateStatusCounts();
-            // Update button color
-            const btn = buttons_list[currentQuestionID - 1];
-            if (markedQuestions.has(currentQuestionID)) {
-              btn.className = "button answered-marked-btn";
-            } else {
-              btn.style.backgroundColor = "#21a957";
+                if (--timer < 0) {
+                  timer = 0;
+                }
+              }, 1000);
             }
-          }
-        });
+
+            window.onload = function () {
+              const timerDisplay = document.getElementById("timer");
+              startTimer(3 * 60 * 60, timerDisplay); // 3 hours
+            };
+
+            // Category Buttons
+            const categoryButtons = {
+              physics: document.querySelector(".physics button"),
+              chemistry: document.querySelector(".chemistry button"),
+              mathematics: document.querySelector(".mathematics button")
+            };
+
+            const container = document.getElementById("button-container");
+            let buttons_list = [];
+
+            // Generate 90 question buttons
+            for (let i = 1; i <= 90; i++) {
+              const btn = document.createElement("button");
+              btn.innerText = i;
+              btn.className = "button";
+              btn.onclick = function () {
+                loadQuestions(i);
+              };
+              container.appendChild(btn);
+              buttons_list.push(btn);
+            }
+
+            // Convert Django context into JS object
+            const questions = [
+              {% for q in Questions %}
+                {
+                  id: {{ forloop.counter }},
+                  question: "{{ q.question_text|escapejs }}",
+                  options: [
+                    "{{ q.option1|escapejs }}",
+                    "{{ q.option2|escapejs }}",
+                    "{{ q.option3|escapejs }}",
+                    "{{ q.option4|escapejs }}"
+                  ]
+                }{% if not forloop.last %},{% endif %}
+              {% endfor %}
+            ];
+
+            const questionContainer = document.querySelector(".question_here");
+            const labels = document.querySelectorAll(".option-group label");
+            let currentQuestionID = null;
+
+            // Stores selected options like { 1: 'A', 2: 'B', ... }
+            let responses = {};
+            let visitedQuestions = new Set();
+            let markedQuestions = new Set();
+
+            function loadQuestions(id) {
+              // Mark as visited
+              visitedQuestions.add(id);
+
+              // Highlight selected question button
+              buttons_list.forEach((btn) => {
+                const btnID = parseInt(btn.innerText);
+                if (btnID === id) {
+                  btn.style.backgroundColor = "#1976d2";
+                  btn.style.color = "white";
+                } else {
+                  btn.style.backgroundColor = getButtonColor(btnID);
+                  btn.style.color = "black";
+                }
+              });
+
+              highlightCategory(id);
+
+              const questionObj = questions.find((q) => q.id === id);
+              if (questionObj) {
+                questionContainer.textContent = "Q" + id + ") " + questionObj.question;
+                loadOptions(questionObj.options, id);
+              }
+
+              currentQuestionID = id;
+              updateStatusCounts();
+            }
+
+            function getButtonColor(id) {
+              if (!visitedQuestions.has(id)) return ""; // default (not visited)
+              if (markedQuestions.has(id) && responses[id]) {
+                return ""; // will use gradient for answered and marked
+              } else if (markedQuestions.has(id)) {
+                return "#7b1fa2"; // purple for marked
+              } else if (responses[id]) {
+                return "#21a957"; // green for answered
+              }
+              return "#e75b1e"; // orange for visited but unanswered
+            }
+
+            function loadOptions(options, questionId) {
+              const radios = document.querySelectorAll('input[name="option"]');
+              radios.forEach((radio) => (radio.checked = false)); // Clear previous selection
+
+              labels.forEach((label, index) => {
+                const span = label.querySelector("span");
+                if (span) {
+                  span.textContent = options[index];
+                }
+              });
+
+              // If already answered, pre-fill the option
+              if (responses[questionId]) {
+                const selected = responses[questionId];
+                const radio = document.querySelector(`input[value="${selected}"]`);
+                if (radio) radio.checked = true;
+              }
+            }
+
+            // Record answer when selected
+            const radios = document.querySelectorAll('input[name="option"]');
+            radios.forEach((radio) => {
+              radio.addEventListener("change", () => {
+                if (currentQuestionID !== null) {
+                  responses[currentQuestionID] = radio.value;
+                  updateStatusCounts();
+                  // Update button color
+                  const btn = buttons_list[currentQuestionID - 1];
+                  if (markedQuestions.has(currentQuestionID)) {
+                    btn.className = "button answered-marked-btn";
+                  } else {
+                    btn.style.backgroundColor = "#21a957";
+                  }
+                }
+              });
+            });
+
+            function clearResponse() {
+              const radios = document.querySelectorAll('input[name="option"]');
+              radios.forEach((radio) => (radio.checked = false));
+              if (currentQuestionID !== null) {
+                delete responses[currentQuestionID];
+                // Update button color
+                const btn = buttons_list[currentQuestionID - 1];
+                if (markedQuestions.has(currentQuestionID)) {
+                  btn.className = "button marked-btn";
+                } else {
+                  btn.style.backgroundColor = "#e75b1e";
+                }
+              }
+              updateStatusCounts();
+            }
+
+            document.querySelector(".clearresponse").addEventListener("click", clearResponse);
+
+            function highlightCategory(id) {
+              const category = getCategoryFromID(id);
+              Object.entries(categoryButtons).forEach(([key, btn]) => {
+                if (key === category) {
+                  btn.style.backgroundColor = "#ffa500"; // orange
+                  btn.style.color = "white";
+                } else {
+                  btn.style.backgroundColor = "white";
+                  btn.style.color = "black";
+                }
+              });
+            }
+
+            function getCategoryFromID(id) {
+              if (id >= 1 && id <= 30) return "physics";
+              if (id >= 31 && id <= 60) return "chemistry";
+              return "mathematics";
+            }
+
+            function nextButtonFunction() {
+              if (currentQuestionID < 90) {
+                loadQuestions(currentQuestionID + 1);
+              }
+            }
+
+            function previousButtonFunction() {
+              if (currentQuestionID > 1) {
+                loadQuestions(currentQuestionID - 1);
+              }
+            }
+
+            // Mark for review functionality
+            document.getElementById("markForReview").addEventListener("click", function() {
+              if (currentQuestionID !== null) {
+                if (markedQuestions.has(currentQuestionID)) {
+                  markedQuestions.delete(currentQuestionID);
+                  const btn = buttons_list[currentQuestionID - 1];
+                  if (responses[currentQuestionID]) {
+                    btn.style.backgroundColor = "#21a957";
+                  } else {
+                    btn.style.backgroundColor = "#e75b1e";
+                  }
+                  btn.className = "button";
+                } else {
+                  markedQuestions.add(currentQuestionID);
+                  const btn = buttons_list[currentQuestionID - 1];
+                  if (responses[currentQuestionID]) {
+                    btn.className = "button answered-marked-btn";
+                  } else {
+                    btn.className = "button marked-btn";
+                  }
+                }
+                updateStatusCounts();
+              }
+            });
+
+            // Category button clicks
+            categoryButtons.physics.onclick = () => loadQuestions(1);
+            categoryButtons.chemistry.onclick = () => loadQuestions(31);
+            categoryButtons.mathematics.onclick = () => loadQuestions(61);
+
+            // Update all status counts
+            function updateStatusCounts() {
+              const total = 90;
+              let notVisited = 0;
+              let notAnswered = 0;
+              let answered = 0;
+              let marked = 0;
+              let answeredAndMarked = 0;
+
+              for (let i = 1; i <= total; i++) {
+                if (!visitedQuestions.has(i)) {
+                  notVisited++;
+                } else if (markedQuestions.has(i) && responses[i]) {
+                  answeredAndMarked++;
+                } else if (markedQuestions.has(i)) {
+                  marked++;
+                } else if (!responses[i]) {
+                  notAnswered++;
+                } else {
+                  answered++;
+                }
+              }
+
+              // Update DOM values
+              document.querySelector(".notvisited .status-number").innerText = notVisited;
+              document.querySelector(".notanswered .unanswerednumber").innerText = notAnswered;
+              document.querySelector(".answered .answerednumber").innerText = answered;
+              document.querySelector(".marked .markednumber").innerText = marked;
+
+              // Create or update answered & marked element
+              let answeredMarkedEl = document.querySelector(".answeredmarkednumber");
+              if (!answeredMarkedEl) {
+                answeredMarkedEl = document.createElement("div");
+                answeredMarkedEl.className = "answeredmarkednumber";
+                answeredMarkedEl.style.width = "45px";
+                answeredMarkedEl.style.height = "35px";
+                answeredMarkedEl.style.background = "linear-gradient(135deg, #21a957 50%, #7b1fa2 50%)";
+                answeredMarkedEl.style.color = "white";
+                answeredMarkedEl.style.fontWeight = "bold";
+                answeredMarkedEl.style.fontFamily = "Arial, sans-serif";
+                answeredMarkedEl.style.fontSize = "16px";
+                answeredMarkedEl.style.display = "flex";
+                answeredMarkedEl.style.justifyContent = "center";
+                answeredMarkedEl.style.alignItems = "center";
+                answeredMarkedEl.style.clipPath = "polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%)";
+                answeredMarkedEl.style.borderRadius = "0 6px 6px 0";
+                answeredMarkedEl.style.boxShadow = "1px 1px 4px rgba(0, 0, 0, 0.25)";
+
+                const container = document.querySelector(".answeredandmarked");
+                container.insertBefore(answeredMarkedEl, container.querySelector(".status-text"));
+              }
+              answeredMarkedEl.innerText = answeredAndMarked;
+            }
+
+            // On Submit, open confirmation modal
+      document.querySelector(".submitbutton").addEventListener("click", function () {
+        document.getElementById("confirmModal").style.display = "block";
       });
 
-      function clearResponse() {
-        const radios = document.querySelectorAll('input[name="option"]');
-        radios.forEach((radio) => (radio.checked = false));
-        if (currentQuestionID !== null) {
-          delete responses[currentQuestionID];
-          // Update button color
-          const btn = buttons_list[currentQuestionID - 1];
-          if (markedQuestions.has(currentQuestionID)) {
-            btn.className = "button marked-btn";
-          } else {
-            btn.style.backgroundColor = "#e75b1e";
-          }
-        }
-        updateStatusCounts();
+      // User confirms submission
+      function confirmSubmit() {
+        document.getElementById("confirmModal").style.display = "none";
+        document.getElementById("submitModal").style.display = "block";
+
+        // OPTIONAL: Disable all inputs / lock interface here
+        // document.body.style.pointerEvents = 'none';
       }
 
-      document.querySelector(".clearresponse").addEventListener("click", clearResponse);
-
-      function highlightCategory(id) {
-        const category = getCategoryFromID(id);
-        Object.entries(categoryButtons).forEach(([key, btn]) => {
-          if (key === category) {
-            btn.style.backgroundColor = "#ffa500"; // orange
-            btn.style.color = "white";
-          } else {
-            btn.style.backgroundColor = "white";
-            btn.style.color = "black";
-          }
-        });
+      // Close modal helper
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
       }
 
-      function getCategoryFromID(id) {
-        if (id >= 1 && id <= 30) return "physics";
-        if (id >= 31 && id <= 60) return "chemistry";
-        return "mathematics";
+      // Go to home after final submission
+      function goToHome() {
+        window.location.href = "/"; // replace with your home route
       }
 
-      function nextButtonFunction() {
-        if (currentQuestionID < 90) {
-          loadQuestions(currentQuestionID + 1);
-        }
-      }
-
-      function previousButtonFunction() {
-        if (currentQuestionID > 1) {
-          loadQuestions(currentQuestionID - 1);
-        }
-      }
-
-      // Mark for review functionality
-      document.getElementById("markForReview").addEventListener("click", function() {
-        if (currentQuestionID !== null) {
-          if (markedQuestions.has(currentQuestionID)) {
-            markedQuestions.delete(currentQuestionID);
-            const btn = buttons_list[currentQuestionID - 1];
-            if (responses[currentQuestionID]) {
-              btn.style.backgroundColor = "#21a957";
-            } else {
-              btn.style.backgroundColor = "#e75b1e";
-            }
-            btn.className = "button";
-          } else {
-            markedQuestions.add(currentQuestionID);
-            const btn = buttons_list[currentQuestionID - 1];
-            if (responses[currentQuestionID]) {
-              btn.className = "button answered-marked-btn";
-            } else {
-              btn.className = "button marked-btn";
-            }
-          }
-          updateStatusCounts();
-        }
-      });
-
-      // Category button clicks
-      categoryButtons.physics.onclick = () => loadQuestions(1);
-      categoryButtons.chemistry.onclick = () => loadQuestions(31);
-      categoryButtons.mathematics.onclick = () => loadQuestions(61);
-
-      // Update all status counts
-      function updateStatusCounts() {
-        const total = 90;
-        let notVisited = 0;
-        let notAnswered = 0;
-        let answered = 0;
-        let marked = 0;
-        let answeredAndMarked = 0;
-
-        for (let i = 1; i <= total; i++) {
-          if (!visitedQuestions.has(i)) {
-            notVisited++;
-          } else if (markedQuestions.has(i) && responses[i]) {
-            answeredAndMarked++;
-          } else if (markedQuestions.has(i)) {
-            marked++;
-          } else if (!responses[i]) {
-            notAnswered++;
-          } else {
-            answered++;
-          }
-        }
-
-        // Update DOM values
-        document.querySelector(".notvisited .status-number").innerText = notVisited;
-        document.querySelector(".notanswered .unanswerednumber").innerText = notAnswered;
-        document.querySelector(".answered .answerednumber").innerText = answered;
-        document.querySelector(".marked .markednumber").innerText = marked;
-
-        // Create or update answered & marked element
-        let answeredMarkedEl = document.querySelector(".answeredmarkednumber");
-        if (!answeredMarkedEl) {
-          answeredMarkedEl = document.createElement("div");
-          answeredMarkedEl.className = "answeredmarkednumber";
-          answeredMarkedEl.style.width = "45px";
-          answeredMarkedEl.style.height = "35px";
-          answeredMarkedEl.style.background = "linear-gradient(135deg, #21a957 50%, #7b1fa2 50%)";
-          answeredMarkedEl.style.color = "white";
-          answeredMarkedEl.style.fontWeight = "bold";
-          answeredMarkedEl.style.fontFamily = "Arial, sans-serif";
-          answeredMarkedEl.style.fontSize = "16px";
-          answeredMarkedEl.style.display = "flex";
-          answeredMarkedEl.style.justifyContent = "center";
-          answeredMarkedEl.style.alignItems = "center";
-          answeredMarkedEl.style.clipPath = "polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%)";
-          answeredMarkedEl.style.borderRadius = "0 6px 6px 0";
-          answeredMarkedEl.style.boxShadow = "1px 1px 4px rgba(0, 0, 0, 0.25)";
-
-          const container = document.querySelector(".answeredandmarked");
-          container.insertBefore(answeredMarkedEl, container.querySelector(".status-text"));
-        }
-        answeredMarkedEl.innerText = answeredAndMarked;
-      }
-
-      // Initial load
-      loadQuestions(1);
+            // Initial load
+            loadQuestions(1);
     </script>
   </body>
 </html>

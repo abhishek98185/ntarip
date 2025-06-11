@@ -1,0 +1,98 @@
+{
+    "Maths": [
+        {
+            "question_number": 21,
+            "question": "Let S = {p1, p2, ..., p10} be the set of first ten prime numbers. Let A = S ∪ P, where P is the set of all possible products of distinct elements of S. Then the number of all ordered pairs (x, y), x ∈ S, y ∈ A, such that x divides y, is",
+            "options": [],
+            "answer": "5120"
+        },
+        {
+            "question_number": 22,
+            "question": "If for some α, β; α ≤ β, α + β = 8 and sec^2(tan^{-1} α) + csc^2(cot^{-1} β) = 36, then α^2 + β is",
+            "options": [],
+            "answer": "14"
+        },
+        {
+            "question_number": 23,
+            "question": "Let A be a 3×3 matrix such that X^T A X = 0 for all nonzero 3×1 matrices X = [x; y; z]. If A[1;1;1] = [1;4;-5], A[1;2;1] = [0;4;-8], and det(adj(2(A+I))) = 2^α 3^β 5^γ, α, β, γ ∈ N, then α^2 + β^2 + γ^2 is",
+            "options": [],
+            "answer": "44"
+        },
+        {
+            "question_number": 24,
+            "question": "Let f be a differentiable function such that 2(x+2)^2 f(x) - 3(x+2)^2 = 10 ∫₀^x (t+2)f(t) dt, x ≥ 0. Then f(2) is equal to",
+            "options": [],
+            "answer": "19"
+        },
+        {
+            "question_number": 25,
+            "question": "The number of 3-digit numbers, that are divisible by 2 and 3, but not divisible by 4 and 9, is",
+            "options": [],
+            "answer": "125"
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 46,
+            "question": "A current of 5A exists in a square loop of side 1/√2 m. Then the magnitude of the magnetic field B at the centre of the square loop will be p × 10^{-6} T. where, value of p is",
+            "options": [],
+            "answer": "8"
+        },
+        {
+            "question_number": 47,
+            "question": "A square loop of sides a=1 m is held normally in front of a point charge q=1 C. The flux of the electric field through the shaded region is (5/p) × (1/ε₀) Nm^2/C, where the value of p is",
+            "options": [],
+            "answer": "48"
+        },
+        {
+            "question_number": 48,
+            "question": "The temperature of 1 mole of an ideal monoatomic gas is increased by 50°C at constant pressure. The total heat added and change in internal energy are E1 and E2, respectively. If E1/E2 = x/9 then the value of x is",
+            "options": [],
+            "answer": "15"
+        },
+        {
+            "question_number": 49,
+            "question": "The least count of a screw guage is 0.01 mm. If the pitch is increased by 75% and number of divisions on the circular scale is reduced by 50%, the new least count will be ___ × 10^{-3} mm",
+            "options": [],
+            "answer": "35"
+        },
+        {
+            "question_number": 50,
+            "question": "A wire of resistance 9 Ω is bent to form an equilateral triangle. Then the equivalent resistance across any two vertices will be ___ ohm.",
+            "options": [],
+            "answer": "2"
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 71,
+            "question": "Xg of benzoic acid on reaction with aq NaHCO3 released CO2 that occupied 11.2 L volume at STP. X is ___ g.",
+            "options": [],
+            "answer": "61"
+        },
+        {
+            "question_number": 72,
+            "question": "Consider the following reaction occurring in the blast furnace: Fe3O4(s) + 4CO(g) → 3Fe(l) + 4CO2(g). x kg of iron is produced when 2.32×10^3 kg Fe3O4 and 2.8×10^2 kg CO are brought together in the furnace. The value of 'x' is ___ (nearest integer). Given: molar mass of Fe3O4=232 gmol^{-1}, molar mass of CO=28 gmol^{-1}, molar mass of Fe=56 gmol^{-1}",
+            "options": [],
+            "answer": "420"
+        },
+        {
+            "question_number": 73,
+            "question": "37.8 g N2O5 was taken in a 1 L reaction vessel and allowed to undergo the following reaction at 500 K: 2N2O5(g) ⇌ 2N2O4(g) + O2(g). The total pressure at equilibrium was found to be 18.65 bar. Then, Kp = ___ × 10^{-2} [nearest integer]. Assume N2O5 to behave ideally under these conditions. Given: R=0.082 bar Lmol^{-1} K^{-1}",
+            "options": [],
+            "answer": "962"
+        },
+        {
+            "question_number": 74,
+            "question": "Among the following cations, the number of cations which will give characteristic precipitate in their identification tests with K4[Fe(CN)6] is ___. Cu^{2+}, Fe^{3+}, Ba^{2+}, Ca^{2+}, NH4^+, Mg^{2+}, Zn^{2+}",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 75,
+            "question": "Standard entropies of X2, Y2 and XY5 are 70, 50 and 110 J K^{-1} mol^{-1} respectively. The temperature in Kelvin at which the reaction (1/2)X2 + (5/2)Y2 <-> XY5 ΔH° = -35 kJ mol^{-1} will be at equilibrium is (Nearest integer)",
+            "options": [],
+            "answer": "700"
+        }
+    ]
+}

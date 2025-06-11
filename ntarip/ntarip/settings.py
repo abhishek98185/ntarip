@@ -123,6 +123,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # added mannually 
+
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)
 EXTERNAL_APPS = [
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
@@ -132,5 +136,5 @@ EXTERNAL_APPS = [
 INSTALLED_APPS += EXTERNAL_APPS
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),  # ✅ If you're using pathlib
+    os.path.join(BASE_DIR, "static"),  
 ]

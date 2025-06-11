@@ -1,0 +1,646 @@
+{
+    "Maths": [
+        {
+            "question_number": 1,
+            "question": "Group A consists of 7 boys and 3 girls, while group B consists of 6 boys and 5 girls. The number of ways, 4 boys and 4 girls can be invited for a picnic if 5 of them must be from group A and the remaining 3 from group B, is equal to :",
+            "options": [
+                "8750",
+                "9100",
+                "8925",
+                "8575"
+            ],
+            "answer": "8925"
+        },
+        {
+            "question_number": 2,
+            "question": "If the system of equations x + 2y - 3z = 2, 2x + λy + 5z = 5, 14x + 3y + μz = 33 has infinitely many solutions, then λ + μ is equal to :",
+            "options": [
+                "13",
+                "10",
+                "12",
+                "11"
+            ],
+            "answer": "12"
+        },
+        {
+            "question_number": 3,
+            "question": "Let A = {x ∈ (0, π) − {π/2} : log(2/π) | sin x| + log(2/π) | cos x| = 2} and B = {x ≥ 0 : √x(√x − 4) − 3|√x − 2| + 6 = 0}. Then n(A ∪ B) is equal to :",
+            "options": [
+                "4",
+                "8",
+                "6",
+                "2"
+            ],
+            "answer": "8"
+        },
+        {
+            "question_number": 4,
+            "question": "The area of the region enclosed by the curves y = e^x, y = |e^x − 1| and y-axis is:",
+            "options": [
+                "1 − loge 2",
+                "loge 2",
+                "1 + loge 2",
+                "2 loge 2 − 1"
+            ],
+            "answer": "1 − loge 2"
+        },
+        {
+            "question_number": 5,
+            "question": "The equation of the chord, of the ellipse x²/16 + y²/8 = 1, whose mid-point is (3, 1) is:",
+            "options": [
+                "48x + 25y = 169",
+                "5x + 16y = 31",
+                "25x + 101y = 176",
+                "4x + 122y = 134"
+            ],
+            "answer": "48x + 25y = 169"
+        },
+        {
+            "question_number": 6,
+            "question": "Let the points (1/2, α) lie on or inside the triangle with sides x + y = 11, x + 2y = 16 and 2x + 3y = 29. Then the product of the smallest and the largest values of α is equal to :",
+            "options": [
+                "44",
+                "22",
+                "33",
+                "55"
+            ],
+            "answer": "33"
+        },
+        {
+            "question_number": 7,
+            "question": "Let f : (0, ∞) → R be a function which is differentiable at all points of its domain and satisfies the condition x² f'(x) = 2x f(x) + 3, with f(1) = 4. Then 2f(2) is equal to :",
+            "options": [
+                "39",
+                "19",
+                "29",
+                "23"
+            ],
+            "answer": "39"
+        },
+        {
+            "question_number": 8,
+            "question": "If 7 = 5 − 1/α + (5 + 1/α) + (5 + 2/α) + (5 + 3/α) + · · · ∞, then the value of α is :",
+            "options": [
+                "1/2",
+                "6",
+                "1/3",
+                "1"
+            ],
+            "answer": "6"
+        },
+        {
+            "question_number": 9,
+            "question": "Let [x] denote the greatest integer function, and let m and n respectively be the numbers of the points, where the function f(x) = [x] + |x − 2|, −2 < x < 3, is not continuous and not differentiable. Then m + n is equal to :",
+            "options": [
+                "6",
+                "8",
+                "9",
+                "7"
+            ],
+            "answer": "8"
+        },
+        {
+            "question_number": 10,
+            "question": "Let A = [aij] be a square matrix of order 2 with entries either 0 or 1 . Let E be the event that A is an invertible matrix. Then the probability P(E) is :",
+            "options": [
+                "3/8",
+                "1/4",
+                "3/5",
+                "1/5"
+            ],
+            "answer": "3/5"
+        },
+        {
+            "question_number": 11,
+            "question": "Let the position vectors of three vertices of a triangle be 4p + q − 3r, −5p + q + 2r and 2p − q + 2r. If the position vectors of the orthocenter and the circumcenter of the triangle are p + q + r/3 and αp + βq + γr respectively, then α + 2β + 5γ is equal to :",
+            "options": [
+                "3",
+                "4",
+                "1",
+                "6"
+            ],
+            "answer": "3"
+        },
+        {
+            "question_number": 12,
+            "question": "Let a = 3i − j + 2k, b = a × (i − 2k) and c = b × k. Then the projection of c − 2j on a is :",
+            "options": [
+                "2√14",
+                "√14",
+                "3√7",
+                "2√7"
+            ],
+            "answer": "2√14"
+        },
+        {
+            "question_number": 13,
+            "question": "The number of real solution(s) of the equation x² + 3x + 2 = min{|x − 3|, |x + 2|} is :",
+            "options": [
+                "1",
+                "0",
+                "2",
+                "3"
+            ],
+            "answer": "2"
+        },
+        {
+            "question_number": 14,
+            "question": "The function f : (−∞, ∞) → (−∞, 1), defined by f(x) = (e^x − e^−x)/(e^x + e^−x) is:",
+            "options": [
+                "Neither one-one nor onto",
+                "Onto but not one-one",
+                "Both one-one and onto",
+                "One-one but not onto"
+            ],
+            "answer": "One-one but not onto"
+        },
+        {
+            "question_number": 15,
+            "question": "In an arithmetic progression, if S40 = 1030 and S12 = 57, then S30 − S10 is equal to :",
+            "options": [
+                "525",
+                "510",
+                "515",
+                "505"
+            ],
+            "answer": "515"
+        },
+        {
+            "question_number": 16,
+            "question": "Suppose A and B are the coefficients of 30th and 12th terms respectively in the binomial expansion of (1 + x)^{2n−1}. If 2A = 5B, then n is equal to :",
+            "options": [
+                "22",
+                "20",
+                "21",
+                "19"
+            ],
+            "answer": "21"
+        },
+        {
+            "question_number": 17,
+            "question": "Let (2, 3) be the largest open interval in which the function f(x) = 2 loge(x − 2) − x² + ax + 1 is strictly increasing and (b, c) be the largest open interval, in which the function g(x) = (x − 1)^3(x + 2 − a)^2 is strictly decreasing. Then 100(a + b − c) is equal to :",
+            "options": [
+                "420",
+                "360",
+                "160",
+                "280"
+            ],
+            "answer": "360"
+        },
+        {
+            "question_number": 18,
+            "question": "For some a, b, let f(x) = (a − 1/a + sin x)/(x/b/1 + sin x/x/b), x ≠ 0, lim_{x→0} f(x) = λ + μa + vb. Then (λ + μ + v)^2 is equal to :",
+            "options": [
+                "16",
+                "25",
+                "9",
+                "36"
+            ],
+            "answer": "16"
+        },
+        {
+            "question_number": 19,
+            "question": "If the equation of the parabola with vertex V (1/2, 3) and the directrix x + 2y = 0 is αx² + βy² − γxy + 30x + 60y + 225 = 0, then α + β + γ is equal to :",
+            "options": [
+                "7",
+                "9",
+                "8",
+                "6"
+            ],
+            "answer": "9"
+        },
+        {
+            "question_number": 20,
+            "question": "If α > β > γ > 0, then the expression cot⁻¹((β + γ)/α) + cot⁻¹((γ + α)/β) + cot⁻¹((α + β)/γ) is equal to :",
+            "options": [
+                "π",
+                "0",
+                "3π/2 − (α + β + γ)",
+                "3π"
+            ],
+            "answer": "π"
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 26,
+            "question": "Which of the following figure represents the relation between Celsius and Fahrenheit temperatures ?",
+            "options": [
+                "(1)",
+                "(2)",
+                "(3)",
+                "(4)"
+            ],
+            "answer": "(4)"
+        },
+        {
+            "question_number": 27,
+            "question": "The position vector of a moving body at any instant of time is given as r = (5t²i − 5tj) m. The magnitude and direction of velocity at t = 2 s is,",
+            "options": [
+                "5√15 m/s, making an angle of tan⁻¹ 4 with - ve Y axis",
+                "5√15 m/s, making an angle of tan⁻¹ 4 with + ve X axis",
+                "5√17 m/s, making an angle of tan⁻¹ 4 with + ve X axis",
+                "5√17 m/s, making an angle of tan⁻¹ 4 with - ve Y axis"
+            ],
+            "answer": "5√17 m/s, making an angle of tan⁻¹ 4 with - ve Y axis"
+        },
+        {
+            "question_number": 28,
+            "question": "The output of the circuit is low (zero) for : (A) X = 0, Y = 0 (B) X = 0, Y = 1 (C) X = 1, Y = 0 (D) X = 1, Y = 1 Choose the correct answer from the options given below :",
+            "options": [
+                "(B), (C) and (D) only",
+                "(A), (B) and (C) only",
+                "(A), (C) and (D) only",
+                "(A), (B) and (D) only"
+            ],
+            "answer": "(B), (C) and (D) only"
+        },
+        {
+            "question_number": 29,
+            "question": "Young's double slit inteference apparatus is immersed in a liquid of refractive index 1.44. It has slit separation of 1.5 mm. The slits are illuminated by a parallel beam of light whose wavelength in air is 690 nm. The fringe-width on a screen placed behind the plane of slits at a distance of 0.72 m, will be :",
+            "options": [
+                "0.23 mm",
+                "0.33 mm",
+                "0.63 mm",
+                "0.46 mm"
+            ],
+            "answer": "0.23 mm"
+        },
+        {
+            "question_number": 30,
+            "question": "The magnitude of heat exchanged by a system for the given cyclic process ABCA (as shown in figure) is (in SI unit) :",
+            "options": [
+                "5π",
+                "40π",
+                "10π",
+                "zero"
+            ],
+            "answer": "5π"
+        },
+        {
+            "question_number": 31,
+            "question": "A long straight wire of a circular cross-section with radius ' a ' carries a steady current I. The current I is uniformly distributed across this cross-section. The plot of magnitude of magnetic field B with distance r from the centre of the wire is given by",
+            "options": [
+                "(1)",
+                "(2)",
+                "(3)",
+                "(4)"
+            ],
+            "answer": "(4)"
+        },
+        {
+            "question_number": 32,
+            "question": "In photoelectric effect, the stopping potential (Vo)v/s frequency (v) curve is plotted. ( h is the Planck's constant and φo is work function of metal ) (A) Vov/sv is linear. (B) The slope of Vov/sv curve = h/e (C) h constant is related to the slope of Vov/sv line. (D) The value of electric charge of electron is not required to determine h using the Vov/sv curve. (E) The work function can be estimated without knowing the value of h. Choose the correct answer from the options given below :",
+            "options": [
+                "(C) and (D) only",
+                "(A), (C) and (E) only",
+                "(A), (B) and (C) only",
+                "(D) and (E) only"
+            ],
+            "answer": "(A), (C) and (E) only"
+        },
+        {
+            "question_number": 33,
+            "question": "A solid sphere and a hollow sphere of the same mass and of same radius are rolled on an inclined plane. Let the time taken to reach the bottom by the solid sphere and the hollow sphere be t₁ and t₂, respectively, then",
+            "options": [
+                "t₁ > t₂",
+                "t₁ = t₂",
+                "t₁ < t₂",
+                "t₁ = 2t₂"
+            ],
+            "answer": "t₁ < t₂"
+        },
+        {
+            "question_number": 34,
+            "question": "A small uncharged conducting sphere is placed in contact with an identical sphere but having 4 × 10⁻⁹C charge and then removed to a distance such that the force of repulsion between them is 9 × 10⁻³ N. The distance between them is (Take 1/4πε₀ as 9 × 10⁹ in SI units)",
+            "options": [
+                "3 cm",
+                "2 cm",
+                "4 cm",
+                "1 cm"
+            ],
+            "answer": "2 cm"
+        },
+        {
+            "question_number": 35,
+            "question": "N equally spaced charges each of value q, are placed on a circle of radius R . The circle rotates about its axis with an angular velocity ω as shown in the figure. A bigger Amperian loop B encloses the whole circle whereas a smaller Amperian loop A encloses a small segment. The difference between enclosed currents, IA — Ів, for the given Amperian loops is",
+            "options": [
+                "qω",
+                "qω/N",
+                "qω/N",
+                "qω"
+            ],
+            "answer": "qω"
+        },
+        {
+            "question_number": 36,
+            "question": "A particle oscillates along the x-axis according to the law, x(t) = x₀ sin² (πt/2) where x₀ = 1 m. The kinetic energy (K) of the particle as a function of x is correctly represented by the graph",
+            "options": [
+                "(1)",
+                "(2)",
+                "(3)",
+                "(4)"
+            ],
+            "answer": "(4)"
+        },
+        {
+            "question_number": 37,
+            "question": "A photograph of a landscape is captured by a drone camera at a height of 18 km . The size of the camera film is 2 cm × 2 cm and the area of the landscape photographed is 400 km². The focal length of the lens in the drone camera is :",
+            "options": [
+                "1.8 cm",
+                "0.9 cm",
+                "2.8 cm",
+                "2.5 cm"
+            ],
+            "answer": "1.8 cm"
+        },
+        {
+            "question_number": 38,
+            "question": "Configuration (1)\nConfiguration (2)\n(1) Kq₀²/a (4 − 2√2)\n(3) Kq₀²/a (4√2 − 2)\n(2) Kq₀²/a (3 − √2)\n(4) Kq₀²/a (3√2 − 2)",
+            "options": [
+                "Kq₀²/a (4 − 2√2)",
+                "Kq₀²/a (3 − √2)",
+                "Kq₀²/a (4√2 − 2)",
+                "Kq₀²/a (3√2 − 2)"
+            ],
+            "answer": "Kq₀²/a (3√2 − 2)"
+        },
+        {
+            "question_number": 39,
+            "question": "Arrange the following in the ascending order of wavelength (λ) : (A) Microwaves (λ₁) (B) Ultraviolet rays (λ₂) (C) Infrared rays (λ₃) (D) X-rays (λ₄). Choose the most appropriate answer from the options given below :",
+            "options": [
+                "λ₄ < λ₃ < λ₂ < λ₁",
+                "λ₄ < λ₂ < λ₃ < λ₁",
+                "λ₄ < λ₃ < λ₁ < λ₂",
+                "λ₄ < λ₂ < λ₁ < λ₃"
+            ],
+            "answer": "λ₄ < λ₂ < λ₁ < λ₃"
+        },
+        {
+            "question_number": 40,
+            "question": "The energy E and momentum p of a moving body of mass m are related by some equation. Given that c represents the speed of light, identify the correct equation",
+            "options": [
+                "E² = μ₀²c² + m²c²",
+                "E² = p²c² + m²c²",
+                "E² = pc² + m²c⁴",
+                "E² = p²c² + m²c⁴"
+            ],
+            "answer": "E² = p²c² + m²c⁴"
+        },
+        {
+            "question_number": 41,
+            "question": "The temperature of a body in air falls from 40°C to 24°C in 4 minutes. The temperature of the air is 16°C. The temperature of the body in the next 4 minutes will be:",
+            "options": [
+                "20°C",
+                "32°C",
+                "12°C",
+                "28°C"
+            ],
+            "answer": "28°C"
+        },
+        {
+            "question_number": 42,
+            "question": "A solid sphere is rolling without slipping on a horizontal plane. The ratio of the linear kinetic energy of the centre of mass of the sphere and rotational kinetic energy is :",
+            "options": [
+                "7/5",
+                "7/2",
+                "5/2",
+                "5/4"
+            ],
+            "answer": "5/2"
+        },
+        {
+            "question_number": 43,
+            "question": "In a Young's double slit experiment, three polarizers are kept as shown in the figure. The transmission axes of P₁ and P₂ are orthogonal to each other. The polarizer P₃ covers both the slits with its transmission axis at 45° to those of P₁ and P₂. An unpolarized light of wavelength λ and intensity Io is incident on P₁ and P₂. The intensity at a point after P₃ where the path difference between the light waves from s₁ and s₂ is λ/4, is",
+            "options": [
+                "Io/8",
+                "Io/2",
+                "Io/4",
+                "Io"
+            ],
+            "answer": "Io/2"
+        },
+        {
+            "question_number": 44,
+            "question": "Assertion (A): In an insulated container, a gas is adiabatically shrunk to half of its initial volume. The temperature of the gas decreases. Reason (R): Free expansion of an ideal gas is an irreversible and an adiabatic process. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                "(A) is false but (R) is true",
+                "(A) is true but (R) is false",
+                "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+            ],
+            "answer": "(A) is false but (R) is true"
+        },
+        {
+            "question_number": 45,
+            "question": "Assertion (A): A electron in a certain region of uniform magnetic field is moving with constant velocity in a straight line path. Reason (R): The magnetic field in that region is along the direction of velocity of the electron. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "(A) is true but (R) is false",
+                "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                "(A) is false but (R) is true"
+            ],
+            "answer": "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 51,
+            "question": "For hydrogen atom, the orbital/s with lowest energy is/are : (A) 4 s (B) 3px (C) 3 dx²−y² (D) 3 dz² (E) 4pz Choose the correct answer from the options given below :",
+            "options": [
+                "(B), (C) and (D) only",
+                "(A) and (E) only",
+                "(A) only",
+                "(B) only"
+            ],
+            "answer": "(B), (C) and (D) only"
+        },
+        {
+            "question_number": 52,
+            "question": "Match List - I with List - II.\nList - I\n(A) Ti³+\n(B) V²⁺\n(C) Ni²⁺\n(D) Sc³⁺\nList - II\n(I) 3.87\n(II) 0.00\n(III) 1.73\n(IV) 2.84\nChoose the correct answer from the options given below :",
+            "options": [
+                "(A) –(III), (B) – (I), (C) – (IV), (D) – (II)",
+                "(A) –(III), (B) – (I), (C) – (II), (D) – (IV)",
+                "(A) –(IV), (B) – (II), (C) – (III), (D) – (I)",
+                "(A) – (II), (B) – (IV), (C) – (I), (D) – (III)"
+            ],
+            "answer": "(A) –(III), (B) – (I), (C) – (IV), (D) – (II)"
+        },
+        {
+            "question_number": 53,
+            "question": "Statement (I): Experimentally determined oxygen-oxygen bond lengths in the O₃ are found to be same and the bond length is greater than that of a O = O (double bond) but less than that of a single (O – O) bond. Statement (II) : The strong lone pair-lone pair repulsion between oxygen atoms is solely responsible for the fact that the bond length in ozone is smaller than that of a double bond (O = O) but more than that of a single bond (O – O). In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both Statement I and Statement II are false",
+                "Statement I is false but Statement II is true",
+                "Statement I is true but Statement II is false",
+                "Both Statement I and Statement II are true"
+            ],
+            "answer": "Statement I is true but Statement II is false"
+        },
+        {
+            "question_number": 54,
+            "question": "When Ethane-1,2-diamine is added progressively to an aqueous solution of Nickel (II) chloride, the sequence of colour change observed will be :",
+            "options": [
+                "Violet → Blue → Pale Blue → Green",
+                "Pale Blue → Blue → Green → Violet",
+                "Green → Pale Blue → Blue → Violet",
+                "Pale Blue → Blue → Violet → Green"
+            ],
+            "answer": "Green → Pale Blue → Blue → Violet"
+        },
+        {
+            "question_number": 55,
+            "question": "Statement (I) : The first ionization energy of Pb is greater than that of Sn . Statement (II) : The first ionization energy of Ge is greater than that of Si. In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Statement I is false but Statement II is true",
+                "Statement I is true but Statement II is false",
+                "Both Statement I and Statement II are true",
+                "Both Statement I and Statement II are false"
+            ],
+            "answer": "Statement I is true but Statement II is false"
+        },
+        {
+            "question_number": 56,
+            "question": "Identify correct statement/s : (A) –OCH₃ and −NHCOCH₃ are activating group. (B) -CN and -OH are meta directing group. (C) -CN and –SO₃H are meta directing group. (D) Activating groups act as ortho - and para directing groups. (E) Halides are activating groups. Choose the correct answer from the options given below :",
+            "options": [
+                "(A) only",
+                "(A), (B) and (E) only",
+                "(A) and (C) only",
+                "(A), (C) and (D) only"
+            ],
+            "answer": "(A), (C) and (D) only"
+        },
+        {
+            "question_number": 57,
+            "question": "Based on the data given below : ECr₂O₇²⁻/Cr³⁺ = 1.33 V, ECl₂/Cl⁻ = 1.36 V, EMnO₄⁻/Mn²⁺ = 1.51 V, ECr³⁺/Cr = -0.74 V, the strongest reducing agent is :",
+            "options": [
+                "Cr",
+                "Cl⁻",
+                "MnO₄⁻",
+                "Mn²⁺"
+            ],
+            "answer": "Cr"
+        },
+        {
+            "question_number": 59,
+            "question": "Find the compound ' A ' from the following reaction sequences. A aqua-regia/ (1) KNO₂, NH₄OH/ (2) AcOH B → yellow ppt",
+            "options": [
+                "CoS",
+                "ZnS",
+                "NiS",
+                "MnS"
+            ],
+            "answer": "CoS"
+        },
+        {
+            "question_number": 60,
+            "question": "The elemental composition of a compound is 54.2%C, 9.2%H and 36.6%O. If the molar mass of the compound is 132 g mol⁻¹, the molecular formula of the compound is : [Given : The relative atomic mass of C : H : O = 12 : 1 : 16]",
+            "options": [
+                "C₄H₉O₃",
+                "C₆H₁₂O₈",
+                "C₄H₈O₂",
+                "C₆H₁₂O₃"
+            ],
+            "answer": "C₆H₁₂O₃"
+        },
+        {
+            "question_number": 61,
+            "question": "The conditions and consequence that favours the t₂g⁶eg¹ configuration in a metal complex are",
+            "options": [
+                "weak field ligand, low spin complex",
+                "weak field ligand, high spin complex",
+                "strong field ligand, high spin complex",
+                "strong field ligand, low spin complex"
+            ],
+            "answer": "weak field ligand, high spin complex"
+        },
+        {
+            "question_number": 62,
+            "question": "In the given structure, number of sp and sp² hybridized carbon atoms present respectively are:",
+            "options": [
+                "4 and 5",
+                "3 and 5",
+                "3 and 6",
+                "4 and 6"
+            ],
+            "answer": "3 and 5"
+        },
+        {
+            "question_number": 63,
+            "question": "Statement (I): t₁/₂ is valid for first order reaction. Statement (II): k = [R]₀/[R] Slope = k/2.303 is valid for first order reaction. Given below are two statements : In the light of the above statements, choose the correct answer from the options given below :",
+            "options": [
+                "Both Statement I and Statement II are true",
+                "Statement I is false but Statement II is true",
+                "Statement I is true but Statement II is false",
+                "Both Statement I and Statement II are false"
+            ],
+            "answer": "Statement I is true but Statement II is false"
+        },
+        {
+            "question_number": 64,
+            "question": "Match List - I with List - II.\nList - I\n(A) RCN (i) SnCl₂, HCl/ (ii) H₃O⁺ → R CHO\n(B) (i) CrO₂ C1₂, CS₂/ (ii) H₃O⁺ → CHO\n(C) (i) CO, HCl/ (ii) anhydrous AlCl₃/CuCl → CHO\n(D) (i) H₂/ Pd-BaSO₄ → CHO\nList - II\n(I) Etard reaction\n(II) Gatterman-Koch reaction\n(III) Rosenmund reduction\n(IV) Stephen reaction\nChoose the correct answer from the options given below :",
+            "options": [
+                "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+                "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+                "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+                "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)"
+            ],
+            "answer": "(A)-(IV), (B)-(III), (C)-(I), (D)-(II)"
+        },
+        {
+            "question_number": 66,
+            "question": "For reaction (Major) The correct order of set of reagents for the above conversion is :",
+            "options": [
+                "Br₂ / FeBr₃, H₂O(Δ), NaOH",
+                "H₂SO₄, Ac₂O, Br₂, H₂O(Δ), NaOH",
+                "Ac₂O, Br₂, H₂O(Δ), NaOH",
+                "AC₂O, H₂SO₄, Br₂, NaOH"
+            ],
+            "answer": "H₂SO₄, Ac₂O, Br₂, H₂O(Δ), NaOH"
+        },
+        {
+            "question_number": 67,
+            "question": "The successive 5 ionisation energies of an element are 800, 2427, 3658, 25024 and 32824 kJ/mol, respectively. By using the above values predict the group in which the above element is present :",
+            "options": [
+                "Group 13",
+                "Group 14",
+                "Group 2",
+                "Group 4"
+            ],
+            "answer": "Group 13"
+        },
+        {
+            "question_number": 68,
+            "question": "Match List - I with List - II.\nList - I\n(A) Adenine\n(B) Cytosine\n(C) Thymine\n(D) Uracil\nList - II\n(I)\n(II)\n(III)\n(IV)\nChoose the correct answer from the options given below :",
+            "options": [
+                "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+                "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+                "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)",
+                "(A)-(III), (B)-(I), (C)-(IV), (D)-(II)"
+            ],
+            "answer": "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)"
+        },
+        {
+            "question_number": 69,
+            "question": "Which of the following mixing of 1 M base and 1 M acid leads to the largest increase in temperature?",
+            "options": [
+                "30 mL CH₃COOH and 30 mL NaOH",
+                "45 mL CH₃COOH and 25 mL NaOH",
+                "30 mL HCl and 30 mL NaOH",
+                "50 mL HCl and 20 mL NaOH"
+            ],
+            "answer": "30 mL HCl and 30 mL NaOH"
+        },
+        {
+            "question_number": 70,
+            "question": "S(g) + 3/2 O₂(g) → SO₃(g) + 2x kcal\nSO₂(g) + 1/2 O₂(g) → SO₃(g) + y kcal\nThe heat of formation of SO₂(g) is given by :",
+            "options": [
+                "x + y kcal",
+                "y − 2x kcal",
+                "x/y kcal",
+                "2x + y kcal"
+            ],
+            "answer": "y − 2x kcal"
+        }
+    ]
+}

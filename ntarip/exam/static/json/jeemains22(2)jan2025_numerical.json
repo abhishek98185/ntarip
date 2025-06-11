@@ -1,0 +1,98 @@
+{
+    "Maths": [
+        {
+            "question_number": 21,
+            "question": "If \\(\\sum_{r=1}^{30} \\binom{30}{r-1}^2 = a \\times 2^{29}\\), then a is equal to:",
+            "options": [],
+            "answer": "465"
+        },
+        {
+            "question_number": 22,
+            "question": "Let A = {1, 2, 3}. The number of relations on A, containing (1, 2) and (2, 3), which are reflexive and transitive but not symmetric, is",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 23,
+            "question": "Let A(6,8), B(10 cos a, –10 sin a) and C(−10 sin a, 10 cos a), be the vertices of a triangle. If La, 9) and G(h, k) be its orthocenter and centroid respectively, then (5a – 3h + 6k + 100 sin 2a) is equal to...",
+            "options": [],
+            "answer": "145"
+        },
+        {
+            "question_number": 24,
+            "question": "Let y = f(x) be the solution of the differential equation \\(\\frac{dy}{dx} = \\frac{x^2-1}{\\sqrt{1-x^2}}\\), -1 < x < 1 such that mf(0) = 0. If \\(\\int_{-1/2}^{1/2} f(x)dx = 2\\pi/a\\) then a² is equal to",
+            "options": [],
+            "answer": "27"
+        },
+        {
+            "question_number": 25,
+            "question": "Let the distance between two parallel lines be 5 units and a point P lie between the lines at a unit distance from one of them. An equilateral triangle PQR is formed such that Q lies on one of the parallel lines, while R lies on the other. Then (QR)² is equal to",
+            "options": [],
+            "answer": "28"
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 46,
+            "question": "A proton is moving undeflected in a region of crossed electric and magnetic fields at a constant speed of 2 × 10⁵ m/s. When the electric field is switched off, the proton moves along a circular path of radius 2 cm. The magnitude of electric field is x × 10⁴ N/C. The value of x is (Take the mass of the proton 1.6 × 10⁻²⁷ kg.)",
+            "options": [],
+            "answer": "4"
+        },
+        {
+            "question_number": 47,
+            "question": "The net current flowing in the given circuit is",
+            "options": [],
+            "answer": "2"
+        },
+        {
+            "question_number": 48,
+            "question": "A parallel plate capacitor of area A = 16 cm² and separation between the plates 10 cm, is charged by a DC current. Consider a hypothetical plane surface of area A₀ = 3.2 cm² inside the capacitor and parallel to the plates. At an instant, the current through the circuit is 6A. At the same instant the displacement current through A₀ is",
+            "options": [],
+            "answer": "1.2"
+        },
+        {
+            "question_number": 49,
+            "question": "A tube of length 1 m is filled completely with an ideal liquid of mass 2 M, and closed at both ends. The tube is rotated uniformly in horizontal plane about one of its ends. If the force exerted by the liquid at the other end is F then angular velocity of the tube is Fin SI unit. The value of a is",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 50,
+            "question": "Two long parallel wires X and Y, separated by a distance of 6 cm, carry currents of 5A and 4A, respectively, in opposite directions as shown in the figure. Magnitude of the resultant magnetic field at point P at a distance of 4 cm from wire Y is x × 10⁻⁵ T. The value of x is (Take permeability of free space as μ₀ = 4π × 10⁻⁷ SI units.)",
+            "options": [],
+            "answer": "5"
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 71,
+            "question": "The compound with molecular formula C6H6, which gives only one monobromo derivative and takes up four moles of hydrogen per mole for complete hydrogenation has ___ electrons.",
+            "options": [],
+            "answer": "6"
+        },
+        {
+            "question_number": 72,
+            "question": "20 mL of 2 M NaOH solution is added to 400 mL of 0.5 M NaOH solution. The final concentration of the solution is ___ ×10⁻² M. (Nearest integer)",
+            "options": [],
+            "answer": "6"
+        },
+        {
+            "question_number": 73,
+            "question": "Consider the following cases of standard enthalpy of reaction (ΔH in kJmol⁻¹): C2H6(g) + 2O2(g) → 2CO2(g) + 3H2O(l), ΔH = -1550; C (graphite) + O2(g) → CO2(g), ΔH₂ = −393.5; H2(g) + O2(g) → H2O(l), ΔH₃ = -286. The magnitude of ΔHfC2H6(g) is ___ kJmol⁻¹ (Nearest integer).",
+            "options": [],
+            "answer": "-84"
+        },
+        {
+            "question_number": 74,
+            "question": "Niobium ( Nb ) and ruthenium (Ru) have \" x \" and \" y \" number of electrons in their respective 4 d orbitals. The value of x + y is",
+            "options": [],
+            "answer": "9"
+        },
+        {
+            "question_number": 75,
+            "question": "The complex of Ni2+ ion and dimethyl glyoxime contains ___ number of Hydrogen (H) atoms.",
+            "options": [],
+            "answer": "16"
+        }
+    ]
+}

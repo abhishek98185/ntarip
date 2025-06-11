@@ -1,0 +1,98 @@
+{
+    "Maths": [
+        {
+            "question_number": 21,
+            "question": "Let A and B be the two points of intersection of the line y+5=0 and the mirror image of the parabola y^2=4x with respect to the line x+y+4=0. If d denotes the distance between A and B, and a denotes the area of triangle SAB, where S is the focus of the parabola y^2=4x, then the value of (a+d) is",
+            "answer": 14
+        },
+        {
+            "question_number": 22,
+            "question": "The number of natural numbers, between 212 and 999, such that the sum of their digits is 15, is",
+            "answer": 64
+        },
+        {
+            "question_number": 23,
+            "question": "If y=y(x) is the solution of the differential equation, sqrt(4−x^2) dy/dx = (arcsin(x/2))^2 − y) arcsin(x/2), −2≤x≤2, y(2)=(π^2−8)/4, then y^2(0) is equal to",
+            "answer": 4
+        },
+        {
+            "question_number": 24,
+            "question": "The interior angles of a polygon with n sides, are in an A.P. with common difference 6°. If the largest interior angle of the polygon is 219°, then n is equal to",
+            "answer": 20
+        },
+        {
+            "question_number": 25,
+            "question": "Let f(x)=lim_{n→∞} Σ_{r=0}^n [(tan(x/2^{r+1})+tan^3(x/2^{r+1}))/(1−tan^2(x/2^{r+1}))]. Then lim_{x→0} [e^x−e^{f(x)}]/(x−f(x)) is equal to",
+            "answer": 1
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 45,
+            "question": "In the circuit shown here, assuming threshold voltage of diode is negligibly small, then voltage V_AB is correctly represented by:",
+            "answer": 4
+        },
+        {
+            "question_number": 46,
+            "question": "A thin transparent film with refractive index 1.4, is held on circular ring of radius 1.8 cm. The fluid in the film evaporates such that transmission through the film at wavelength 560 nm goes to a minimum every 12 seconds. Assuming that the film is flat on its two sides, the rate of evaporation is ___ π×10^−13 m^3/s.",
+            "answer": 54
+        },
+        {
+            "question_number": 47,
+            "question": "The value of current I in the electrical circuit as given below, when potential at A is equal to the potential at B, will be ___ A.",
+            "answer": 2
+        },
+        {
+            "question_number": 48,
+            "question": "An electric dipole of dipole moment 6×10^−6 Cm is placed in uniform electric field of magnitude 10^6 V/m. Initially, the dipole moment is parallel to electric field. The work that needs to be done on the dipole to make its dipole moment opposite to the field, will be ___ J.",
+            "answer": 12
+        },
+        {
+            "question_number": 49,
+            "question": "A conducting bar moves on two conducting rails as shown in the figure. A constant magnetic field B exists into the page. The bar starts to move from the vertex at time t=0 with a constant velocity. If the induced EMF is E ∝ t^n, then value of n is ___",
+            "answer": 1
+        },
+        {
+            "question_number": 50,
+            "question": "The volume contraction of a solid copper cube of edge length 10 cm, when subjected to a hydraulic pressure of 7×10^6 Pa, would be ___ mm^3. (Given bulk modulus of copper = 1.4×10^11 N/m^2)",
+            "answer": 50
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 51,
+            "question": "Concentrated nitric acid is labelled as 75% by mass. The volume in mL of the solution which contains 30 g of nitric acid is ___ (Given: Density of nitric acid solution is 1.25 g/mL).",
+            "answer": 2
+        },
+        {
+            "question_number": 57,
+            "question": "For bacterial growth in a cell culture, growth law is very similar to the law of radioactive decay. Which of the following graphs is most suitable to represent bacterial colony growth? Where N - Number of Bacteria at any time, N₀ - Initial number of Bacteria.",
+            "answer": 3
+        },
+        {
+            "question_number": 71,
+            "question": "Electrolysis of 600 mL aqueous solution of NaCl for 5 min changes the pH of the solution to 12. The current in Amperes used for the given electrolysis is ___. (Nearest integer)",
+            "answer": 2
+        },
+        {
+            "question_number": 72,
+            "question": "A group 15 element forms dπ-dπ bond with transition metals. It also forms hydride, which is a strongest base among the hydrides of other group members that form dπ-dπ bond. The atomic number of the element is ___",
+            "answer": 15
+        },
+        {
+            "question_number": 73,
+            "question": "Total number of molecules/species from following which will be paramagnetic is ___: O2, O2+, O2−, NO, NO2, CO, K2[NiCl4], [Co(NH3)6]Cl3, K2[Ni(CN)4]",
+            "answer": 6
+        },
+        {
+            "question_number": 74,
+            "question": "Consider the following data: Heat of formation of CO2(g)=−393.5 kJ/mol, Heat of formation of H2O(l)=−286.0 kJ/mol, Heat of combustion of benzene=−3267.0 kJ/mol. The heat of formation of benzene is ___ kJ/mol. (Nearest integer)",
+            "answer": 48
+        },
+        {
+            "question_number": 75,
+            "question": "The spin only magnetic moment (μ) value (B.M.) of the compound with strongest oxidising power among Mn2O3, TiO and VO is ___ B.M. (Nearest integer).",
+            "answer": 5
+        }
+    ]
+}

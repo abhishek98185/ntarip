@@ -1,0 +1,83 @@
+{
+    "Maths": [
+        {
+            "question_number": 21,
+            "question": "Let f(x)=... are the number of points, where f is not continuous and is not differentiable, respectively, then α+β equals",
+            "answer": 5
+        },
+        {
+            "question_number": 22,
+            "question": "Let M denote the set of all real matrices of order 3x3 and let S=..., If n(S1∪S2∪S3)=125α, then α equals",
+            "answer": 1613
+        },
+        {
+            "question_number": 23,
+            "question": "If α=1+Σ_{r=1}^6 (-3)^{r-1} 12C_{2r-1}, then the distance of the point (12, √3) from the line αx-√3y+1=0 is",
+            "answer": 5
+        },
+        {
+            "question_number": 24,
+            "question": "Let E1: x²/9 + y²/4 = 1 be an ellipse... If Ai is the area of the ellipse Ei, then (5/π)(Σ_{i=1}^∞ Ai) is equal to",
+            "answer": 54
+        },
+        {
+            "question_number": 25,
+            "question": "Let a=..., b=..., d=..., If c is a vector such that ..., then |10-3b·c|+|d×c|² is equal to",
+            "answer": 6
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 46,
+            "question": "A double slit interference experiment performed with a light of wavelength 600 nm forms an interference fringe pattern on a screen with 10th bright fringe having its centre at a distance of 10 mm from the central maximum. Distance of the centre of the same 10th bright fringe from the central maximum when the source of light is replaced by another source of wavelength 660 nm would be ____ mm.",
+            "answer": 11
+        },
+        {
+            "question_number": 47,
+            "question": "In a measurement, it is asked to find modulus of elasticity per unit torque applied on the system. The measured quantity has dimension of [M^a L^b T^c]. If b=-3, the value of c is ____.",
+            "answer": 0
+        },
+        {
+            "question_number": 48,
+            "question": "A tiny metallic rectangular sheet has length and breadth of 5 mm and 2.5 mm , respectively. Using a specially designed screw gauge which has pitch of 0.75 mm and 15 divisions in the circular scale, you are asked to find the area of the sheet. In this measurement, the maximum fractional error will be x/100 where x is ____.",
+            "answer": 3
+        },
+        {
+            "question_number": 49,
+            "question": "Two iron solid discs of negligible thickness have radii R1 and R2 and moment of intertia I1 and I2, respectively. For R2=2R1, the ratio of I1 and I2 would be 1/x, where x= ____.",
+            "answer": 16
+        },
+        {
+            "question_number": 50,
+            "question": "The moment of inertia of a solid disc rotating along its diameter is 2.5 times higher than the moment of inertia of a ring rotating in similar way. The moment of inertia of a solid sphere which has same radius as the disc and rotating in similar way, is n times higher than the moment of inertia of the given ring. Here, n= ____.",
+            "answer": 4
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 71,
+            "question": "The formation enthalpies, ΔHf° for H(g) and O(g) are 220.0 and 250.0 kJ mol^{-1}, respectively, at 298.15 K, and ΔHf° for H2O(g) is -242.0 kJ mol^{-1} at the same temperature. The average bond enthalpy of the O-H bond in water at 298.15 K is ____ kJ mol^{-1} (nearest integer).",
+            "answer": 466
+        },
+        {
+            "question_number": 72,
+            "question": "The molarity of a 70% (mass/mass) aqueous solution of a monobasic acid (X) is ____ × 10^{-1} M (Nearest integer) [Given: Density of aqueous solution of (X) is 1.25 g mL^{-1} Molar mass of the acid is 70 g mol^{-1}]",
+            "answer": 125
+        },
+        {
+            "question_number": 73,
+            "question": "Consider the following sequence of reactions: Chlorobenzene ... 11.25 mg of chlorobenzene will produce ____ × 10^{-1} mg of product B. (Consider the reactions result in complete conversion.)",
+            "answer": 93
+        },
+        {
+            "question_number": 74,
+            "question": "Quantitative analysis of an organic compound (X) shows following % composition. C: 14.5% Cl: 64.46% H: 1.8% (Empirical formula mass of the compound (X) is ____ × 10^{-1} (Given molar mass in gmol^{-1} of C: 12, H: 1, O: 16, Cl: 35.5)",
+            "answer": 1655
+        },
+        {
+            "question_number": 75,
+            "question": "Given below is the plot of the molar conductivity vs sqrt(concentration) for KCl in aqueous solution. If, for the higher concentration of KCl solution, the resistance of the conductivity cell is 100 Ω, then the resistance of the same cell with the dilute solution is 'x' Ω. The value of x is (Nearest integer).",
+            "answer": 150
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "Maths": [
+        {
+            "question_number": 21,
+            "question": "The variance of the numbers 8,21,34,47,...,320 is",
+            "options": [],
+            "answer": "8788"
+        },
+        {
+            "question_number": 22,
+            "question": "The roots of the quadratic equation 3x²-px+q=0 are 10th and 11th terms of an arithmetic progression with common difference 3/2. If the sum of the first 11 terms of this arithmetic progression is 88, then q-2p is equal to",
+            "options": [],
+            "answer": "474"
+        },
+        {
+            "question_number": 23,
+            "question": "The number of ways, 5 boys and 4 girls can sit in a row so that either all the boys sit together or no two boys sit together, is",
+            "options": [],
+            "answer": "17280"
+        },
+        {
+            "question_number": 24,
+            "question": "The focus of the parabola y²=4x+16 is the centre of the circle C of radius 5. If the values of λ, for which C passes through the point of intersection of the lines 3x-y=0 and x+λy=4, are λ₁ and λ₂, λ₁<λ₂, then 12λ₁+29λ₂ is equal to",
+            "options": [],
+            "answer": "15"
+        },
+        {
+            "question_number": 25,
+            "question": "Let α,β be the roots of the equation x²-ax-b=0 with Im(α)<Im(β). Let Pₙ=αⁿ-βⁿ. If P₃=−5√7i, P₄=−3√7i, P₅=11√7i and P₆=45√7i, then |α⁴+β⁴| is equal to",
+            "options": [],
+            "answer": "31"
+        }
+    ],
+    "Physics": [
+        {
+            "question_number": 46,
+            "question": "A time varying potential difference is applied between the plates of a parallel plate capacitor of capacitance 2.5 μF. The dielectric constant of the medium between the capacitor plates is 1. It produces an instantaneous displacement current of 0.25 mA in the intervening space between the capacitor plates, the magnitude of the rate of change of the potential difference will be ___ Vs^{-1}.",
+            "options": [],
+            "answer": "100"
+        },
+        {
+            "question_number": 47,
+            "question": "In a series LCR circuit, a resistor of 300Ω, a capacitor of 25 nF and an inductor of 100 mH are used. For maximum current in the circuit, the angular frequency of the ac source is ___ ×10⁴ radians s^{-1}.",
+            "options": [],
+            "answer": "2"
+        },
+        {
+            "question_number": 48,
+            "question": "An air bubble of radius 1.0 mm is observed at a depth of 20 cm below the free surface of a liquid having surface tension 0.095 J/m² and density 10³ kg/m³. The difference between pressure inside the bubble and atmospheric pressure is ___ N/m². (Take g=10 m/s²)",
+            "options": [],
+            "answer": "2190"
+        },
+        {
+            "question_number": 49,
+            "question": "A satellite of mass M/2 is revolving around earth in a circular orbit at a height of R/3 from earth surface. The angular momentum of the satellite is M√(GMR/x). The value of x is ___, where M and R are the mass and radius of earth, respectively. (G is the gravitational constant)",
+            "options": [],
+            "answer": "3"
+        },
+        {
+            "question_number": 50,
+            "question": "At steady state the charge on the capacitor, as shown in the circuit below, is ___ μC.",
+            "options": [],
+            "answer": "16"
+        }
+    ],
+    "Chemistry": [
+        {
+            "question_number": 71,
+            "question": "0.01 mole of an organic compound (X) containing 10% hydrogen, on complete combustion produced 0.9 g H₂O. Molar mass of (X) is ___ gmol⁻¹.",
+            "options": [],
+            "answer": "100"
+        },
+        {
+            "question_number": 72,
+            "question": "A compound 'X' absorbs 2 moles of hydrogen and 'X' upon oxidation with KMnO₄/H⁺ gives CC(C)=O, CC(=O)O and CC(=O)CCC(=O)O. The total number of σ bonds present in the compound 'X' is ___",
+            "options": [],
+            "answer": "27"
+        },
+        {
+            "question_number": 73,
+            "question": "When 81.0 g of aluminium is allowed to react with 128.0 g of oxygen gas, the mass of aluminium oxide produced in grams is ___ (Nearest integer) Given: Molar mass of Al is 27.0 gmol⁻¹, Molar mass of O is 16.0 gmol⁻¹.",
+            "options": [],
+            "answer": "153"
+        },
+        {
+            "question_number": 74,
+            "question": "The bond dissociation enthalpy of X₂ ΔH_bond calculated from the given data is ___ kJmol⁻¹. (Nearest integer)",
+            "options": [],
+            "answer": "200"
+        },
+        {
+            "question_number": 75,
+            "question": "Consider the following sequence of reactions. Total number of sp³ hybridised carbon atoms in the major product C formed is",
+            "options": [],
+            "answer": "4"
+        }
+    ]
+}

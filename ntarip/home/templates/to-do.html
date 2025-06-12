@@ -22,13 +22,9 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
+        h1,
         h2 {
-            margin-top: 40px;
+            text-align: center;
         }
 
         table {
@@ -74,10 +70,6 @@
             background-color: #6f42c1;
         }
 
-        .downloadbutton {
-            margin-left: 60vw;
-        }
-
         .download-pdf {
             background-color: #ff9800;
         }
@@ -94,59 +86,152 @@
             border-radius: 4px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
-        .delete-btn {
-            background: none;
-            border: none;
-            color: red;
-            font-size: 18px;
-            cursor: pointer;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .task-inputs {
             display: flex;
+            justify-content: center;
             gap: 10px;
-            margin-top: 20px;
-            min-height: 70px;
-            /* Increased height */
-            align-items: center;
+            margin: 20px 0;
         }
 
         #todoText {
-            flex: 3;
+            width: 60%;
+            height: 45px;
+            padding: 10px;
             font-size: 16px;
-            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
 
         #todoDate {
-            flex: 1;
-            font-size: 16px;
-            height: 40px;
+            width: 160px;
+            height: 45px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
         }
 
         .add-task {
-            height: 40px;
-            padding: 0 20px;
-            font-size: 16px;
+            background-color: #6f42c1;
+        }
+
+        .task-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .task-actions button {
+            margin-left: 8px;
+        }
+
+        .calendar {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        .calendar th {
+            background: #00b894;
+            color: white;
+            padding: 10px;
+        }
+
+        .calendar td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .calendar td:hover {
+            background: #dfe6e9;
+        }
+
+        .calendar .green {
+            background-color: #b9f6ca;
+            font-weight: bold;
+        }
+
+        .calendar .red {
+            background-color: #ff8a80;
+            font-weight: bold;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #00b894;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .calendar-header button {
+            background: white;
+            color: #00b894;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .day-labels {
+            background-color: #00b894;
+            color: white;
+        }
+
+        .task-on-date {
+            text-align: left;
+            margin-top: 15px;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 6px;
         }
     </style>
-
-    <!-- Add libraries for PDF generation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <h1>📚 Study Planner</h1>
 
-        <!-- Section 1: Study Progress Grid -->
         <h2>📊 Study Progress Grid</h2>
         <table id="studyTable">
-            <div class="downloadbutton">
-                <button class="btn download-pdf" onclick="downloadPDF()">📄 Download PDF</button>
-            </div>
             <thead>
                 <tr id="headerRow">
                     <th>Chapter</th>
@@ -166,85 +251,200 @@
         </table>
         <button class="btn add-row" onclick="addRow()">+ Add Row</button>
         <button class="btn add-col" onclick="addColumn()">+ Add Column</button>
-        <!-- <button class="btn download-pdf" onclick="downloadPDF()">📄 Download PDF</button> -->
 
-        <!-- Section 2: To-Do List with Deadline -->
-        <h2>🗓️ To-Do with Deadline</h2>
-        <div class="task-inputs">
-            <input type="text" id="todoText" placeholder="Task description..." />
-            <input type="date" id="todoDate" />
-            <button class="btn add-task" onclick="addTodo()">Add</button>
+
+        <div class="container">
+            <h1>📚 Study Planner</h1>
+
+            <!-- TO-DO Input -->
+            <div class="task-inputs">
+                <input type="text" id="todoText" placeholder="Enter task description...">
+                <input type="date" id="todoDate">
+                <button class="btn add-task" onclick="addTask()">Add</button>
+            </div>
+
+            <!-- Task List -->
+            <ul id="todoList" class="task-list"></ul>
+
+            <!-- Calendar -->
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button onclick="prevMonth()">←</button>
+                    <h3 id="monthYear"></h3>
+                    <button onclick="nextMonth()">→</button>
+                </div>
+                <table>
+                    <thead class="day-labels">
+                        <tr>
+                            <th>Su</th>
+                            <th>Mo</th>
+                            <th>Tu</th>
+                            <th>We</th>
+                            <th>Th</th>
+                            <th>Fr</th>
+                            <th>Sa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody"></tbody>
+                </table>
+                <div id="taskDetails" class="task-on-date"></div>
+            </div>
         </div>
-        <ul id="todoList"></ul>
-    </div>
 
-    <!-- Script section -->
-    <script>
-        function addRow() {
-            const tableBody = document.getElementById("tableBody");
-            const cols = document.getElementById("headerRow").children.length;
-            const newRow = document.createElement("tr");
+        <script>
+            const tasks = [];
 
-            for (let i = 0; i < cols; i++) {
-                const cell = document.createElement("td");
-                if (i === 0) {
-                    cell.innerHTML = '<input type="text" placeholder="Chapter name" />';
-                } else {
-                    cell.innerHTML = '<input type="checkbox" />';
+            function addRow() {
+                const tableBody = document.getElementById("tableBody");
+                const cols = document.getElementById("headerRow").children.length;
+                const newRow = document.createElement("tr");
+
+                for (let i = 0; i < cols; i++) {
+                    const cell = document.createElement("td");
+                    if (i === 0) {
+                        cell.innerHTML = '<input type="text" placeholder="Chapter name" />';
+                    } else {
+                        cell.innerHTML = '<input type="checkbox" />';
+                    }
+                    newRow.appendChild(cell);
                 }
-                newRow.appendChild(cell);
+                tableBody.appendChild(newRow);
             }
-            tableBody.appendChild(newRow);
-        }
 
-        function addColumn() {
-            const newLabel = prompt("Enter column label:");
-            if (!newLabel) return;
+            function addColumn() {
+                const newLabel = prompt("Enter column label:");
+                if (!newLabel) return;
 
-            const headerRow = document.getElementById("headerRow");
-            const newHeader = document.createElement("th");
-            newHeader.textContent = newLabel;
-            headerRow.appendChild(newHeader);
+                const headerRow = document.getElementById("headerRow");
+                const newHeader = document.createElement("th");
+                newHeader.textContent = newLabel;
+                headerRow.appendChild(newHeader);
 
-            const rows = document.querySelectorAll("#tableBody tr");
-            rows.forEach(row => {
-                const cell = document.createElement("td");
-                cell.className = "border px-4 py-2 text-center";
-                cell.innerHTML = '<input type="checkbox">';
-                row.appendChild(cell);
-            });
-        }
+                const rows = document.querySelectorAll("#tableBody tr");
+                rows.forEach(row => {
+                    const cell = document.createElement("td");
+                    cell.innerHTML = '<input type="checkbox">';
+                    row.appendChild(cell);
+                });
+            }
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
+            function addTask() {
+                const text = document.getElementById("todoText").value.trim();
+                const date = document.getElementById("todoDate").value;
+                if (!text || !date) return;
 
-        function addTodo() {
-            const text = document.getElementById("todoText").value.trim();
-            const date = document.getElementById("todoDate").value;
-            if (!text || !date) return;
+                const task = { text, date, status: "pending" };
+                tasks.push(task);
+                renderTasks();
+                renderCalendar();
+                showTasksOnDate(date);  // auto-show added task
+                document.getElementById("todoText").value = "";
+                document.getElementById("todoDate").value = "";
+            }
 
-            const li = document.createElement("li");
-            li.innerHTML = `<span>${text} (Due: ${date})</span> <button class="delete-btn" onclick="this.parentElement.remove()">✖</button>`;
-            document.getElementById("todoList").appendChild(li);
+            function renderTasks() {
+                const list = document.getElementById("todoList");
+                list.innerHTML = "";
+                tasks.forEach((task, index) => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+          <span>${task.text} (Due: ${task.date})</span>
+          <span class="task-actions">
+            <button class="btn" style="background:#2ecc71" onclick="updateStatus(${index}, 'completed')">✔️</button>
+            <button class="btn" style="background:#e74c3c" onclick="updateStatus(${index}, 'incomplete')">❌</button>
+            <button class="btn" style="background:#3498db" onclick="shiftDate(${index})">📅</button>
+          </span>
+        `;
+                    list.appendChild(li);
+                });
+            }
 
-            document.getElementById("todoText").value = '';
-            document.getElementById("todoDate").value = '';
-        }
+            function updateStatus(index, status) {
+                tasks[index].status = status;
+                renderTasks();
+                renderCalendar();
+            }
 
-        async function downloadPDF() {
-            const table = document.getElementById("studyTable");
-            const canvas = await html2canvas(table);
-            const imageData = canvas.toDataURL('image/png');
+            function shiftDate(index) {
+                const newDate = prompt("Enter new date (YYYY-MM-DD):", tasks[index].date);
+                if (newDate) {
+                    tasks[index].date = newDate;
+                    renderTasks();
+                    renderCalendar();
+                    showTasksOnDate(newDate);
+                }
+            }
 
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF();
+            function renderCalendar() {
+                const calendarBody = document.getElementById("calendarBody");
+                const monthYear = document.getElementById("monthYear");
+                const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-            const pageWidth = pdf.internal.pageSize.getWidth();
-            const imgProps = pdf.getImageProperties(imageData);
-            const imgWidth = pageWidth - 20;
-            const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+                monthYear.textContent = `${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}`;
 
-            pdf.addImage(imageData, 'PNG', 10, 10, imgWidth, imgHeight);
-            pdf.save("Study_Progress_Grid.pdf");
-        }
-    </script>
+                calendarBody.innerHTML = "";
+                let date = 1;
+                for (let i = 0; i < 6; i++) {
+                    let row = document.createElement("tr");
+                    for (let j = 0; j < 7; j++) {
+                        let cell = document.createElement("td");
+                        if (i === 0 && j < firstDay) {
+                            cell.innerHTML = "";
+                        } else if (date > daysInMonth) {
+                            break;
+                        } else {
+                            let fullDate = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(date).padStart(2, "0")}`;
+                            const foundTask = tasks.find(t => t.date === fullDate);
+                            cell.innerText = date;
+                            if (foundTask) {
+                                cell.classList.add(foundTask.status === "completed" ? "green" : "red");
+                            }
+                            cell.onclick = () => showTasksOnDate(fullDate);
+                            date++;
+                        }
+                        row.appendChild(cell);
+                    }
+                    calendarBody.appendChild(row);
+                }
+            }
+
+            function showTasksOnDate(date) {
+                const taskDetails = document.getElementById("taskDetails");
+                const taskList = tasks.filter(task => task.date === date);
+                if (taskList.length === 0) {
+                    taskDetails.innerHTML = `<strong>Tasks for ${date}:</strong> None`;
+                } else {
+                    taskDetails.innerHTML = `<strong>Tasks for ${date}:</strong><ul>${taskList.map(t => `<li>${t.text} (${t.status})</li>`).join("")}</ul>`;
+                }
+            }
+
+            function nextMonth() {
+                if (currentMonth === 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                } else {
+                    currentMonth++;
+                }
+                renderCalendar();
+            }
+
+            function prevMonth() {
+                if (currentMonth === 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                } else {
+                    currentMonth--;
+                }
+                renderCalendar();
+            }
+
+            window.onload = () => {
+                renderCalendar();
+            };
+
+        </script>
 </body>
 
 </html>

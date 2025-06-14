@@ -1,302 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Study Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      background: #f4f4f4;
     }
 
     .container {
-      max-width: 1100px;
-      margin: auto;
+      max-width: 900px;
+      margin: 30px auto;
       background: white;
-      padding: 30px;
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
-    h1, h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 20px;
+      color: #0047ab;
     }
 
-    .task-inputs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    #todoText {
-      width: 60%;
-      height: 45px;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    #todoDate {
-      width: 160px;
-      height: 45px;
-      padding: 5px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .btn {
-      padding: 10px 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 14px;
-    }
-
-    .add-task { background-color: #6f42c1; }
-
-    .task-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #f1f1f1;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
-
-    .task-actions button {
-      margin-left: 8px;
-    }
-
-    .calendar {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .calendar table {
+    table {
       width: 100%;
-      border-spacing: 0;
+      border-collapse: collapse;
+      margin-top: 20px;
     }
 
-    .calendar th {
-      background: #00b894;
-      color: white;
-      padding: 10px;
-    }
-
-    .calendar td {
-      padding: 10px;
-      border: 1px solid #ddd;
+    th, td {
+      text-align: center;
+      padding: 12px;
+      border: 1px solid #ccc;
       cursor: pointer;
     }
 
-    .calendar td:hover {
-      background: #dfe6e9;
-    }
-
-    .calendar .green {
-      background-color: #b9f6ca;
-      font-weight: bold;
-    }
-
-    .calendar .red {
-      background-color: #ff8a80;
-      font-weight: bold;
-    }
-
-    .calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #00b894;
-      color: white;
-      padding: 10px 20px;
-    }
-
-    .calendar-header button {
-      background: white;
-      color: #00b894;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-
-    .day-labels {
+    th {
       background-color: #00b894;
       color: white;
     }
 
-    .task-on-date {
-      text-align: left;
-      margin-top: 15px;
-      background: #f1f1f1;
-      padding: 10px;
-      border-radius: 6px;
+    td:hover {
+      background-color: #dff9fb;
+    }
+
+    /* Modal Styling */
+    .task-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .task-modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 350px;
+      max-height: 80%;
+      overflow-y: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .task-done {
+      color: green;
+      font-weight: bold;
+    }
+
+    .task-pending {
+      color: red;
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📚 Study Planner</h1>
+    <h2>📚 Study Planner - June 2025</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Su</th><th>Mo</th><th>Tu</th><th>We</th>
+          <th>Th</th><th>Fr</th><th>Sa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td onclick="showTasksForDate('2025-06-01')">1</td>
+          <td onclick="showTasksForDate('2025-06-02')">2</td>
+          <td onclick="showTasksForDate('2025-06-03')">3</td>
+          <td onclick="showTasksForDate('2025-06-04')">4</td>
+          <td onclick="showTasksForDate('2025-06-05')">5</td>
+          <td onclick="showTasksForDate('2025-06-06')">6</td>
+          <td onclick="showTasksForDate('2025-06-07')">7</td>
+        </tr>
+        <tr>
+          <td onclick="showTasksForDate('2025-06-08')">8</td>
+          <td onclick="showTasksForDate('2025-06-09')">9</td>
+          <td onclick="showTasksForDate('2025-06-10')">10</td>
+          <td onclick="showTasksForDate('2025-06-11')">11</td>
+          <td onclick="showTasksForDate('2025-06-12')">12</td>
+          <td onclick="showTasksForDate('2025-06-13')">13</td>
+          <td onclick="showTasksForDate('2025-06-14')">14</td>
+        </tr>
+        <!-- Add more weeks as needed -->
+      </tbody>
+    </table>
+  </div>
 
-    <!-- TO-DO Input -->
-    <div class="task-inputs">
-      <input type="text" id="todoText" placeholder="Enter task description...">
-      <input type="date" id="todoDate">
-      <button class="btn add-task" onclick="addTask()">Add</button>
-    </div>
-
-    <!-- Task List -->
-    <ul id="todoList" class="task-list"></ul>
-
-    <!-- Calendar -->
-    <div class="calendar">
-      <div class="calendar-header">
-        <button onclick="prevMonth()">←</button>
-        <h3 id="monthYear"></h3>
-        <button onclick="nextMonth()">→</button>
-      </div>
-      <table>
-        <thead class="day-labels">
-          <tr>
-            <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-          </tr>
-        </thead>
-        <tbody id="calendarBody"></tbody>
-      </table>
-      <div id="taskDetails" class="task-on-date"></div>
+  <!-- Modal -->
+  <div id="taskModal" class="task-modal">
+    <div class="task-modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3>Tasks for <span id="modalDate"></span></h3>
+      <ul id="modalTasksList"></ul>
     </div>
   </div>
 
   <script>
-    let currentMonth = new Date().getMonth();
-    let currentYear = new Date().getFullYear();
-    let tasks = [];
-
-    function addTask() {
-      const text = document.getElementById("todoText").value.trim();
-      const date = document.getElementById("todoDate").value;
-      if (!text || !date) return;
-
-      const task = { text, date, status: "pending" };
-      tasks.push(task);
-      renderTasks();
-      renderCalendar();
-      showTasksOnDate(date);  // auto-show added task
-      document.getElementById("todoText").value = "";
-      document.getElementById("todoDate").value = "";
-    }
-
-    function renderTasks() {
-      const list = document.getElementById("todoList");
-      list.innerHTML = "";
-      tasks.forEach((task, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <span>${task.text} (Due: ${task.date})</span>
-          <span class="task-actions">
-            <button class="btn" style="background:#2ecc71" onclick="updateStatus(${index}, 'completed')">✔️</button>
-            <button class="btn" style="background:#e74c3c" onclick="updateStatus(${index}, 'incomplete')">❌</button>
-            <button class="btn" style="background:#3498db" onclick="shiftDate(${index})">📅</button>
-          </span>
-        `;
-        list.appendChild(li);
-      });
-    }
-
-    function updateStatus(index, status) {
-      tasks[index].status = status;
-      renderTasks();
-      renderCalendar();
-    }
-
-    function shiftDate(index) {
-      const newDate = prompt("Enter new date (YYYY-MM-DD):", tasks[index].date);
-      if (newDate) {
-        tasks[index].date = newDate;
-        renderTasks();
-        renderCalendar();
-        showTasksOnDate(newDate);
-      }
-    }
-
-    function renderCalendar() {
-      const calendarBody = document.getElementById("calendarBody");
-      const monthYear = document.getElementById("monthYear");
-      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-      monthYear.textContent = `${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}`;
-
-      calendarBody.innerHTML = "";
-      let date = 1;
-      for (let i = 0; i < 6; i++) {
-        let row = document.createElement("tr");
-        for (let j = 0; j < 7; j++) {
-          let cell = document.createElement("td");
-          if (i === 0 && j < firstDay) {
-            cell.innerHTML = "";
-          } else if (date > daysInMonth) {
-            break;
-          } else {
-            let fullDate = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(date).padStart(2, "0")}`;
-            const foundTask = tasks.find(t => t.date === fullDate);
-            cell.innerText = date;
-            if (foundTask) {
-              cell.classList.add(foundTask.status === "completed" ? "green" : "red");
-            }
-            cell.onclick = () => showTasksOnDate(fullDate);
-            date++;
-          }
-          row.appendChild(cell);
-        }
-        calendarBody.appendChild(row);
-      }
-    }
-
-    function showTasksOnDate(date) {
-      const taskDetails = document.getElementById("taskDetails");
-      const taskList = tasks.filter(task => task.date === date);
-      if (taskList.length === 0) {
-        taskDetails.innerHTML = `<strong>Tasks for ${date}:</strong> None`;
-      } else {
-        taskDetails.innerHTML = `<strong>Tasks for ${date}:</strong><ul>${taskList.map(t => `<li>${t.text} (${t.status})</li>`).join("")}</ul>`;
-      }
-    }
-
-    function nextMonth() {
-      if (currentMonth === 11) {
-        currentMonth = 0;
-        currentYear++;
-      } else {
-        currentMonth++;
-      }
-      renderCalendar();
-    }
-
-    function prevMonth() {
-      if (currentMonth === 0) {
-        currentMonth = 11;
-        currentYear--;
-      } else {
-        currentMonth--;
-      }
-      renderCalendar();
-    }
-
-    window.onload = () => {
-      renderCalendar();
+    // Sample tasks data (can be fetched from backend later)
+    const tasksByDate = {
+      "2025-06-01": [
+        { description: "Complete Physics DPP", done: true },
+        { description: "Revise Chapter 1", done: false }
+      ],
+      "2025-06-12": [
+        { description: "Mock Test 1", done: false },
+        { description: "Revise Maths Formula Sheet", done: true }
+      ],
+      "2025-06-13": [
+        { description: "Organic Chemistry Practice", done: false }
+      ]
     };
+
+    function showTasksForDate(dateStr) {
+      const modal = document.getElementById('taskModal');
+      const modalDate = document.getElementById('modalDate');
+      const modalTasksList = document.getElementById('modalTasksList');
+
+      modalDate.innerText = dateStr;
+      modalTasksList.innerHTML = '';
+
+      const tasks = tasksByDate[dateStr] || [];
+
+      if (tasks.length === 0) {
+        modalTasksList.innerHTML = "<li>No tasks for this date.</li>";
+      } else {
+        tasks.forEach(task => {
+          const li = document.createElement('li');
+          li.innerHTML = `${task.description} 
+            <span class="${task.done ? 'task-done' : 'task-pending'}">
+              (${task.done ? 'Done ✅' : 'Pending ❌'})
+            </span>`;
+          modalTasksList.appendChild(li);
+        });
+      }
+
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('taskModal').style.display = 'none';
+    }
   </script>
 </body>
 </html>
+

@@ -1,28 +1,40 @@
 
-function navigateWithLoader(url) {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'flex'; // Show loader overlay
-    // Delay navigation to let animation play
+// Show loader on link click
+  function navigateWithLoader(url) {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "flex";
     setTimeout(() => {
-        window.location.href = url;
-    }, 800); // 1 second delay, adjust if needed
-}
+      window.location.href = url;
+    }, 800);
+  }
 
-// Intercept all link clicks on the page
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', e => {
-        // Only intercept normal left clicks without modifier keys
+  // Intercept link clicks
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hide loader when DOM is loaded
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+
+    // Attach link click listeners
+    document.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", function (e) {
         if (
-            !e.defaultPrevented &&
-            e.button === 0 &&
-            !e.metaKey &&
-            !e.ctrlKey &&
-            !e.shiftKey &&
-            !e.altKey
+          !e.defaultPrevented &&
+          e.button === 0 &&
+          !e.metaKey &&
+          !e.ctrlKey &&
+          !e.shiftKey &&
+          !e.altKey &&
+          link.target !== "_blank"
         ) {
-            e.preventDefault();
-            const url = link.href;
-            navigateWithLoader(url);
+          e.preventDefault();
+          navigateWithLoader(link.href);
         }
+      });
     });
-});
+  });
+
+  // Hide loader on back/forward navigation
+  window.addEventListener("pageshow", function (event) {
+    const loader = document.getElementById("loader");
+    if (loader) loader.style.display = "none";
+  });

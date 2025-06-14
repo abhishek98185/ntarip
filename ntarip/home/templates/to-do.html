@@ -223,6 +223,71 @@
             padding: 10px;
             border-radius: 6px;
         }
+
+        /* responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            table,
+            th,
+            td {
+                font-size: 12px;
+            }
+
+            .task-inputs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #todoText,
+            #todoDate {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 8px 0;
+            }
+
+            .calendar-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .calendar table,
+            .calendar th,
+            .calendar td {
+                font-size: 12px;
+            }
+
+            .task-on-date {
+                font-size: 14px;
+            }
+
+            .task-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .task-actions {
+                display: flex;
+                gap: 5px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .calendar-header h3 {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 

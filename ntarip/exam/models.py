@@ -22,6 +22,8 @@ class Paper(models.Model):
     day = models.PositiveSmallIntegerField(null=True, blank=True)
     month = models.CharField(max_length=20, null=True, blank=True)
 
+    paper_id = models.CharField(default=f"{paper_name} ({year}-{month})-day-{day}- Shift {shift}")
+
     def __str__(self):
         return f"{self.paper_name} ({self.year}-{self.month})-day-{self.day}- Shift {self.shift}"
 

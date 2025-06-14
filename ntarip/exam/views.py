@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Paper, PaperName
-import datetime
+from django.contrib.contenttypes.models import ContentType
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from .models import Paper, PaperName, AnswerSheet, UserAnswer
+from django.utils.dateparse import parse_time
+import json
 
 # Create your views here.
 
@@ -30,9 +34,54 @@ def exam(request):
         context = {
             'paper': paper,
             'Questions': Questions,
+            'Physics' : physics_questions,
+            'Chemistry' : chemistry_questions,
+            'Maths' : maths_questions,
             'exam': exam,
+            'examData':{'exam':exam,'year':year,'month':month,'day':day}
         }
 
         return render(request, 'jeemains.html', context)
     # return render(request, 'jeemains.html')
+@csrf_exempt
+def submit_answers(request):
+    if request.method == "POST":
+        user = request.user
+        if not user.is_authenticated:
+            return JsonResponse({'error': 'User not authenticated'}, status=403)
 
+        data = json.loads(request.body)
+        paper_id = data.get("paper_id")
+        answers = data.get("answers", [])
+
+        try:
+            paper = Paper.objects.get(paper_id=paper_id)
+        except Paper.DoesNotExist:
+            return JsonResponse({'error': 'Paper not found'}, status=404)
+
+        answersheet = AnswerSheet.objects.create(user=user, paper=paper)
+
+        for ans in answers:
+            question_type = ans.get("question_type")  # e.g., "mcq", "written"
+            question_id = ans.get("question_id")
+            answer_text = ans.get("answer")
+            is_correct = ans.get("is_correct", False)
+            start_time = parse_time(ans.get("start_time"))
+
+            try:
+                content_type = ContentType.objects.get(model=question_type)
+            except ContentType.DoesNotExist:
+                continue  # or return error
+
+            UserAnswer.objects.create(
+                content_type=content_type,
+                object_id=question_id,
+                answersheet=answersheet,
+                answer=answer_text,
+                is_correct=is_correct,
+                start_time=start_time
+            )
+
+        return JsonResponse({'message': 'Answers submitted successfully!'})
+
+    return JsonResponse({'error': 'Invalid request method'}, status=405)

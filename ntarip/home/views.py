@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from home.models import Contact
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -18,7 +18,21 @@ def formulasheet(request):
 
 def about(request):
     return render(request,'about.html')
+
 def todolist(request):
     return render(request,'to-do.html')
+
+def contact(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        contact = Contact.objects.create(
+            username = username,
+            email = email,
+            message = message
+        )
+
+    return render(request, 'contact.html')
 
 

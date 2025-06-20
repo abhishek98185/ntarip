@@ -54,16 +54,17 @@
       <div id="menuright">
         <ul class="nav-links" id="navLinks">
           <li><a href="/">Home</a></li>
-          <li><a href="/jee">JEE</a></li>
-          <li><a href="/neet">NEET</a></li>
-          <li><a href="/jeeadvance">JEE ADVANCE</a></li>
-          <li><a href="/formulasheet">Formula Sheets</a></li>
-          <li><a href="/todolist">To Do list</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="{% url 'jee' %}">JEE</a></li>
+          <li><a href="{% url 'neet' %}">NEET</a></li>
+          <li><a href="{% url 'jeeadvance' %}">JEE ADVANCE</a></li>
+          <li><a href="{% url 'formulasheet' %}">Formula Sheets</a></li>
+          <li><a href="{% url 'todolist' %}">To Do list</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
           {% if request.user.is_authenticated %}
-          <li><a href="/account/logout">{{ request.user }}</a></li>
+          <li><a href="{% url 'logout' %}">{{ request.user }}</a></li>
           {% else %}
-          <li><a href="/account/login">Login</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
           {% endif %}
         </ul>
       </div>

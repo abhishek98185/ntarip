@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import index,jeeadvance,jee,neet,formulasheet,about,todolist
+from .views import index,jeeadvance,jee,neet,formulasheet,about,todolist,contact
 
 
 urlpatterns = [
@@ -10,6 +10,7 @@ urlpatterns = [
     path('neet',neet,name="neet"),
     path('formulasheet',formulasheet,name="formulasheet"),
     path('about',about,name="about"),
-    path('todolist',todolist,name="todolist")
+    path('todolist',todolist,name="todolist"),
+    path('contact',contact,name='contact')
 ]
 

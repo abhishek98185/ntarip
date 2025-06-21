@@ -5,7 +5,19 @@
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
-
+body::-webkit-scrollbar {
+  background-color: #0d111c;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #1c294b;
+  width: 15px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #1e90ff;
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: #1e90ff;
+}
 .navbar {  
   padding: 15px 20px;
   display: flex;

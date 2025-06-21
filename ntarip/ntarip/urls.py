@@ -26,5 +26,3 @@ urlpatterns = [
     path('exam', include('exam.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-#username = Anmol_Kumar 
-#password = Anmoldjango@123

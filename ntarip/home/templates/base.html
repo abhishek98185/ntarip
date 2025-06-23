@@ -41,6 +41,61 @@
   gap: 50px;
   z-index: 10;
 }
+/* Updated Profile Menu Style */
+.profile-menu {
+  position: absolute;
+  top: 66px; /* Adjust to the height of your navbar */
+  right: 10px; /* Adjust based on layout */
+  width: 200px;
+  background-color: #0b1a47; /* Matches dark blue theme */
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  display: none;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-menu ul li {
+  padding: 12px 20px;
+  transition: background-color 0.2s ease;
+  color: #fff;
+}
+
+.profile-menu ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  font-weight: 500;
+}
+
+/* Hover Effects */
+.profile-menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom colored items if needed */
+.down1 {
+  background-color: transparent;
+}
+.down2 {
+  background-color: transparent;
+}
+.down3 {
+  background-color: transparent;
+  color: #f1c40f;
+}
+
 
 </style>
 
@@ -64,11 +119,20 @@
           {% if request.user.is_authenticated %}
           <li><a href="{% url 'logout' %}">{{ request.user }}</a></li>
           {% else %}
-          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'login' %}" id="loginlink">Login</a></li>
           {% endif %}
         </ul>
       </div>
     </nav>
+    <div class="profile-menu">
+  <ul>
+    <li class="down1"><a href="#">Home</a></li>
+    <li class="down2"><a href="#">Dashboard</a></li>
+    <li class="down3"><a href="#">Logout</a></li>
+  </ul>
+</div>
+
+    
 
   </header>
 
@@ -140,6 +204,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
   integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/theme.js' %}"></script>
 
@@ -160,7 +225,56 @@ navbar.addEventListener("mouseleave", ()=>{
       ease: "power3.out"
     });
 })
+// Hide when mouse leaves BOTH login and menu
+function hideProfileMenuWithDelay() {
+  setTimeout(() => {
+    if (!login.matches(':hover') && !profileMenu.matches(':hover')) {
+      gsap.to(profileMenu, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.out",
+        onComplete: () => {
+          profileMenu.style.display = "none";
+        }
+      });
+    }
+  }, 200); // Slight delay allows smooth movement between elements
+}
+// const tl = gsap.timeline()
+const profileMenu = document.querySelector(".profile-menu");
+const login = document.querySelector("#loginlink");
 
+let hideTimeout = null;
+
+function showProfileMenu() {
+  clearTimeout(hideTimeout); // Cancel any pending hide
+  profileMenu.style.display = "block";
+  gsap.to(profileMenu, {
+    opacity: 1,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+}
+
+function hideProfileMenu() {
+  gsap.to(profileMenu, {
+    opacity: 0,
+    duration: 0.3,
+    ease: "power2.out",
+    onComplete: () => {
+      profileMenu.style.display = "none";
+    }
+  });
+}
+
+function hideProfileMenuWithDelay() {
+  hideTimeout = setTimeout(hideProfileMenu, 200); // Delay to allow hover on menu
+}
+
+login.addEventListener("mouseenter", showProfileMenu);
+login.addEventListener("mouseleave", hideProfileMenuWithDelay);
+profileMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+profileMenu.addEventListener("mouseleave", hideProfileMenuWithDelay);
 </script>
 
 </html>

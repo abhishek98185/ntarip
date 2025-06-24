@@ -14,6 +14,20 @@
   --intro-bg: #8af6d2;
   --intro-text: #0f172a;
 }
+
+body::-webkit-scrollbar {
+  background-color: var(--bg-color);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--navbar-bg);
+  width: 15px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: var(--primary-color);
+}
 .intro {
   background-color: var(--intro-bg);
   /* color: var(--intro-text); */

@@ -22,6 +22,15 @@ def about(request):
 def todolist(request):
     return render(request,'to-do.html')
 
+def dashboard(request):
+    return render(request,'dashboard.html')
+
+def profile(request):
+    return render(request,'profile.html')
+
+def leadership(request):
+    return render(request,'leadership.html')
+
 def contact(request):
     if request.method == 'POST':
         username = request.POST.get('username')

@@ -1,89 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Leaderboard | NTARIP</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      margin: 0;
-      padding: 20px;
+{% extends 'header2.html' %}
+{% load static %}
+
+{% block title %}Leaderboard | NTARIP{% endblock %}
+
+{% block extra_css %}
+<style>
+  h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    background-color: #1d72b8;
+    color: white;
+  }
+
+  tr.highlight {
+    background-color: #d1ffd6;
+    font-weight: bold;
+  }
+
+  #user-rank {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .trophy {
+    font-size: 20px;
+  }
+
+  .gold {
+    color: gold;
+  }
+
+  .silver {
+    color: silver;
+  }
+
+  .bronze {
+    color: #cd7f32;
+  }
+
+  @media (max-width: 600px) {
+    table, th, td {
+      font-size: 14px;
     }
 
     h2 {
-      text-align: center;
-      color: #222;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-    }
-
-    th {
-      background-color: #1d72b8;
-      color: white;
-    }
-
-    tr.highlight {
-      background-color: #d1ffd6;
-      font-weight: bold;
+      font-size: 22px;
     }
 
     #user-rank {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
+      font-size: 16px;
     }
+  }
+</style>
+{% endblock %}
 
-    .trophy {
-      font-size: 20px;
-    }
-
-    .gold {
-      color: gold;
-    }
-
-    .silver {
-      color: silver;
-    }
-
-    .bronze {
-      color: #cd7f32;
-    }
-
-    @media (max-width: 600px) {
-      table, th, td {
-        font-size: 14px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      #user-rank {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
-<body>
-
+{% block body %}
 <h2>🏆 NTARIP Leaderboard</h2>
 
 <table id="leaderboard">
@@ -102,7 +92,6 @@
 <div id="user-rank"></div>
 
 <script>
-  // Sample student data
   const students = [
     { name: "Sneha", points: 400 },
     { name: "Priya", points: 385 },
@@ -119,16 +108,13 @@
     { name: "Nikhil", points: 245 },
   ];
 
-  const currentUser = "Aditya"; // Currently logged in user
-
-  // Sort by points descending
+  const currentUser = "Aditya";
   students.sort((a, b) => b.points - a.points);
 
   const tbody = document.querySelector("#leaderboard tbody");
   let userRank = null;
   let userPoints = null;
 
-  // Show top 10 only
   students.slice(0, 10).forEach((student, index) => {
     const tr = document.createElement("tr");
 
@@ -152,7 +138,6 @@
     tbody.appendChild(tr);
   });
 
-  // If user not in top 10, find and display rank
   if (userRank === null) {
     students.forEach((student, index) => {
       if (student.name === currentUser) {
@@ -170,6 +155,4 @@
     userRankDiv.textContent = "You're not on the leaderboard yet!";
   }
 </script>
-
-</body>
-</html>
+{% endblock %}

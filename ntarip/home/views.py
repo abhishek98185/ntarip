@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from home.models import Contact, Profile
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -25,19 +26,35 @@ def todolist(request):
 
 def dashboard(request):
     return render(request,'dashboard.html')
-
+@login_required
 def profile(request):
-    if request.user.is_authenticated:
-        profile = get_object_or_404(Profile, user=request.user)
-        content = {
-            'name': profile.user.username,
-            'email': profile.user.email,
-            'image': profile.image,
-            'user_class': profile.user_class
-        }
-        return render(request, 'profile.html', content)
-    else:
-        return redirect('login')  
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        user_class = request.POST.get('student_class')
+        image = request.FILES.get('image')
+
+        if username:
+            request.user.username = username
+        if email:
+            request.user.email = email
+        request.user.save()
+
+
+        profile.user_class = user_class
+        if image:
+            profile.image = image 
+        profile.save()
+
+        return redirect('profile')
+    return render(request, 'profile.html', {
+        'name': profile.user.username,
+        'email': profile.user.email,
+        'image': profile.image,
+        'user_class': profile.user_class
+    })
+      
 def leadership(request):
     return render(request,'leadership.html')
 

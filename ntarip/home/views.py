@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from home.models import Contact
+from django.shortcuts import render, get_object_or_404, redirect
+from home.models import Contact, Profile
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -26,8 +27,17 @@ def dashboard(request):
     return render(request,'dashboard.html')
 
 def profile(request):
-    return render(request,'profile.html')
-
+    if request.user.is_authenticated:
+        profile = get_object_or_404(Profile, user=request.user)
+        content = {
+            'name': profile.user.username,
+            'email': profile.user.email,
+            'image': profile.image,
+            'user_class': profile.user_class
+        }
+        return render(request, 'profile.html', content)
+    else:
+        return redirect('login')  
 def leadership(request):
     return render(request,'leadership.html')
 
@@ -43,5 +53,6 @@ def contact(request):
         )
 
     return render(request, 'contact.html')
+
 
 

@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User 
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
+from home.models import Profile
 
 # Create your views here.
 
@@ -54,6 +55,10 @@ def registration(request):
             email=email,
             password=password  # Automatically hashed by create_user
         )
+        profile = Profile.objects.create(
+            user = user
+        )
+        profile.save()
 
         messages.success(request, "Registration successfully completed!")
         return redirect('/account/login')  # Redirect after successful registration

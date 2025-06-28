@@ -81,24 +81,33 @@
   <h2>👤 Student Profile</h2>
 
   <div class="profile-pic-container">
-    <img id="profileImage" src="https://via.placeholder.com/120" alt="Profile Picture">
-    <input type="file" id="imageUpload" accept="image/*">
+    <img id="profileImage" src="{{ image.url|default:'https://via.placeholder.com/120' }}" alt="Profile Picture" width="120" height="120">
+    <input type="file" id="imageUpload" name="image" accept="image/*">
   </div>
 
+
   <div class="form-group">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" value="Abhishek Singh">
+    <label for="name">User Name</label>
+    <input type="text" id="name" value="{{name}}">
   </div>
 
   <div class="form-group">
     <label for="email">Email ID</label>
-    <input type="email" id="email" value="abhishek@example.com">
+    <input type="email" id="email" value="{{email}}">
   </div>
 
-  <div class="form-group">
-    <label for="student_class">Class</label>
-    <input type="text" id="student_class" value="12th - PCM">
-  </div>
+<div class="form-group">
+  <label for="student_class">Class</label>
+  <select id="student_class" name="student_class" class="form-control"style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" >
+    <option value="1" {% if user_class == "12-PCM" %}selected{% endif %}>12th-PCM</option>
+    <option value="2" {% if user_class == "12-PCB" %}selected{% endif %}>12th-PCB</option>
+    <option value="3" {% if user_class == "11-PCM" %}selected{% endif %}>11th-PCM</option>
+    <option value="4" {% if user_class == "11-PCB" %}selected{% endif %}>11th-PCB</option>
+    <option value="5" {% if user_class == "11-PCMB" %}selected{% endif %}>11th-PCMB</option>
+    <option value="6" {% if user_class == "12-PCMB" %}selected{% endif %}>12th-PCMB</option>
+  </select>
+</div>
+
 
   <button class="save-btn" onclick="saveProfile()">Save Changes</button>
 </main>
